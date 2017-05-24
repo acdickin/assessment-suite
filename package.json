@@ -1,0 +1,41 @@
+{
+  "name": "local-t2-assessment-suite",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build-webpack-dont-work": "node_modules/.bin/webpack --config webpack.config.js",
+    "build": "node_modules/.bin/tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^2.2.2",
+    "@types/enzyme": "^2.7.7",
+    "@types/jest": "^19.2.2",
+    "ts-jest": "^19.0.7",
+    "jest": "^19.0.2"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/specs/__mocks__/fileMock.ts",
+      "\\.(css|less)$": "<rootDir>/specs/__mocks__/styleMock.ts"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/specs/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
+  }
+}
