@@ -1,5 +1,4 @@
 import Assessments from '../components/Assessments';
-import {assessments, assessmentIds} from '../res/data/assessments';
 import {connect} from 'react-redux';
 import { push } from 'react-router-redux';
 const getCols = (device) => {
@@ -16,11 +15,13 @@ const getCols = (device) => {
   return 1
 }
 const stateToProps = (state) => {
+  /*
   console.log(assessments);
   return {
     assessments: assessmentIds.map(id => assessments[id]),
     cols: getCols(state.device)
   }
+  */
 }
 const dispatchToProps = (dispatch) => {
   return {

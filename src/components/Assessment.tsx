@@ -1,13 +1,13 @@
 import * as React from "react";
 import Form, {ValidationResultInterface} from './Form';
+
 export interface ItemInterface{
   title: string;
-  questions: any[];
+  questions: {id:number,title: string,type: string, choices: any[]}[];
 }
 
 
 export interface Props { 
-  appBarTitle(msg: string): any;
   item: ItemInterface;
   values: any;
   submitData(data: any): void;
@@ -20,18 +20,18 @@ export interface State {
 }
 
 export default class Assessment extends React.Component<Props, State> {
+    constructor(props){
+      super(props);
+    }
     componentWillMount () {
       const {item} = this.props;
-
-      this.props.appBarTitle(item.title);
       window.scrollTo(0,0);
     }
 
     componentWillReceiveProps(nextProps) {
       const {item} = nextProps;
- 
-      this.props.appBarTitle(item.title);
     }
+
     render() {
         const {item, submitData, validateData,cancel,values} = this.props;
         return (<Form values={values} items={item.questions} cancel={cancel} validateData={validateData} submitData={submitData} />);

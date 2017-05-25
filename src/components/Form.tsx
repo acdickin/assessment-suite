@@ -76,7 +76,7 @@ export default class Form extends React.Component<Props, State>{
                     </div>
                     <div style={flexParentRowStyle as any}>
                       <div style={flexRowItemStyle as any}>
-                        <RaisedButton primary={true} type="submit" label="Save" />
+                        <RaisedButton primary={true} type="submit" label="Submit" />
                       </div>
                       <div style={flexRowItemStyle as any}>
                         <RaisedButton onTouchTap={this.props.cancel} secondary={true} type="button" label="Cancel" />

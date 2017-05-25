@@ -1,47 +1,9 @@
-import AssessmentResult from '../components/AssessmentResult';
-import {assessments, assessmentIds} from '../res/data/assessments';
+import * as React from "react";
+import AssessmentResultComponent from '../components/AssessmentResult';
+import {AssessmentInterface} from '../res/data/assessments';
 import {connect} from 'react-redux';
 import { push } from 'react-router-redux';
 
-const computeScore = (assessment,results) => {
-      console.log(assessment);
-      console.log(results);
-
-    function countCompleted (answers) {
-      var count = 0;
-      var totalCount = 0;
-      Object.keys(answers).map(function (v) {
-        if (answers[v]) {
-          count++;
-        }
-        totalCount++;
-      });
-      return {numAnswered: count, total: totalCount};
-    }
-
-    function tallyScore (answers, questions) {
-      var total = 0;
-      console.log(questions);
-      Object.keys(questions).map(function (idx) {
-          let question = questions[idx];
-
-          let choiceValue = answers[question.id];
-          let choices = questions[idx].choices;
-          console.log(choiceValue);
-          console.log(choices);
-          choices.map((choice) => {
-            if(choice.value === choiceValue){
-              total += parseInt(choice.score);
-            }
-          });
-      });
-      console.log(total);
-      return total;
-    }
-
-
-    return tallyScore(results,assessment.questions);
-}
 
 function getDescription(tally, assessment) {
 
@@ -50,33 +12,55 @@ function getDescription(tally, assessment) {
           return true;
         }
         return false;
-      })//[0] || assessment.scoring[0];
+      });
 
-    
-      return score.length ? score[0] : assessment.scoring[0];
+
+      return score.length ? score[0] : assessment.scoring[0]
 }
 
-const stateToProps = (state,ownProps) => {
- // ownProps.params.id
-  let assessment = assessments[ownProps.params.id] ? assessments[ownProps.params.id] : assessments['1'];
-  let score = state.assessmentResults[ownProps.params.id] ? computeScore(assessment,state.assessmentResults[ownProps.params.id]) : 0;
-  let description = getDescription(score,assessment);
+export interface Props { 
+  assessment: AssessmentInterface;
+  results: any;
+}
+
+export interface State { 
+    minScore: number;
+    maxScore: number;
+    score: number;
+    result: string,
+    assessment: AssessmentInterface,
+    middleScore: number,
+    highIsGood: boolean
+}
+
+export default class AssessmentResult extends React.Component<Props, State> {
+  public static defaultProps: Partial<Props>= {
+
+  }
   
-  return {
-    minScore: assessment.minScore,
-    maxScore: assessment.maxScore,
-    score: score,
-    result: description,
-    assessment: assessment,
-    middleScore: assessment.middleScore,
-    highIsGood: assessment.scoringMode === 1
+  constructor(props){
+    super(props);
+    this.state = this.handleAssessmentState(this.props.assessment,this.props.results);
+  }
+
+  handleAssessmentState = (assessment: AssessmentInterface,results: any) => {
+    const score = assessment.calcScore(results);
+    return {
+      minScore: assessment.minScore,
+      maxScore: assessment.maxScore,
+      score: assessment.calcScore(results),
+      result: getDescription(score,assessment),
+      assessment: assessment,
+      middleScore: assessment.middleScore,
+      highIsGood: assessment.scoringMode === 1
+    };
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState(this.handleAssessmentState(nextProps.assessment,nextProps.results))
+  }
+
+  render(){
+    return <AssessmentResultComponent {...this.state} />
   }
 }
-const dispatchToProps = (dispatch) => {
-  return {
-
-  }
-}
-export default connect(stateToProps,dispatchToProps)
-
-(AssessmentResult);

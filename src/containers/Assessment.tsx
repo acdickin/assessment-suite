@@ -1,53 +1,64 @@
-import Assessment from '../components/Assessment';
-import {ItemInterface} from '../components/Assessment';
-import {assessments} from '../res/data/assessments';
-import {connect} from 'react-redux';
-import { push } from 'react-router-redux';
-import {ValidationResultInterface} from '../components/Form';
-import {addAssessmentResult} from '../actions';
+import * as React from "react";
+import Form, {ValidationResultInterface} from '../components/Form';
+import AssessmentComponent from '../components/Assessment';
+import {FriendShiptAssessment,AssessmentInterface} from '../res/data/assessments';
 
-function validate(data){
-  let hasErrors = false;
-  const reduceCb = (errors, name) => {
-    if(data[name].length === 0){
-      hasErrors = true;
-      errors[name] = 'Required.';
-    } else {
-      errors[name] = '';
+export interface Props { 
+  item: AssessmentInterface
+  onSuccess(data: any): void;
+  values?: any;
+}
+
+export interface State { 
+
+}
+
+export default class Assessment extends React.Component<Props, State> {
+
+  handleSubmitData = (data: any) => {
+    this.props.onSuccess(data);
+  }
+
+  handleValidateData = (data: any) => {
+
+    let hasErrors = false;
+    const reduceCb = (errors, name) => {
+      if(data[name].length === 0){
+        hasErrors = true;
+        errors[name] = 'Required.';
+      } else {
+        errors[name] = '';
+      }
+      
+      return errors;
+    };
+
+    const errors = Object.keys(data)
+      .map((propName) => propName)
+      .reduce(reduceCb,{});
+    return {
+      data: errors,
+      isValid: !hasErrors
     }
+  }
+
+  handleCancel = () => {
     
-    return errors;
-  };
+  }
 
-  const errors = Object.keys(data)
-    .map((propName) => propName)
-    .reduce(reduceCb,{});
-  return {
-    data: errors,
-    isValid: !hasErrors
+  handleFormValues = () => {
+    let {values,item} = this.props;
+
+
+    values = values || item.questions.reduce((acc,question) => {
+                                                acc[question.id] = "";
+                                                return acc;
+                                              },{});
+    return values;
+  }
+
+  render(){
+    const {item,values} = this.props;
+    return <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} submitData={this.handleSubmitData} validateData={this.handleValidateData} />;
   }
 }
-
-
-const stateToProps = (state,ownProps) => {
-  return {
-    item: assessments[ownProps.params.id] as ItemInterface,
-    values: state.assessmentResults[ownProps.params.id] ? state.assessmentResults[ownProps.params.id] : false
-  }
-}
-const dispatchToProps = (dispatch,ownProps) => {
-  return {
-    submitData: (data) => {
-      dispatch(addAssessmentResult(ownProps.params.id,data));
-      dispatch(push('/main/assessmentresult/' + ownProps.params.id));
-      window.scrollTo(0,0);
-    },
-    validateData: (data: any): ValidationResultInterface => {
-      return validate(data);
-    },
-    cancel: ownProps.pathOnTouchTap('/main/assessments')
-  }
-}
-export default connect(stateToProps,dispatchToProps)
-
-(Assessment);

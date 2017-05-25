@@ -39,10 +39,55 @@ export interface AssessmentInterface{
   scoring: ScoringInterface[];
   questions: QuestionInterface[];
   image: string;
+  calcQuestions(values: any): QuestionInterface[];
   calcScore(values: any): number;
 }
+const defaultCalcQuestion = function(values: any){
 
-export const makeAssessment = (id,title, minScore: number,middleScore: number,maxScore: number, scoring: ScoringInterface[], scoringMode: number, questions: QuestionInterface[], image='',calcScore: (any) => any = defaultCalcScore ):AssessmentInterface => {
+      return this.questions;
+}
+
+const defaultCalcScore = function(values: any){
+
+    function countCompleted (answers) {
+      var count = 0;
+      var totalCount = 0;
+      Object.keys(answers).map(function (v) {
+        if (answers[v]) {
+          count++;
+        }
+        totalCount++;
+      });
+      return {numAnswered: count, total: totalCount};
+    }
+
+    function tallyScore (answers, questions) {
+      var total = 0;
+   
+      Object.keys(questions).map(function (idx) {
+          let question = questions[idx];
+          if(answers && typeof answers[question.id] !== 'undefined'){
+            let choiceValue = answers[question.id];
+            let choices = questions[idx].choices;
+
+            if(choices){
+              choices.map((choice) => {
+                if(choice.value === choiceValue){
+                  total += parseInt(choice.score);
+                }
+              });
+            }
+          }
+      });
+
+      return total;
+    }
+
+
+    return tallyScore(values,this.questions);
+}
+
+export const makeAssessment = (id,title, minScore: number, middleScore: number, maxScore: number, scoring: ScoringInterface[], scoringMode: number, questions: QuestionInterface[], image='',calcQuestions: (any) => any = defaultCalcQuestion, calcScore: (any) => any = defaultCalcScore ):AssessmentInterface => {
   return {
     id,
     title,
@@ -50,10 +95,11 @@ export const makeAssessment = (id,title, minScore: number,middleScore: number,ma
     middleScore,
     maxScore,
     scoring,
-    scoringMode,
     questions,
     image,
-    calcScore
+    calcQuestions,
+    calcScore,
+    scoringMode
   }
 }
 
@@ -463,37 +509,14 @@ const socialImage  = require('../images/Perceived_Social_Support.jpg');
 const postDepSocialImage = require('../images/Post_Deployment_Social_Support.jpg');
 const parentingConfidenceImage = require('../images/Parenting_Confidence.jpg');
 
-const defaultCalcScore = function(values: any){
-
-
-    function tallyScore (answers, questions) {
-      var total = 0;
-   
-      Object.keys(questions).map(function (idx) {
-          let question = questions[idx];
-
-          let choiceValue = answers[question.id];
-          let choices = questions[idx].choices;
-          if(choices){
-            choices.map((choice) => {
-              if(choice.value === choiceValue){
-                total += parseInt(choice.score);
-              }
-            });
-          }
-      });
-
-      return total;
-    }
-
-
-    return tallyScore(values,this.questions);
-}
 
 interface AssessmentTreeInterface {
   [propName: string]: AssessmentInterface;
 }
 
+export const FriendShiptAssessment = makeAssessment(1,'Friendship Scale', 0, 17, 24,FriendshipScaleList,1,friendShipQuestions,friendsImage);
+
+/*
 const assessmentsRaw: AssessmentInterface[] = [
   makeAssessment(1,'Friendship Scale', 0, 17, 24,FriendshipScaleList,1,friendShipQuestions,friendsImage),
   makeAssessment(2,'Marital Satisfaction', 2, 92, 158,MaritalSatisfactionList,0,maritalSatisfactionQuestions,marriageImage),
@@ -501,7 +524,7 @@ const assessmentsRaw: AssessmentInterface[] = [
   makeAssessment(3,'Perceived Social Support', 12, 58, 84, PerceivedSocialSupportList, 1, percSocialSupportQuestions, socialImage),
   makeAssessment(4,'Post Deployment Social Support', 15, 49, 75,PostDeploymentSocialSupportList, 0, postDepSupportQuestions,postDepSocialImage),
   makeAssessment(5,'Parenting Confidence', 16, 60, 96,ParentingConfidenceList,1,parentingConfidenceAssessment,parentingConfidenceImage)
-]
+];
 
 const normalData = normalize(assessmentsRaw,assessmentListSchema);
 
@@ -509,6 +532,6 @@ export const assessments: AssessmentTreeInterface = normalData.entities.assessme
 
 export const assessmentIds = normalData.result;
 
-
+*/
 
 
