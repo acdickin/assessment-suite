@@ -24,12 +24,12 @@ export default class Assessment extends React.Component<Props, State> {
       super(props);
     }
     componentWillMount () {
-      const {item} = this.props;
+   
       //window.scrollTo(0,0);
     }
 
     componentWillReceiveProps(nextProps) {
-      const {item} = nextProps;
+    
     }
 
     render() {

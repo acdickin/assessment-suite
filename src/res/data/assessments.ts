@@ -1,10 +1,3 @@
-import {combineReducers} from 'redux';
-import { normalize, schema } from 'normalizr';
-
-import * as objectAssign from 'object-assign';
-
-const assessmentSchema = new schema.Entity('assessment');
-const assessmentListSchema = new schema.Array(assessmentSchema);
 
 export interface ScoringInterface{
   id: number;
@@ -48,18 +41,6 @@ const defaultCalcQuestion = function(values: any){
 }
 
 const defaultCalcScore = function(values: any){
-
-    function countCompleted (answers) {
-      var count = 0;
-      var totalCount = 0;
-      Object.keys(answers).map(function (v) {
-        if (answers[v]) {
-          count++;
-        }
-        totalCount++;
-      });
-      return {numAnswered: count, total: totalCount};
-    }
 
     function tallyScore (answers, questions) {
       var total = 0;
@@ -262,6 +243,7 @@ PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring12);
 PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring13);
 PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring14);
 
+/*
 
 const choicesSet1: ChoicesInterface[] = [
       {title: '0 - Not at all', value: '1', score: 0},
@@ -274,7 +256,7 @@ const choicesSet1: ChoicesInterface[] = [
       {title: '7', value: '8', score: 7},
       {title: '8 - Exactly So', value: '9', score: 8}
 ];
-
+*/
 const choicesSet2: ChoicesInterface[] = [
       {title: 'Almost Always', value: '1', score: 4},
       {title: 'Most of the time', value: '2', score: 3},
@@ -518,7 +500,7 @@ const postDepSocialImage = require('../images/Post_Deployment_Social_Support.jpg
 const parentingConfidenceImage = require('../images/Parenting_Confidence.jpg');
 
 
-interface AssessmentTreeInterface {
+export interface AssessmentTreeInterface {
   [propName: string]: AssessmentInterface;
 }
 

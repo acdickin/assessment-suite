@@ -6,7 +6,7 @@
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
-    "noUnusedLocals": false
+    "noUnusedLocals": true
 },
 "include": [
     "src/**/*"

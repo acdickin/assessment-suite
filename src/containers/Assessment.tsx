@@ -1,5 +1,4 @@
 import * as React from "react";
-import Form, {ValidationResultInterface} from '../components/Form';
 import AssessmentComponent from '../components/Assessment';
 import {AssessmentInterface} from '../res/data/assessments';
 import AssessmentResultContainer from './AssessmentResult';
@@ -80,7 +79,7 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   render(){
-    const {item,values} = this.props;
+    const {item} = this.props;
      let content;
      if(this.state.isComplete){
        content = <AssessmentResultContainer results={this.state.values} assessment={item} />;

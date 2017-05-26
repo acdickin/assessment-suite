@@ -6,16 +6,15 @@ import FriendShipAssessment from './containers/assessments/FriendShip';
 import MaritalSatisfaction from './containers/assessments/MaritalSatisfaction';
 import PostDeploymentSocialSupport from './containers/assessments/PostDeploymentSocialSupport';
 import SocialSupport from './containers/assessments/SocialSupport';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
+/*
 function testOnSuccess(data){
   console.log(data);
   console.log('testOnSuccess');
-}
+}*/
 
 const render = () => {
     ReactDOM.render(

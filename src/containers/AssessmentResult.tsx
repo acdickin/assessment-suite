@@ -1,8 +1,6 @@
 import * as React from "react";
 import AssessmentResultComponent from '../components/AssessmentResult';
 import {AssessmentInterface} from '../res/data/assessments';
-import {connect} from 'react-redux';
-import { push } from 'react-router-redux';
 
 
 function getDescription(tally, assessment) {
