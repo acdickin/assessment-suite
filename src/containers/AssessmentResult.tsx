@@ -19,16 +19,18 @@ function getDescription(tally, assessment) {
 export interface Props { 
   assessment: AssessmentInterface;
   results: any;
+  backClick(): void;
 }
 
 export interface State { 
     minScore: number;
     maxScore: number;
     score: number;
-    result: string,
-    assessment: AssessmentInterface,
-    middleScore: number,
-    highIsGood: boolean
+    result: string;
+    assessment: AssessmentInterface;
+    middleScore: number;
+    highIsGood: boolean;
+    id: string;
 }
 
 export default class AssessmentResult extends React.Component<Props, State> {
@@ -43,14 +45,16 @@ export default class AssessmentResult extends React.Component<Props, State> {
 
   handleAssessmentState = (assessment: AssessmentInterface,results: any) => {
     const score = assessment.calcScore(results);
+    console.log(score);
     return {
       minScore: assessment.minScore,
       maxScore: assessment.maxScore,
-      score: assessment.calcScore(results),
+      score: score,
       result: getDescription(score,assessment),
       assessment: assessment,
       middleScore: assessment.middleScore,
-      highIsGood: assessment.scoringMode === 1
+      highIsGood: assessment.scoringMode === 1,
+      id: assessment.id + ''
     };
   }
 
@@ -59,6 +63,7 @@ export default class AssessmentResult extends React.Component<Props, State> {
   }
 
   render(){
-    return <AssessmentResultComponent {...this.state} />
+
+    return <AssessmentResultComponent  backClick={this.props.backClick} {...this.state} />
   }
 }

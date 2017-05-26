@@ -34,9 +34,25 @@ export default class Assessment extends React.Component<Props, State> {
   handleSubmitData = (data: any) => {
     const {onSuccess} = this.props;
     onSuccess(data);
+    this.handleSetComplete();
     this.setState({
-      isComplete: true,
       values: data
+    });
+  }
+
+  handleSetComplete = () => {
+    this.setState({
+      isComplete: true
+    });
+  }
+
+  handleResultBack = () => {
+    this.handleSetIncomplete();
+  }
+
+  handleSetIncomplete = () => {
+    this.setState({
+      isComplete: false
     });
   }
 
@@ -68,11 +84,10 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   handleFormValues = () => {
-    let {values,item} = this.props;
-
-
+    let {item} = this.props;
+    let {values} = this.state;
     values = values || item.questions.reduce((acc,question) => {
-                                                acc[question.id] = "";
+                                                acc[question.id] = typeof values[question.id] !== 'undefined' ?  values[question.id] : "";
                                                 return acc;
                                               },{});
     return values;
@@ -82,7 +97,7 @@ export default class Assessment extends React.Component<Props, State> {
     const {item} = this.props;
      let content;
      if(this.state.isComplete){
-       content = <AssessmentResultContainer results={this.state.values} assessment={item} />;
+       content = <AssessmentResultContainer backClick={this.handleResultBack} results={this.state.values} assessment={item} />;
      }else{
        content = <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} submitData={this.handleSubmitData} validateData={this.handleValidateData} />;
      }

@@ -25,7 +25,7 @@ const render = () => {
           
             <h1>Marital Satisfaction</h1>
 
-            <MaritalSatisfaction />
+            <MaritalSatisfaction  />
 
             <h1>Post Deployment Support</h1>
 

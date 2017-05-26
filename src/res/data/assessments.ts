@@ -60,7 +60,7 @@ const defaultCalcScore = function(values: any){
             }
           }
       });
-
+     
       return total;
     }
 
@@ -75,7 +75,7 @@ export const makeAssessment = (id,title, minScore: number, middleScore: number, 
     minScore,
     middleScore,
     maxScore,
-    scoring,
+    scoring,//1: High score is good, 0: high score is bad
     questions,
     image,
     calcQuestions,
