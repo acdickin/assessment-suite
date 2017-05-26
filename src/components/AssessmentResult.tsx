@@ -16,7 +16,7 @@ export interface State {
 
 export default class Assessment extends React.Component<Props, State> {
     componentWillMount () {
-      window.scrollTo(0,0);
+     // window.scrollTo(0,0);
     }
 
     componentWillReceiveProps(nextProps) {

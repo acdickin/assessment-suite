@@ -69,21 +69,21 @@ export default class Form extends React.Component<Props, State>{
     render() {
         const {items} = this.props;
         const {values, errors} = this.state;
-        return (<div style={{flexGrow: 1}}>
+        return (<div>
                   <form onSubmit={this.handleSubmit}>
                     <div>
                       {items.map(item => <Select key={item.id} error={errors[item.id]} value={values[item.id]} item={item} handleChange={this.handleChange(item.id)} />)}
                     </div>
                     <div style={flexParentRowStyle as any}>
-                      <div style={flexRowItemStyle as any}>
+                      <span style={flexRowItemStyle as any}>
                         <RaisedButton primary={true} type="submit" label="Submit" />
-                      </div>
-                      <div style={flexRowItemStyle as any}>
+                      </span>
+                      <span style={flexRowItemStyle as any}>
                         <RaisedButton onTouchTap={this.props.cancel} secondary={true} type="button" label="Cancel" />
-                      </div>
-                      <div style={flexRowItemStyle as any}>
+                      </span>
+                      <span style={flexRowItemStyle as any}>
                         <RaisedButton  onTouchTap={this.handleClear} type="button" label="Clear" />
-                      </div>
+                      </span>
                     </div>
                   </form>
                 </div>

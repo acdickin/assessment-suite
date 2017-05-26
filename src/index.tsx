@@ -2,7 +2,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 //import { AppContainer } from 'react-hot-loader';
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
-import FriendShipAssessment from './containers/FriendShipAssessment';
+import FriendShipAssessment from './containers/assessments/FriendShip';
+import MaritalSatisfaction from './containers/assessments/MaritalSatisfaction';
+import PostDeploymentSocialSupport from './containers/assessments/PostDeploymentSocialSupport';
+import SocialSupport from './containers/assessments/SocialSupport';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -15,9 +18,24 @@ function testOnSuccess(data){
 }
 
 const render = () => {
-    ReactDOM.render(<MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                        <FriendShipAssessment onSuccess={testOnSuccess} />
-                    </MuiThemeProvider>,
+    ReactDOM.render(
+          <div style={{padding: 20}}>
+            <h1>Friendship</h1>
+        
+            <FriendShipAssessment />
+          
+            <h1>Marital Satisfaction</h1>
+
+            <MaritalSatisfaction />
+
+            <h1>Post Deployment Support</h1>
+
+            <PostDeploymentSocialSupport />
+
+            <h1>Social Support</h1>
+            
+            <SocialSupport />
+          </div>,
         document.getElementById("spaApp")
     );
 }

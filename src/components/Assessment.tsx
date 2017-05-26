@@ -25,7 +25,7 @@ export default class Assessment extends React.Component<Props, State> {
     }
     componentWillMount () {
       const {item} = this.props;
-      window.scrollTo(0,0);
+      //window.scrollTo(0,0);
     }
 
     componentWillReceiveProps(nextProps) {

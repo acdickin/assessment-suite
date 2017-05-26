@@ -1,22 +1,44 @@
 import * as React from "react";
 import Form, {ValidationResultInterface} from '../components/Form';
 import AssessmentComponent from '../components/Assessment';
-import {FriendShiptAssessment,AssessmentInterface} from '../res/data/assessments';
-
+import {AssessmentInterface} from '../res/data/assessments';
+import AssessmentResultContainer from './AssessmentResult';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 export interface Props { 
   item: AssessmentInterface
-  onSuccess(data: any): void;
+  onSuccess?(data: any): void;
   values?: any;
 }
 
 export interface State { 
-
+  isComplete: boolean;
+  values: any;
 }
 
 export default class Assessment extends React.Component<Props, State> {
+  public static defaultProps: Partial<Props> = {
+    values: false,
+    onSuccess: (data: any):void => {
+      //default
+    }
+  }
+  constructor(props){
+    super(props);
+    this.state = {
+      isComplete: false,
+      values: false
+    }
+  }
 
   handleSubmitData = (data: any) => {
-    this.props.onSuccess(data);
+    const {onSuccess} = this.props;
+    onSuccess(data);
+    this.setState({
+      isComplete: true,
+      values: data
+    });
   }
 
   handleValidateData = (data: any) => {
@@ -59,6 +81,12 @@ export default class Assessment extends React.Component<Props, State> {
 
   render(){
     const {item,values} = this.props;
-    return <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} submitData={this.handleSubmitData} validateData={this.handleValidateData} />;
+     let content;
+     if(this.state.isComplete){
+       content = <AssessmentResultContainer results={this.state.values} assessment={item} />;
+     }else{
+       content = <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} submitData={this.handleSubmitData} validateData={this.handleValidateData} />;
+     }
+     return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>{content}</MuiThemeProvider>;
   }
 }
