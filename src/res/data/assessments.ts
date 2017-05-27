@@ -107,7 +107,7 @@ export const makeQuestion = (id: number,title,type='text',choices = []): Questio
 const MaritalSatisfactionList: ScoringInterface[] = [];
 
 
-const MaritalSatisfactionScoring0 = makeScoring(1,100,158,'HIGH',
+const MaritalSatisfactionScoring0 = makeScoring(3,2,84,'POOR',
                                     `<p>Your score is in a range typically associated with high marital distress.</p><p>Your response indicated that you are experiencing problems with your spouse in a variety of areas leading to a great deal of distress in your marital relationship.</p>`,
                                     `<p>Having experiences of marital distress suggests that you should look into these concerns because they can be very upsetting and disruptive of your life.  We encourage you to check out the resources in the "Families and Friendships" topic. You will find information and exercises for developing skills and strategies that can help improve your marriage.</p><p>In addition to the materials on AfterDeployment, you may benefit from discussing your marriage with a healthcare provider. You can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of this page. If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of this page. Both the CALL and CHAT options are available 24/7. 
                                     </p> <p> We recommend that you retake the Marital Relationships assessment in a month to see how you are doing. If over time you find that problems aren’t improving, consult a professional. AfterDeployment is not a substitute for face to face support.</p><p>Problems may also be present in other areas of life. A good way to determine if you’re having problems in other areas is to take additional assessments.</p><p>For your convenience, you can find links to the tools that were mentioned here through the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -122,7 +122,7 @@ const MaritalSatisfactionScoring1 = makeScoring(2,85,99,'MODERATE',
 
 
 
-const MaritalSatisfactionScoring2 = makeScoring(3,2,84,'LOW',
+const MaritalSatisfactionScoring2 = makeScoring(1,100,158,'GOOD',
                                     `<p>Your score is in a range typically associated with good marital satisfaction.</p><p>Your responses suggest that you are feeling satisfied with your marriage.</p>`,
                                     `<p>Your results suggest you are managing this area of your life.  Because maintaining healthy habits means a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the “Life Stress” program.</p><p>You’re also encouraged to check out other assessments on AfterDeployment as they can be helpful for learning more about whether or not you are having problems in other areas.  For your convenience, you can find links to the tools that were mentioned here through the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -505,7 +505,7 @@ export interface AssessmentTreeInterface {
 }
 
 export const FriendShipAssessment = makeAssessment(1,'Friendship Scale', 0, 17, 24,FriendshipScaleList,1,friendShipQuestions,friendsImage);
-export const MaritalAssessment = makeAssessment(2,'Marital Satisfaction', 2, 92, 158,MaritalSatisfactionList,0,maritalSatisfactionQuestions,marriageImage);
+export const MaritalAssessment = makeAssessment(2,'Marital Satisfaction', 2, 92, 158,MaritalSatisfactionList,1,maritalSatisfactionQuestions,marriageImage);
 export const SocialSupportAssessment = makeAssessment(3,'Perceived Social Support', 12, 58, 84, PerceivedSocialSupportList, 1, percSocialSupportQuestions, socialImage);
 export const PostDeploymentSocialSupportAssessment = makeAssessment(4,'Post Deployment Social Support', 15, 49, 75,PostDeploymentSocialSupportList, 0, postDepSupportQuestions,postDepSocialImage);
 export const ParentingConfidenceAssessment = makeAssessment(5,'Parenting Confidence', 16, 60, 96,ParentingConfidenceList,1,parentingConfidenceAssessment,parentingConfidenceImage);

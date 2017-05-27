@@ -25,7 +25,7 @@ export default class Assessment extends React.Component<Props, State> {
     componentWillReceiveProps(nextProps) {
 
     }
-    
+   
     render() {
         const {minScore,maxScore,middleScore,highIsGood,score,result,backClick,id} = this.props;
    
@@ -43,5 +43,18 @@ export default class Assessment extends React.Component<Props, State> {
           </div>
         );
     }
+    
+    /*
+    render() {
+        const {minScore,maxScore,middleScore,highIsGood,score,backClick,id} = this.props;
+   
+
+        return (
+          <div>
+            <LinearGauge id={id} middleScore={middleScore} highIsGood={highIsGood} minScore={minScore} maxScore={maxScore} result={score} />
+            <RaisedButton label="Back" onTouchTap={() => backClick()} />
+          </div>
+        );
+    }*/
 }
 

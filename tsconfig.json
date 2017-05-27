@@ -5,8 +5,7 @@
     "noImplicitAny": false,
     "module": "commonjs",
     "target": "es5",
-    "jsx": "react",
-    "noUnusedLocals": true
+    "jsx": "react"
 },
 "include": [
     "src/**/*"

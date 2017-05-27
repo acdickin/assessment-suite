@@ -10,15 +10,12 @@ import SocialSupport from './containers/assessments/SocialSupport';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
-/*
+
 function testOnSuccess(data){
   console.log(data);
   console.log('testOnSuccess');
-}*/
-
-const render = () => {
-    ReactDOM.render(
-          <div style={{padding: 20}}>
+}
+/*
             <h1>Friendship</h1>
         
             <FriendShipAssessment />
@@ -34,6 +31,16 @@ const render = () => {
             <h1>Social Support</h1>
             
             <SocialSupport />
+*/
+
+const render = () => {
+    ReactDOM.render(
+          <div style={{padding: 20}}>
+          
+            <h1>Marital Satisfaction</h1>
+
+            <MaritalSatisfaction onSuccess={testOnSuccess} />
+
           </div>,
         document.getElementById("spaApp")
     );

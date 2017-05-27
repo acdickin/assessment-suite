@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 export interface Props { 
   item: AssessmentInterface
-  onSuccess?(data: any): void;
+  onSubmit?(error: any, data: any): void;
   values?: any;
 }
 
@@ -19,7 +19,7 @@ export interface State {
 export default class Assessment extends React.Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     values: false,
-    onSuccess: (data: any):void => {
+    onSubmit: (error: any, data: any):void => {
       //default
     }
   }
@@ -32,8 +32,8 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   handleSubmitData = (data: any) => {
-    const {onSuccess} = this.props;
-    onSuccess(data);
+    const {onSubmit} = this.props;
+    onSubmit(null, data);
     this.handleSetComplete();
     this.setState({
       values: data
