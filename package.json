@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,16 @@
   },
   "author": "",
   "license": "ISC",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "react-tap-event-plugin": "^2.0.1",
+    "babel-polyfill": "^6.23.0"
+   },
   "devDependencies": {
     "@types/enzyme": "^2.7.7",
     "@types/jest": "^19.2.2",
@@ -29,20 +38,13 @@
     "webpack-path-rewriter": "^1.1.4"
   },
   "dependencies": {
-    "babel-polyfill": "^6.23.0",
     "d3": "^4.9.1",
     "file-loader": "^0.11.1",
     "local-t2-linear-gage": "0.0.5",
     "material-ui": "^0.18.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "react-redux": "^5.0.5",
-    "react-router": "^4.1.1",
-    "react-router-redux": "^4.0.8",
-    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
-    "url-loader": "^0.5.8"
+    "url-loader": "^0.5.8",
+    "react-hot-loader": "^3.0.0-beta.7"
   },
   "jest": {
     "moduleNameMapper": {
