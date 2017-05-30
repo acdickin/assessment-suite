@@ -18,32 +18,13 @@ function testOnSuccess(data){
   console.log(data);
   console.log('testOnSuccess');
 }
-/*
-            <h1>Friendship</h1>
-        
-            <FriendShipAssessment />
-          
-            <h1>Marital Satisfaction</h1>
-
-            <MaritalSatisfaction  />
-
-            <h1>Post Deployment Support</h1>
-
-            <PostDeploymentSocialSupport />
-
-            <h1>Social Support</h1>
-            
-            <SocialSupport />
-*/
 
 const render = () => {
     ReactDOM.render(
           <div style={{padding: 20}}>
           
             <h1>Marital Satisfaction</h1>
-
             <MaritalSatisfaction onSuccess={testOnSuccess} />
-
           </div>,
         document.getElementById("spaApp")
     );
