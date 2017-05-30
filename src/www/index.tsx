@@ -4,12 +4,12 @@ import * as ReactDOM from "react-dom";
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
 
 import {
-  assessments 
-} from '../';
-const {  FriendShip,
+  FriendShip,
   MaritalSatisfaction,
   PostDeploymentSocialSupport,
-  SocialSupport } = assessments;
+  SocialSupport 
+} from '../';
+
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();

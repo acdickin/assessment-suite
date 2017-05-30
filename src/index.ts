@@ -5,7 +5,14 @@ import SocialSupport from './containers/assessments/SocialSupport';
 
 
 
-export const assessments = {
+export default  {
+  FriendShip,
+  MaritalSatisfaction,
+  PostDeploymentSocialSupport,
+  SocialSupport 
+}
+
+export  {
   FriendShip,
   MaritalSatisfaction,
   PostDeploymentSocialSupport,
