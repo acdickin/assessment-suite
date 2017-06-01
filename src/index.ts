@@ -2,19 +2,17 @@ import FriendShip from './containers/assessments/FriendShip';
 import MaritalSatisfaction from './containers/assessments/MaritalSatisfaction';
 import PostDeploymentSocialSupport from './containers/assessments/PostDeploymentSocialSupport';
 import SocialSupport from './containers/assessments/SocialSupport';
+import {createRoutes} from './routes';
 
 
-
-export default  {
-  FriendShip,
-  MaritalSatisfaction,
-  PostDeploymentSocialSupport,
-  SocialSupport 
+const assessments = {
+    FriendShip,
+    MaritalSatisfaction,
+    PostDeploymentSocialSupport,
+    SocialSupport 
 }
 
 export  {
-  FriendShip,
-  MaritalSatisfaction,
-  PostDeploymentSocialSupport,
-  SocialSupport 
-}
+  assessments,
+  createRoutes
+};

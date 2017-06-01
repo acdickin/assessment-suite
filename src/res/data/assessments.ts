@@ -1,3 +1,7 @@
+import { normalize, schema } from 'normalizr';
+
+const assessmentSchema = new schema.Entity('assessment');
+const assessmentListSchema = new schema.Array(assessmentSchema);
 
 export interface ScoringInterface{
   id: number;
@@ -511,4 +515,16 @@ export const PostDeploymentSocialSupportAssessment = makeAssessment(4,'Post Depl
 export const ParentingConfidenceAssessment = makeAssessment(5,'Parenting Confidence', 16, 60, 96,ParentingConfidenceList,1,parentingConfidenceAssessment,parentingConfidenceImage);
 
 
+const assessmentsRaw: AssessmentInterface[] = [
+  FriendShipAssessment,
+  MaritalAssessment,
+  SocialSupportAssessment,
+  PostDeploymentSocialSupportAssessment,
+  ParentingConfidenceAssessment
+]
 
+const normalData = normalize(assessmentsRaw,assessmentListSchema);
+
+export const assessments: AssessmentTreeInterface = normalData.entities.assessment;
+
+export const assessmentIds = normalData.result;

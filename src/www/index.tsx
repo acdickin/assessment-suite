@@ -4,11 +4,15 @@ import * as ReactDOM from "react-dom";
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
 
 import {
+  assessments
+} from '../';
+const {
   FriendShip,
   MaritalSatisfaction,
   PostDeploymentSocialSupport,
   SocialSupport 
-} from '../';
+} = assessments
+
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -22,7 +26,6 @@ function testOnSuccess(data){
 const render = () => {
     ReactDOM.render(
           <div style={{padding: 20}}>
-          
             <h1>Marital Satisfaction</h1>
             <MaritalSatisfaction onSuccess={testOnSuccess} />
           </div>,

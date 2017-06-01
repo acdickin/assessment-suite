@@ -15,8 +15,9 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-tap-event-plugin": "^2.0.1",
-    "babel-polyfill": "^6.23.0"
-   },
+    "babel-polyfill": "^6.23.0",
+    "normalizr": "^3.2.0"
+  },
   "devDependencies": {
     "@types/enzyme": "^2.7.7",
     "@types/jest": "^19.2.2",
@@ -37,9 +38,9 @@
     "file-loader": "^0.11.1",
     "local-t2-linear-gage": "0.0.5",
     "material-ui": "^0.18.1",
+    "react-hot-loader": "^3.0.0-beta.7",
     "redux": "^3.6.0",
-    "url-loader": "^0.5.8",
-    "react-hot-loader": "^3.0.0-beta.7"
+    "url-loader": "^0.5.8"
   },
   "jest": {
     "moduleNameMapper": {
