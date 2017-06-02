@@ -15,7 +15,7 @@ export interface AssessmentRoutesConfig{
 
 export const createRoutes = (config: AssessmentRoutesConfig,cb: (assessment: AssessmentInterface) => AssessmentInterface = null) => {
   const defaultCb = (assessment: AssessmentInterface) => {
-    assessment.image = '';
+    ///assessment.image = '';
     return assessment;
   }
   const assessmentCb = cb || defaultCb;

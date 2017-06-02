@@ -33,8 +33,8 @@ const configSubroutes = {
 }
 
 const subroutes = createRoutes(configSubroutes,(assessment: AssessmentInterface) => {
-
-   assessment.image = require('../'+assessment.image);
+  console.log(assessment);
+  // assessment.image = require('../'+assessment.image);
    return assessment;
 });
 
