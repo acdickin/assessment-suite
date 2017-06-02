@@ -1,26 +1,41 @@
 import {syncRoute,asynRouteMaker} from '../lib/helper';
+
 import AssessmentResult from '../containers/AssessmentResult';
-import Assessment from '../containers/Assessment';
+import AssessmentPage from '../containers/AssessmentPage';
 import AssessmentList from '../containers/AssessmentList';
+import Home from '../example/components/Home';
 import * as React from 'react';
 import {assessmentIds,assessments,AssessmentInterface} from '../res/data/assessments';
 
 export interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
+  routesPrefix?: string;
 }
 
 
 
 
-export const createRoutes = (config: AssessmentRoutesConfig) => {
-
+export const createRoutes = (config: AssessmentRoutesConfig,cb: (assessment: AssessmentInterface) => AssessmentInterface = null) => {
+  const defaultCb = (assessment: AssessmentInterface) => {
+    return assessment;
+  }
+  const assessmentCb = cb || defaultCb;
   const ids = config.ids.length ? config.ids : assessmentIds;
-  const assessmentsSubset:AssessmentInterface[]  = ids.map(aid => assessments[aid]);
+  const assessmentsSubset:AssessmentInterface[] 
+                                = ids.filter(aid => typeof assessments[aid] !== 'undefined')
+                                      .map(aid => {
+          
+                                            assessments[aid].image = require('../res' + assessments[aid].image)
+                                            return assessments[aid];
+                                      });
+
+
+  AssessmentList.defaultProps = {...AssessmentList.defaultProps, itemClick: config.itemClick, assessments: assessmentsSubset};
   const routes = [
   
-    syncRoute('assessment/:id',Assessment),
-    syncRoute('assessments',<AssessmentList itemClick={config.itemClick} assessments={assessmentsSubset} />),
+    syncRoute('assessment/:id',AssessmentPage),
+    syncRoute('assessments',AssessmentList),
   
   ];
   return routes;

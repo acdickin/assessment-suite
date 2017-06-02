@@ -1,12 +1,12 @@
 import {Component} from 'React';
-//import {AssessmentRoutesConfig} from './src/routes';
+import {AssessmentRoutesConfig} from './src/routes';
 //import {AssessmentInterface} from './src/res/data/assessments';
 interface AssessmentInterface{
   onSubmit?(error: any, data: any): void;
   values?: any;
 }
 
-export function createRoutes(config: any): void;
+export function createRoutes(config: AssessmentRoutesConfig): void;
 
 
 

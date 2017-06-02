@@ -1,10 +1,11 @@
 import * as React from "react";
 import AssessmentComponent from '../components/Assessment';
-import {AssessmentInterface} from '../res/data/assessments';
+import {assessments, AssessmentInterface} from '../res/data/assessments';
 import AssessmentResultContainer from './AssessmentResult';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+
 export interface Props { 
   item: AssessmentInterface
   onSubmit?(error: any, data: any): void;
@@ -25,6 +26,7 @@ export default class Assessment extends React.Component<Props, State> {
   }
   constructor(props){
     super(props);
+    console.log(props);
     this.state = {
       isComplete: false,
       values: false
