@@ -1,9 +1,14 @@
 import {Component} from 'React';
-import {AssessmentRoutesConfig} from './src/routes';
+
 //import {AssessmentInterface} from './src/res/data/assessments';
 interface AssessmentInterface{
   onSubmit?(error: any, data: any): void;
   values?: any;
+}
+interface AssessmentRoutesConfig{
+  ids: number[]|string[];
+  itemClick(assessment: AssessmentInterface): void;
+  routesPrefix?: string;
 }
 
 export function createRoutes(config: AssessmentRoutesConfig): void;
