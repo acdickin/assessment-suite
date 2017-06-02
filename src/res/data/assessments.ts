@@ -498,11 +498,11 @@ const parentingConfidenceAssessment: QuestionInterface[] = [
   makeQuestion(17,'Being a parent makes me tense and anxious.','select',choicesSet11),
 ]
 
-const friendsImage = path.resolve('../images/Friendship_Scale.jpg');
-const marriageImage  = path.resolve('../images/Marital_Satisfaction.jpg');
-const socialImage  = path.resolve('../images/Perceived_Social_Support.jpg');
-const postDepSocialImage = path.resolve('../images/Post_Deployment_Social_Support.jpg');
-const parentingConfidenceImage = path.resolve('../images/Parenting_Confidence.jpg');
+const friendsImage = 'res/images/Friendship_Scale.jpg';
+const marriageImage  = 'res/images/Marital_Satisfaction.jpg';
+const socialImage  = 'res/images/Perceived_Social_Support.jpg';
+const postDepSocialImage = 'res/images/Post_Deployment_Social_Support.jpg';
+const parentingConfidenceImage = 'res/images/Parenting_Confidence.jpg';
 
 
 export interface AssessmentTreeInterface {

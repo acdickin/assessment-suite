@@ -13,11 +13,9 @@ export interface AssessmentRoutesConfig{
   routesPrefix?: string;
 }
 
-
-
-
 export const createRoutes = (config: AssessmentRoutesConfig,cb: (assessment: AssessmentInterface) => AssessmentInterface = null) => {
   const defaultCb = (assessment: AssessmentInterface) => {
+    assessment.image = '';
     return assessment;
   }
   const assessmentCb = cb || defaultCb;
@@ -26,8 +24,8 @@ export const createRoutes = (config: AssessmentRoutesConfig,cb: (assessment: Ass
                                 = ids.filter(aid => typeof assessments[aid] !== 'undefined')
                                       .map(aid => {
           
-                                            assessments[aid].image = require('../res' + assessments[aid].image)
-                                            return assessments[aid];
+                                            
+                                            return assessmentCb(assessments[aid]);
                                       });
 
 

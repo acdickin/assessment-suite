@@ -22,7 +22,7 @@ const {
   SocialSupport 
 } = assessments;
 
-const itemCb = (assessment: AssessmentInterface) => {
+export const itemCb = (assessment: AssessmentInterface) => {
   console.log(assessment);
   hashHistory.push('/main/assessment/'+assessment.id);
 }
@@ -33,8 +33,8 @@ const configSubroutes = {
 }
 
 const subroutes = createRoutes(configSubroutes,(assessment: AssessmentInterface) => {
-  console.log('..'+assessment.image);
-   //assessment.image = require('..'+assessment.image);
+
+   assessment.image = require('../'+assessment.image);
    return assessment;
 });
 
