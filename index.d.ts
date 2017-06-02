@@ -13,10 +13,10 @@ export interface AssessmentInterface{
 interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
-  routesPrefix?: string;
+  loadImages?: boolean;
 }
 
-export function createRoutes(config: AssessmentRoutesConfig,cb: (assessment: AssessmentInterface) => AssessmentInterface): void;
+export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): void;
 
 
 
