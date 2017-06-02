@@ -29,7 +29,8 @@ export const itemCb = (assessment: AssessmentInterface) => {
 
 const configSubroutes = {
   ids: [1,2],
-  itemClick: itemCb
+  itemClick: itemCb,
+  loadImages: true
 }
 
 const subroutes = createRoutes(configSubroutes,(assessment: AssessmentInterface) => {

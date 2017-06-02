@@ -55,6 +55,7 @@ export default class AssessmentList extends React.Component<Props, State> {
                                   <GridTile
                                     onTouchTap={this.handleItemClick(assess)}
                                     title={assess.title}
+                                    key={"assess" + assess.id}
                                   >
                                     <img src={assess.image} />
                                   </GridTile>
