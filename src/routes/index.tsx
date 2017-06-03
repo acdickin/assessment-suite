@@ -14,6 +14,29 @@ export interface AssessmentRoutesConfig{
   loadImages?: boolean;
 }
 
+interface AdapterProps{
+  params?: any;
+}
+/*
+export class AssessmentAdapter extends React.Component<AdapterProps, null> {
+  public static defaultProps: Partial<AdapterProps> = {
+    params: {}
+  }
+
+  handleSetTitle = (title: string) => {
+    //const {appBarTitle} = this.props;
+    alert(title);
+    //appBarTitle(title);
+  }
+  
+  render(){
+    return (<div>
+              {React.cloneElement((this.props as any).children, {setTitle: this.handleSetTitle })}
+            </div>);
+  }
+}*/
+
+
 export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface) => {
   const defaultCb = (assessment: AssessmentInterface) => {
     ///assessment.image = '';
@@ -22,6 +45,7 @@ export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: As
   const assessmentCb = cb || defaultCb;
   const ids = config.ids.length ? config.ids : assessmentIds;
   const loadImages = typeof config['loadImages'] !== 'undefined' ? config['loadImages'] : false;
+  //const componentWrapper = config['componentWrapper'] ? config['componentWrapper'] : AssessmentAdapter;
 
   const assessmentsSubset:AssessmentInterface[] 
                                 = ids.filter(aid => typeof assessments[aid] !== 'undefined')
@@ -31,11 +55,16 @@ export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: As
                                       });
 
 
-  AssessmentList.defaultProps = {...AssessmentList.defaultProps, itemClick: config.itemClick, assessments: assessmentsSubset};
+  AssessmentList.defaultProps = {...AssessmentList.defaultProps, 
+                                      itemClick: config.itemClick, 
+                                      assessments: assessmentsSubset}; 
   const routes = [
-  
+  /*
+      syncRoute('assessment/:id',() => React.createElement(AssessmentPage)),
+    syncRoute('assessments',() => React.createElement(AssessmentList))
+   */
     syncRoute('assessment/:id',AssessmentPage),
-    syncRoute('assessments',AssessmentList),
+    syncRoute('assessments',AssessmentList)
   
   ];
   return routes;

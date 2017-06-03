@@ -27,6 +27,7 @@ export const itemCb = (assessment: AssessmentInterface) => {
   hashHistory.push('/main/assessment/'+assessment.id);
 }
 
+
 const configSubroutes = {
   ids: [1,2],
   itemClick: itemCb,

@@ -18,8 +18,6 @@ interface AssessmentRoutesConfig{
 
 export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): void;
 
-
-
 export namespace assessments {
     /*~ For example, given this definition, someone could write:
      *~   import { assessments } from 'yourModule';

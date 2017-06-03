@@ -34,6 +34,22 @@ const styles = {
   },
 };
 
+class AssessmentAdapter extends React.Component<{testyTestTitle: (msg:string) => void;}, null> {
+
+  handleSetTitle = (title: string) => {
+    const {testyTestTitle} = this.props;
+    //alert(title);
+    testyTestTitle(title);
+  }
+  
+  render(){
+    return (<div>
+              {React.cloneElement((this.props as any).children, {setTitle: this.handleSetTitle })}
+            </div>);
+  }
+}
+
+
 
 interface MyProps {
   
@@ -141,7 +157,9 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
                          />}
                 <div style={{'padding': '5px'} as any}>
                   <div>
-                    {this.props.children}
+                   
+                      {React.cloneElement((this.props as any).children, {setPageTitle: this.handleTitle })}
+                
                   </div>
                 </div>
                 <AppSnackBar {...flashMessage} />

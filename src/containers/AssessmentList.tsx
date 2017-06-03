@@ -13,6 +13,7 @@ declare module 'react' { //See https://github.com/zilverline/react-tap-event-plu
 export interface Props { 
   assessments: AssessmentInterface[];
   itemClick(assessment: AssessmentInterface): void;
+  setPageTitle?(title:string): void;
 }
 
 export interface State { 
@@ -22,7 +23,7 @@ export interface State {
 export default class AssessmentList extends React.Component<Props, State> {
   
   public static defaultProps: Partial<Props> = {
-
+    setPageTitle: (title: string) => {}
   }
 
   
@@ -40,6 +41,12 @@ export default class AssessmentList extends React.Component<Props, State> {
       itemClick(assessment);
     }
   }
+
+  componentDidMount(){
+    const {setPageTitle} = this.props;
+    setPageTitle("Assessments");
+  }
+
 
   render(){
     const {assessments} = this.props;

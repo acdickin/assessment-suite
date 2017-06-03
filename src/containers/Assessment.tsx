@@ -7,7 +7,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 
 export interface Props { 
-  item: AssessmentInterface
+  item: AssessmentInterface;
+  setPageTitle?(title:string): void;
   onSubmit?(error: any, data: any): void;
   values?: any;
 }
@@ -22,15 +23,20 @@ export default class Assessment extends React.Component<Props, State> {
     values: false,
     onSubmit: (error: any, data: any):void => {
       //default
-    }
+    },
+    setPageTitle: (title: string) => {}
   }
   constructor(props){
     super(props);
-    console.log(props);
     this.state = {
       isComplete: false,
       values: false
     }
+  }
+
+  componentDidMount(){
+    const {setPageTitle,item} = this.props;
+    setPageTitle(item.title);
   }
 
   handleSubmitData = (data: any) => {
