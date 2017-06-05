@@ -1,0 +1,38 @@
+interface.AssessmentInterface
+
+
+<container.AssessmentPage>
+onSubmit(error: any, data: any, assessment):void
+
+<container.Assessment>
+onSubmit(error: any, data: any, assessment):void
+
+
+
+<component.Assessment>
+onSubmit(error: any, data: any):void
+
+<component.AssessmentResult>
+backClick(): valid
+results: any;
+assesssment: interface.AssessmentInterface
+
+<component.Form>
+onSubmit(error: any, data: any):void
+
+<container.assessment.FriendShip>
+onSubmit(error: any, data: any):void
+
+
+##################Hierarchy Example
+
+<routes.createRoutes()>
+	
+
+
+<container.AssessmentPage>
+	<container.Assessment>
+		<component.Assessment>
+			<component.Form>
+		<container.AssessmentResult>
+			<component.AssessmentResult>
