@@ -22,16 +22,24 @@ const {
   SocialSupport 
 } = assessments;
 
-export const itemCb = (assessment: AssessmentInterface) => {
-  console.log(assessment);
+const itemClick = (assessment: AssessmentInterface) => {
   hashHistory.push('/main/assessment/'+assessment.id);
 }
+const onCancel = (error: any, assessment: AssessmentInterface) => {
+  console.log('me canceled');
+  hashHistory.push('/main/assessments');
+}
 
+const onSubmit = (errors,data,assessment: AssessmentInterface) => {
+
+}
 
 const configSubroutes = {
   ids: [1,2],
-  itemClick: itemCb,
-  loadImages: true
+  itemClick,
+  onCancel,
+  loadImages: true,
+  onSubmit
 }
 
 const subroutes = createRoutes(configSubroutes,(assessment: AssessmentInterface) => {

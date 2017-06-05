@@ -14,6 +14,8 @@ interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
   loadImages?: boolean;
+  onCancel(error: any, assessment: AssessmentInterface): void;
+  onSubmit?(error: any, data: any, assessment: AssessmentInterface): void;
 }
 
 export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): void;

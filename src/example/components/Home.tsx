@@ -18,11 +18,19 @@ export interface State {
 
 
 export default class Home extends React.Component<Props, State> {
+    handleCancel = (error: any, assessment: any) => {
+          alert("you clicked cancel");
+    }
+
+    handleSubmit = (error: any, assessment: any) => {
+          alert("you clicked SUBMIT");
+    }
+
     render() {
         return (<div>
                   <h1>Home Page</h1>
                   <Link to="/main/assessments">Assessments List</Link>
-                  <FriendShip />
+                  <FriendShip onSubmit={this.handleSubmit} onCancel={this.handleCancel} />
                 </div>
                   );
     }

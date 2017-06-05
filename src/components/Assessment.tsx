@@ -10,9 +10,9 @@ export interface ItemInterface{
 export interface Props { 
   item: ItemInterface;
   values: any;
-  submitData(data: any): void;
   validateData(data: any): ValidationResultInterface; 
   cancel(): void;
+  onSubmit(error: any, data: any): void;
 }
 
 export interface State { 
@@ -33,7 +33,7 @@ export default class Assessment extends React.Component<Props, State> {
     }
 
     render() {
-        const {item, submitData, validateData,cancel,values} = this.props;
-        return (<Form values={values} items={item.questions} cancel={cancel} validateData={validateData} submitData={submitData} />);
+        const {item, onSubmit, validateData,cancel,values} = this.props;
+        return (<Form values={values} items={item.questions} cancel={cancel} validateData={validateData} onSubmit={onSubmit} />);
     }
 }

@@ -10,42 +10,32 @@ import {assessmentIds,assessments,AssessmentInterface} from '../res/data/assessm
 export interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
-  routesPrefix?: string;
+  onCancel(error: any, assessment: AssessmentInterface): void;
+  onSubmit?(error: any, data: any, assessment: AssessmentInterface): void
   loadImages?: boolean;
+}
+
+const defaultOnCancel = (error: any, assessment: AssessmentInterface) => {
+ 
+}
+
+const defaultOnSubmit = (error: any, data: any,assessment: AssessmentInterface):void => {
+  console.log(error,data);
+ 
 }
 
 interface AdapterProps{
   params?: any;
 }
-/*
-export class AssessmentAdapter extends React.Component<AdapterProps, null> {
-  public static defaultProps: Partial<AdapterProps> = {
-    params: {}
-  }
-
-  handleSetTitle = (title: string) => {
-    //const {appBarTitle} = this.props;
-    alert(title);
-    //appBarTitle(title);
-  }
-  
-  render(){
-    return (<div>
-              {React.cloneElement((this.props as any).children, {setTitle: this.handleSetTitle })}
-            </div>);
-  }
-}*/
-
 
 export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface) => {
   const defaultCb = (assessment: AssessmentInterface) => {
-    ///assessment.image = '';
     return assessment;
   }
   const assessmentCb = cb || defaultCb;
   const ids = config.ids.length ? config.ids : assessmentIds;
+  const onCancel = typeof config['onCancel'] !== 'undefined' ? config['onCancel'] : defaultOnCancel;
   const loadImages = typeof config['loadImages'] !== 'undefined' ? config['loadImages'] : false;
-  //const componentWrapper = config['componentWrapper'] ? config['componentWrapper'] : AssessmentAdapter;
 
   const assessmentsSubset:AssessmentInterface[] 
                                 = ids.filter(aid => typeof assessments[aid] !== 'undefined')
@@ -58,11 +48,12 @@ export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: As
   AssessmentList.defaultProps = {...AssessmentList.defaultProps, 
                                       itemClick: config.itemClick, 
                                       assessments: assessmentsSubset}; 
+
+  AssessmentPage.defaultProps =  {...AssessmentPage.defaultProps, 
+                                      onSubmit: defaultOnSubmit,
+                                      onCancel: onCancel};                                 
   const routes = [
-  /*
-      syncRoute('assessment/:id',() => React.createElement(AssessmentPage)),
-    syncRoute('assessments',() => React.createElement(AssessmentList))
-   */
+
     syncRoute('assessment/:id',AssessmentPage),
     syncRoute('assessments',AssessmentList)
   

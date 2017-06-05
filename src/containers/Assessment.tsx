@@ -5,12 +5,14 @@ import AssessmentResultContainer from './AssessmentResult';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import {AssessmentProps} from './assessments/interfaces'
 
 export interface Props { 
   item: AssessmentInterface;
   setPageTitle?(title:string): void;
-  onSubmit?(error: any, data: any): void;
+  onSubmit?(error: any, data: any,assessment: AssessmentInterface):void;
   values?: any;
+  onCancel?(error: any, assessment: AssessmentInterface): void;
 }
 
 export interface State { 
@@ -21,10 +23,8 @@ export interface State {
 export default class Assessment extends React.Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     values: false,
-    onSubmit: (error: any, data: any):void => {
-      //default
-    },
-    setPageTitle: (title: string) => {}
+    setPageTitle: (title: string) => {},
+    onSubmit: (error: any, data: any,assessment: AssessmentInterface) => {}
   }
   constructor(props){
     super(props);
@@ -39,10 +39,13 @@ export default class Assessment extends React.Component<Props, State> {
     setPageTitle(item.title);
   }
 
-  handleSubmitData = (data: any) => {
-    const {onSubmit} = this.props;
-    onSubmit(null, data);
-    this.handleSetComplete();
+  handleSubmitData = (error:any, data: any) => {
+    const {onSubmit,item} = this.props;
+    onSubmit(error, data,item);
+    if(!error){
+      this.handleSetComplete();
+    }
+    
     this.setState({
       values: data
     });
@@ -88,7 +91,8 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   handleCancel = () => {
-    
+    const {onCancel,item} = this.props;
+    onCancel(null,item);
   }
 
   handleFormValues = () => {
@@ -102,12 +106,12 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   render(){
-    const {item} = this.props;
+    const {item,onSubmit} = this.props;
      let content;
      if(this.state.isComplete){
        content = <AssessmentResultContainer backClick={this.handleResultBack} results={this.state.values} assessment={item} />;
      }else{
-       content = <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} submitData={this.handleSubmitData} validateData={this.handleValidateData} />;
+       content = <AssessmentComponent item={item} values={this.handleFormValues()} cancel={this.handleCancel} onSubmit={this.handleSubmitData} validateData={this.handleValidateData} />;
      }
      return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>{content}</MuiThemeProvider>;
   }

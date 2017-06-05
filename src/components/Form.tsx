@@ -10,14 +10,15 @@ export interface FormErrorInterface {
 export interface ValidationResultInterface {
   isValid: boolean;
   data: FormErrorInterface;
+  
 }
 
 export interface Props { 
-  submitData(data: any): void; 
   validateData(data: any): ValidationResultInterface;
   cancel(): any;
   items: any[]
   values: any;
+  onSubmit(error: any, data: any): void;
 }
 
 export interface State { 
@@ -41,12 +42,14 @@ export default class Form extends React.Component<Props, State>{
     }
 
     handleSubmit = (event) => {
-      const {submitData,validateData} = this.props;
+      const {validateData,onSubmit} = this.props;
       const validationResponse = validateData(this.state.values);
 
       this.setState({errors: validationResponse.data});
       if(validationResponse.isValid){
-        submitData(this.state.values)
+        onSubmit(null,this.state.values);
+      }else{
+        onSubmit(validationResponse,this.state.values);
       }
       
       event.preventDefault();
@@ -54,6 +57,12 @@ export default class Form extends React.Component<Props, State>{
 
     handleClear = (event) => {
       this.setState({values: this.props.items.reduce(reduceCb,{})})
+    }
+     
+    handleCancel = (event) => {
+      this.handleClear(event);
+      const {cancel} = this.props;
+      cancel();
     }
 
     handleChange = (name) => {
@@ -76,7 +85,7 @@ export default class Form extends React.Component<Props, State>{
                         <RaisedButton primary={true} type="submit" label="Submit" />
                       </span>
                       <span style={flexRowItemStyle as any}>
-                        <RaisedButton onTouchTap={this.props.cancel} secondary={true} type="button" label="Cancel" />
+                        <RaisedButton onTouchTap={this.handleCancel} secondary={true} type="button" label="Cancel" />
                       </span>
                       <span style={flexRowItemStyle as any}>
                         <RaisedButton  onTouchTap={this.handleClear} type="button" label="Clear" />
