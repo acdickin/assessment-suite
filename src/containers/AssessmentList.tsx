@@ -14,22 +14,27 @@ export interface Props {
   assessments: AssessmentInterface[];
   itemClick(assessment: AssessmentInterface): void;
   setPageTitle?(title:string): void;
+  numCols: number;
 }
 
 export interface State { 
-
+  numCols: number;
 }
 
 export default class AssessmentList extends React.Component<Props, State> {
   
   public static defaultProps: Partial<Props> = {
-    setPageTitle: (title: string) => {}
+    setPageTitle: (title: string) => {},
+    numCols: null
   }
 
   
   constructor(props){
     super(props);
-    console.log(props);
+    this.state = {
+      numCols: this.handleGetCols()
+    };
+
   }
 
   handleItemClick = (assessment: AssessmentInterface) => {
@@ -45,6 +50,52 @@ export default class AssessmentList extends React.Component<Props, State> {
   componentDidMount(){
     const {setPageTitle} = this.props;
     setPageTitle("Assessments");
+
+    !this.props.numCols && this.registerWidthListenter();
+
+  }
+
+  registerWidthListenter = () => {
+    var _timeOutResizeId = null;
+    window.onresize = () => {
+       if(_timeOutResizeId){
+         clearTimeout(_timeOutResizeId);
+       }
+       _timeOutResizeId = setTimeout(
+              () => {
+                 const newCols = this.handleGetCols();
+                 if(this.state.numCols !== newCols){
+                   this.setState({
+                     numCols: newCols
+                   });
+                 }
+              },
+            1000);
+      
+    }
+  }
+
+  handleGetCols = () => {
+    let cols = this.props.numCols
+    if(!cols){
+      cols = this.handleColCount();
+    }
+    console.log(cols);
+    return cols
+  }
+
+  handleColCount = () => {
+    const width = window.innerWidth;
+    if(!width){
+      return 1;
+    }
+    if(width > 900){
+      return 4;
+    }
+    if(width > 600){
+      return 2;
+    }
+    return 1;
   }
 
 
@@ -52,12 +103,11 @@ export default class AssessmentList extends React.Component<Props, State> {
     const {assessments} = this.props;
     return <div>
             <GridList
-              cols={2}
+              cols={this.state.numCols}
               cellHeight={200}
             >
               {assessments.map(assess => {
                 return         (
-                                 
                                   <GridTile
                                     onTouchTap={this.handleItemClick(assess)}
                                     title={assess.title}
@@ -65,7 +115,6 @@ export default class AssessmentList extends React.Component<Props, State> {
                                   >
                                     <img src={assess.image} />
                                   </GridTile>
-                                  
                                 );
               })}
             </GridList>

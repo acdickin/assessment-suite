@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
