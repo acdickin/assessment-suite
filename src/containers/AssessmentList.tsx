@@ -51,7 +51,6 @@ export default class AssessmentList extends React.Component<Props, State> {
   render(){
     const {assessments} = this.props;
     return <div>
-              <h1>Assessments List</h1>
             <GridList
               cols={2}
               cellHeight={200}
@@ -69,7 +68,6 @@ export default class AssessmentList extends React.Component<Props, State> {
                                   
                                 );
               })}
-
             </GridList>
             </div>;
   }
