@@ -3,7 +3,7 @@ import Form, {ValidationResultInterface} from './Form';
 
 export interface ItemInterface{
   title: string;
-  questions: {id:number,title: string,type: string, choices: any[]}[];
+  questions: {id:number|string,title: string,type: string, choices: any[]}[];
 }
 
 
