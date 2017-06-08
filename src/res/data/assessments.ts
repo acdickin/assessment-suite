@@ -699,6 +699,7 @@ const choicesSet29: ChoicesInterface[] = [
       {title: 'No', value: '1', score: 0},
       {title: 'Yes', value: '2', score: 1}
 ];
+;
 // (a) almost never 0 (b) rarely 2(c) in most things 10 (d) in everything 10 
 
 const friendShipQuestions: QuestionInterface[] = [
@@ -1103,21 +1104,21 @@ const anxietyQuestions: QuestionInterface[] = [
   makeQuestion('8','If you checked off any problems, how difficult have these made it for you to do your work, take care of things at home, or long with other people?','select',choicesSet26),
 ];
 const panicQuestions: QuestionInterface[] = [
-  makeQuestion('1','In the last 4 weeks, have you had an anxiety attack - suddenly feeling fear or panic?','select',choicesSet19),
-  makeQuestion('2','Has this ever happened before?','select',choicesSet19),
-  makeQuestion('3','Do some of these attacks come suddenly out of the blue; that is, in situations where you don\'t expect to be nervous or uncomfortable?','select',choicesSet19),
-  makeQuestion('4','Do these attacks bother you a lot or are you worried about having another attack?','select',choicesSet19),
-  makeQuestion('5','Were you short of breath?','select',choicesSet19),
-  makeQuestion('6','Did your heart race, pound, or skip?','select',choicesSet19),
-  makeQuestion('7','Did you have chest pain or pressure?','select',choicesSet19),
-  makeQuestion('8','Did you sweat?','select',choicesSet19),
-  makeQuestion('9','Did you feel as if you were choking?','select',choicesSet19),
-  makeQuestion('10','Did you have hot flashes or chills?','select',choicesSet19),
-  makeQuestion('11','Did you have nausea or an upset stomach, or the feeling that you were going to have diarrhea?','select',choicesSet19),
-  makeQuestion('12','Did you feel dizzy, unsteady, or faint?','select',choicesSet19),
-  makeQuestion('13','Did you have tingling or numbness in parts of your body?','select',choicesSet19),
-  makeQuestion('14','Did you tremble or shake?','select',choicesSet19),
-  makeQuestion('15','Were you afraid you were dying?','select',choicesSet19)
+  makeQuestion('1','In the last 4 weeks, have you had an anxiety attack - suddenly feeling fear or panic?','select',choicesSet29),
+  makeQuestion('2','Has this ever happened before?','select',choicesSet29),
+  makeQuestion('3','Do some of these attacks come suddenly out of the blue; that is, in situations where you don\'t expect to be nervous or uncomfortable?','select',choicesSet29),
+  makeQuestion('4','Do these attacks bother you a lot or are you worried about having another attack?','select',choicesSet29),
+  makeQuestion('5','Were you short of breath?','select',choicesSet29),
+  makeQuestion('6','Did your heart race, pound, or skip?','select',choicesSet29),
+  makeQuestion('7','Did you have chest pain or pressure?','select',choicesSet29),
+  makeQuestion('8','Did you sweat?','select',choicesSet29),
+  makeQuestion('9','Did you feel as if you were choking?','select',choicesSet29),
+  makeQuestion('10','Did you have hot flashes or chills?','select',choicesSet29),
+  makeQuestion('11','Did you have nausea or an upset stomach, or the feeling that you were going to have diarrhea?','select',choicesSet29),
+  makeQuestion('12','Did you feel dizzy, unsteady, or faint?','select',choicesSet29),
+  makeQuestion('13','Did you have tingling or numbness in parts of your body?','select',choicesSet29),
+  makeQuestion('14','Did you tremble or shake?','select',choicesSet29),
+  makeQuestion('15','Were you afraid you were dying?','select',choicesSet29)
 ];
 
 const physicalInjuryAssessmentQs: QuestionInterface[] = [
