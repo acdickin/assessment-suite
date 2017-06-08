@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {flexParentRowStyle,flexRowItemStyle} from './commonStyles'
 
 export interface FormErrorInterface {
-  [propName: string]: {name: string,title: string};
+  [propName: string]: number|string;
 }
 
 export interface ValidationResultInterface {
@@ -15,6 +15,7 @@ export interface ValidationResultInterface {
 
 export interface Props { 
   validateData(data: any): ValidationResultInterface;
+  handleChange(any);
   cancel(): any;
   items: any[]
   values: any;
@@ -22,7 +23,6 @@ export interface Props {
 }
 
 export interface State { 
-  values: any,
   errors: any
 }
 
@@ -30,33 +30,46 @@ const reduceCb = (acc,value) => {
   acc[value.id] = '';
   return acc;
 }
-
+const getField = (item,values,errors,handleChange) => {
+  let comp = null;
+  switch(item.type){
+    case 'select':
+      comp = <Select key={item.id} error={errors[item.id]} value={values[item.id]} item={item} handleChange={handleChange(item.id)} />;
+      break;
+    case 'label':
+      comp = <h3 key={item.id}>{item.title}</h3>;
+      break;
+    default:
+      comp = <h3 key={item.id}>{item.title}</h3>;
+  }
+  return comp;
+}
 export default class Form extends React.Component<Props, State>{
     constructor (props) {
       super(props);
 
       this.state = {
         errors: props.items.reduce(reduceCb,{}),
-        values: props.values ? props.values : props.items.reduce(reduceCb,{})
       };
     }
 
     handleSubmit = (event) => {
       const {validateData,onSubmit} = this.props;
-      const validationResponse = validateData(this.state.values);
+      const validationResponse = validateData(this.props.values);
 
       this.setState({errors: validationResponse.data});
       if(validationResponse.isValid){
-        onSubmit(null,this.state.values);
+        onSubmit(null,this.props.values);
       }else{
-        onSubmit(validationResponse,this.state.values);
+        onSubmit(validationResponse,this.props.values);
       }
       
       event.preventDefault();
     }
 
     handleClear = (event) => {
-      this.setState({values: this.props.items.reduce(reduceCb,{})})
+      const {handleChange} = this.props;
+      handleChange({});
     }
      
     handleCancel = (event) => {
@@ -66,19 +79,21 @@ export default class Form extends React.Component<Props, State>{
     }
 
     handleChange = (name) => {
+        const {handleChange} = this.props;
         return (event, index, value) => {
+          let newValues = {...this.props.values,[name]: value};
           this.setState({errors: {...this.state.errors, [name]: ''}});
-          this.setState({values: {...this.state.values,[name]: value}} as any)
+          handleChange(newValues);
         }
     }
 
     render() {
-        const {items} = this.props;
-        const {values, errors} = this.state;
+        const {items,values} = this.props;
+        const {errors} = this.state;
         return (<div>
                   <form onSubmit={this.handleSubmit}>
                     <div>
-                      {items.map(item => <Select key={item.id} error={errors[item.id]} value={values[item.id]} item={item} handleChange={this.handleChange(item.id)} />)}
+                      {items.map(item => getField(item,values,errors,this.handleChange))}
                     </div>
                     <div style={flexParentRowStyle as any}>
                       <span style={flexRowItemStyle as any}>

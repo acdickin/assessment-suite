@@ -39,6 +39,7 @@ export interface AssessmentInterface{
   image: string;
   calcQuestions(values: any): QuestionInterface[];
   calcScore(values: any): number;
+  validate(data:{[propName: string]: string}): {data: {[propName: string]: string}, isValid: boolean}
 }
 const defaultCalcQuestion = function(values: any){
 
@@ -72,8 +73,42 @@ const defaultCalcScore = function(values: any){
 
     return tallyScore(values,this.questions);
 }
+function defaultValidation(data:{[propName: string]: string}): { data:{[propName: string]: string}, isValid: boolean} {
+    let hasErrors = false;
+    console.log(data);
+    const filteredData = this.calcQuestions(data)
+        .filter((question) => {
+          return question.type !== 'label'
+        })
+        .reduce((acc,question) => {
+            acc[question.id] = typeof data[question.id] !== 'undefined' ? data[question.id] : '';
+            return acc;
+        },{});
 
-export const makeAssessment = (id,title, minScore: number, middleScore: number, maxScore: number, scoring: ScoringInterface[], scoringMode: number, questions: QuestionInterface[], image='',calcQuestions: (any) => any = defaultCalcQuestion, calcScore: (any) => any = defaultCalcScore ):AssessmentInterface => {
+    const reduceCb = (errors, name) => {
+      if(filteredData[name].length === 0){
+        hasErrors = true;
+        errors[name] = 'Required.';
+      } else {
+        errors[name] = '';
+      }
+      
+      return errors;
+    };
+
+    const errors = Object.keys(filteredData)
+      .map((propName) => propName)
+      .reduce(reduceCb,{});
+
+      console.log(errors);
+
+    return {
+      data: errors,
+      isValid: !hasErrors
+    }
+}
+
+export const makeAssessment = (id,title, minScore: number, middleScore: number, maxScore: number, scoring: ScoringInterface[], scoringMode: number, questions: QuestionInterface[], image='',calcQuestions: (any) => any = defaultCalcQuestion, calcScore: (any) => any = defaultCalcScore,validate: (any) => any = defaultValidation ):AssessmentInterface => {
   return {
     id,
     title,
@@ -85,7 +120,8 @@ export const makeAssessment = (id,title, minScore: number, middleScore: number, 
     image,
     calcQuestions,
     calcScore,
-    scoringMode
+    scoringMode,
+    validate
   }
 }
 
@@ -659,6 +695,10 @@ const choicesSet28: ChoicesInterface[] = [
       {title: 'True', value: '1', score: 1},
       {title: 'False', value: '2', score: 0}
 ];
+const choicesSet29: ChoicesInterface[] = [
+      {title: 'No', value: '1', score: 0},
+      {title: 'Yes', value: '2', score: 1}
+];
 // (a) almost never 0 (b) rarely 2(c) in most things 10 (d) in everything 10 
 
 const friendShipQuestions: QuestionInterface[] = [
@@ -1004,11 +1044,11 @@ const calcPanicScore = function(values: any = {}){
 }
 const alcDrugsQuestions: QuestionInterface[] = [
   makeQuestion('1','In your lifetime, which of the following substances have you ever used? (NON-MEDICAL USE ONLY)','label'),
-  makeQuestion('2','Alcohol (beer, wine, spirits, etc.)','select',choicesSet19),
-  makeQuestion('3','Cannabis (marijuana, pot, grass, hash, etc.)','select',choicesSet19),
-  makeQuestion('4','Cocaine (coke, crack, etc.)','select',choicesSet19),
-  makeQuestion('5','Amphetamine type stimulants (speed, diet pills, ecstasy, etc.)','select',choicesSet19),
-  makeQuestion('6','Sedatives or sleeping pills (Valium, Serapax, Rohypnol, Ambien, etc.)','select',choicesSet19),
+  makeQuestion('2','Alcohol (beer, wine, spirits, etc.)','select',choicesSet29),
+  makeQuestion('3','Cannabis (marijuana, pot, grass, hash, etc.)','select',choicesSet29),
+  makeQuestion('4','Cocaine (coke, crack, etc.)','select',choicesSet29),
+  makeQuestion('5','Amphetamine type stimulants (speed, diet pills, ecstasy, etc.)','select',choicesSet29),
+  makeQuestion('6','Sedatives or sleeping pills (Valium, Serapax, Rohypnol, Ambien, etc.)','select',choicesSet29),
 
   makeQuestion('7','In the past three months, how often have you used each of the following substances? (NON-MEDICAL USE ONLY)','label',choicesSet20),
   makeQuestion('8','During the past three months, how often have you had a strong desire or urge to use [substance]?','label', choicesSet21),
@@ -1119,13 +1159,13 @@ const sleepAssessmentQs: QuestionInterface[] = [
   makeQuestion('10','I\'ve fallen asleep driving.','select',choicesSet28),
 ]
 
-const alcImage = require('../images/Alcohol_and_Drugs.jpg');
-const ptsImage = require('../images/Post_Traumatic_Stress.jpg');
-const depressImage = require('../images/Depression.jpg');
-const anxietyImage = require('../images/Anxiety.jpg');
-const panicImage = require('../images/Panic.jpg');
-const physInjuryImage = require('../images/PhysicaI_Injury_Resilience.jpg');
-const sleepImage = require('../images/Sleep.jpg');
+const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
+const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
+const depressImage = 'res/images/Depression.jpg';
+const anxietyImage = 'res/images/Anxiety.jpg';
+const panicImage = 'res/images/Panic.jpg';
+const physInjuryImage = 'res/images/PhysicaI_Injury_Resilience.jpg';
+const sleepImage = 'res/images/Sleep.jpg';
 /////////////////////////////////////PORT of Drugs Assessments END
 
 export interface AssessmentTreeInterface {

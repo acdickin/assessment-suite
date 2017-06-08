@@ -28,7 +28,7 @@ export default class AssessmentPage extends React.Component<Props, State> {
   render(){
 
     const {params,onCancel} = this.props;
-    console.log(onCancel);
+
     const assessment = typeof assessments[params.id] !== 'undefined' ? assessments[params.id] : false;
 
     if(assessment){

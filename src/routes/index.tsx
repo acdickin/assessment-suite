@@ -20,7 +20,7 @@ const defaultOnCancel = (error: any, assessment: AssessmentInterface) => {
 }
 
 const defaultOnSubmit = (error: any, data: any,assessment: AssessmentInterface):void => {
-  console.log(error,data);
+  //console.log(error,data);
  
 }
 
