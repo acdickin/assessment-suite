@@ -723,7 +723,7 @@ const maritalSatisfactionQuestions: QuestionInterface[] = [
   makeQuestion(2,'Handling Family Finances','select',choicesSet5),
   makeQuestion(3,'Matters of Recreation','select',choicesSet5),
   makeQuestion(4,'Demonstration of Affection','select',choicesSet6),
-  makeQuestion(5,'Friends','text',choicesSet5),
+  makeQuestion(5,'Friends','select',choicesSet5),
   makeQuestion(6,'Sex Relations','select',choicesSet7),
   makeQuestion(7,'Conventionality (right, good, or proper conduct)','select',choicesSet5),
   makeQuestion(8,'Philosophy of Life','select',choicesSet5),

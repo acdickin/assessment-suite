@@ -8,7 +8,7 @@ module.exports = {
         'webpack-dev-server/client?http://localhost:8080',
         //'webpack-hot-middleware/client',
         'webpack/hot/only-dev-server',
-        "./src/example/index.tsx"
+        "./src/example/index2.tsx"
     ],
 
     output: {

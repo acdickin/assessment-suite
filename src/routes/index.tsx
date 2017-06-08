@@ -1,5 +1,5 @@
 import {syncRoute,asynRouteMaker} from '../lib/helper';
-
+import {Route} from 'react-router';
 import AssessmentResult from '../containers/AssessmentResult';
 import AssessmentPage from '../containers/AssessmentPage';
 import AssessmentList from '../containers/AssessmentList';
@@ -13,6 +13,7 @@ export interface AssessmentRoutesConfig{
   onCancel?(error: any, assessment: AssessmentInterface): void;
   onSubmit?(error: any, data: any, assessment: AssessmentInterface): void
   loadImages?: boolean;
+  plain?: boolean;
 }
 
 const defaultOnCancel = (error: any, assessment: AssessmentInterface) => {
@@ -21,19 +22,20 @@ const defaultOnCancel = (error: any, assessment: AssessmentInterface) => {
 
 const defaultOnSubmit = (error: any, data: any,assessment: AssessmentInterface):void => {
   //console.log(error,data);
- 
 }
 
 interface AdapterProps{
   params?: any;
 }
 
-export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface) => {
+const initConfig = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface):{AssessmentList: any,AssessmentPage: any} => {
   const defaultCb = (assessment: AssessmentInterface) => {
     return assessment;
   }
   const assessmentCb = cb || defaultCb;
   const ids = config.ids.length ? config.ids : assessmentIds;
+  const usePlainRoutes = typeof config['plain'] !== 'undefined' ? config['plain'] : false;
+
   const onCancel = typeof config['onCancel'] !== 'undefined' ? config['onCancel'] : defaultOnCancel;
   const loadImages = typeof config['loadImages'] !== 'undefined' ? config['loadImages'] : false;
 
@@ -51,12 +53,34 @@ export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: As
 
   AssessmentPage.defaultProps =  {...AssessmentPage.defaultProps, 
                                       onSubmit: defaultOnSubmit,
-                                      onCancel: onCancel};                                 
-  const routes = [
+                                      onCancel: onCancel};      
+  return {
+    AssessmentList,
+    AssessmentPage
+  }                                                        
+
+};
+
+export const createPlainRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): any[] => {
+  const {AssessmentList, AssessmentPage} = initConfig(config,cb);
+  return  [
 
     syncRoute('assessment/:id',AssessmentPage),
     syncRoute('assessments',AssessmentList)
   
-  ];
-  return routes;
-};
+  ];  
+
+}
+export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface):JSX.Element => {
+    const {AssessmentList, AssessmentPage} = initConfig(config,cb);
+    return (
+        <Route>
+          <Route path="assessment/:id" component={AssessmentPage} />
+          <Route path="assessments" component={AssessmentList} />
+        </Route>
+      );
+}
+
+
+
+

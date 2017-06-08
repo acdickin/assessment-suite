@@ -2,7 +2,7 @@ import FriendShip from './containers/assessments/FriendShip';
 import MaritalSatisfaction from './containers/assessments/MaritalSatisfaction';
 import PostDeploymentSocialSupport from './containers/assessments/PostDeploymentSocialSupport';
 import SocialSupport from './containers/assessments/SocialSupport';
-import {createRoutes} from './routes';
+import {createRoutes,createPlainRoutes} from './routes';
 
 
 const assessments = {
@@ -14,5 +14,6 @@ const assessments = {
 
 export  {
   assessments,
-  createRoutes
+  createRoutes,
+  createPlainRoutes
 };

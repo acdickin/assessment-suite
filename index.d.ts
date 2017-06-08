@@ -18,8 +18,8 @@ interface AssessmentRoutesConfig{
   onSubmit?(error: any, data: any, assessment: AssessmentInterface): void;
 }
 
-export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): void;
-
+export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): JSX.Element;
+export function createPlainRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): any[];
 export namespace assessments {
     /*~ For example, given this definition, someone could write:
      *~   import { assessments } from 'yourModule';

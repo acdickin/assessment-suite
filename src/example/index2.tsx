@@ -44,23 +44,13 @@ const configSubroutes = {
   plain: true
 }
 
-const subroutes = createPlainRoutes(configSubroutes,(assessment: AssessmentInterface) => {
+const AssessmentRoutes = createRoutes(configSubroutes,(assessment: AssessmentInterface) => {
   console.log(assessment);
   // assessment.image = require('../'+assessment.image);
    return assessment;
 });
 
-const siteRoutes = [
 
-  {
-    component: Theme,
-    indexRoute: Home,
-    childRoutes: [
-      syncRoute('/',PageContainer, [], Home),
-      syncRoute('/main',PageContainer, subroutes, Home)
-    ]
-  }
-];
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -70,7 +60,16 @@ injectTapEventPlugin();
 const render = () => {
     ReactDOM.render(
           <div>
-            <Router routes={siteRoutes} history={hashHistory} />
+            <Router  history={hashHistory}>
+                <Route component={Theme}>
+                    <Route component={PageContainer}>
+                      <Route path="/" component={Home} />
+                      <Route path="/main">
+                        {AssessmentRoutes}
+                      </Route>
+                    </Route>
+                </Route>
+            </Router>
           </div>,
         document.getElementById("spaApp")
     );
