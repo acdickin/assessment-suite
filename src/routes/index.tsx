@@ -7,7 +7,7 @@ import Home from '../example/components/Home';
 import * as React from 'react';
 import {assessmentIds,assessments,AssessmentInterface} from '../res/data/assessments';
 
-export interface AssessmentRoutesConfig{
+interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
   onCancel?(error: any, assessment: AssessmentInterface): void;

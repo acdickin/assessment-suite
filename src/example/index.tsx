@@ -40,8 +40,7 @@ const configSubroutes = {
   itemClick,
   onCancel,
   loadImages: true,
-  onSubmit,
-  plain: true
+  onSubmit
 }
 
 const subroutes = createPlainRoutes(configSubroutes,(assessment: AssessmentInterface) => {
