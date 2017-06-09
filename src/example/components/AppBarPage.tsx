@@ -61,7 +61,6 @@ interface MyProps {
   flashMessage: {message: string, open: boolean};
   appNameShort: string;
   appNameLong: string;
-  alertNurse(): any;
 }
 
 interface MyState {
@@ -72,17 +71,7 @@ interface MyState {
 }
 
 
-const rightNurseIcon = (props) => {
-  const {alertNurse} = props;
-  const handleAlertNurse = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    alertNurse();
-  }
-  return (<FlatButton style={{width: '120px',color: 'white',backgroundColor: 'red'}} onTouchTap={handleAlertNurse} secondary={true} icon={<PersonIcon />} >
-           Alert Nurse
-          </FlatButton>);
-};
+
 
 
 export default class AppBarPage extends React.Component<MyProps, MyState>{
@@ -142,9 +131,9 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
 
 
   render () {
-    const {categories,pathOnTouchTap,appConfig,leftIcon,flashMessage,appNameShort,appNameLong, alertNurse} = this.props;
+    const {categories,pathOnTouchTap,appConfig,leftIcon,flashMessage,appNameShort,appNameLong} = this.props;
 
-    //const MainContent = !this.state.showAltContent ? React.cloneElement((this.props as any).children, { restoreContent: this.restoreContent, replaceContent: this.replaceContent, appBarTitle: this.handleTitle, categories, pathOnTouchTap, alertNurse, appConfig: appConfig }) : this.state.altContent;
+    //const MainContent = !this.state.showAltContent ? React.cloneElement((this.props as any).children, { restoreContent: this.restoreContent, replaceContent: this.replaceContent, appBarTitle: this.handleTitle, categories, pathOnTouchTap, appConfig: appConfig }) : this.state.altContent;
     return (
        
         <div>
@@ -153,7 +142,7 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
                         title={this.state.title}
                         titleStyle={{textAlign: 'center'}}
                         iconElementLeft={leftIcon}
-                        iconElementRight={rightNurseIcon(this.props)}
+                    
                          />}
                 <div style={{'padding': '5px'} as any}>
                   <div>

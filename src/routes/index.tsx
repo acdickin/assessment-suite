@@ -61,15 +61,14 @@ const initConfig = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentI
 
 };
 
-export const createPlainRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): any[] => {
+export const createPlainRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): {AssessmentPageRoute: any, AssessmentsRoute: any} => {
   const {AssessmentList, AssessmentPage} = initConfig(config,cb);
-  return  [
-
-    syncRoute('assessment/:id',AssessmentPage),
-    syncRoute('assessments',AssessmentList)
-  
-  ];  
-
+  const AssessmentPageRoute = syncRoute('assessment/:id',AssessmentPage);
+  const AssessmentsRoute = syncRoute('assessments',AssessmentList);
+  return  {
+    AssessmentPageRoute,
+    AssessmentsRoute
+  }
 }
 export const createRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface):JSX.Element => {
     const {AssessmentList, AssessmentPage} = initConfig(config,cb);

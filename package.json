@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "react-tap-event-plugin": "^2.0.1",
-    "babel-polyfill": "^6.23.0",
+    "babel-polyfill": "^6.20.0",
     "normalizr": "^3.2.0"
   },
   "devDependencies": {

@@ -43,7 +43,7 @@ const configSubroutes = {
   onSubmit
 }
 
-const subroutes = createPlainRoutes(configSubroutes,(assessment: AssessmentInterface) => {
+const {AssessmentsRoute,AssessmentPageRoute} = createPlainRoutes(configSubroutes,(assessment: AssessmentInterface) => {
   console.log(assessment);
   // assessment.image = require('../'+assessment.image);
    return assessment;
@@ -56,7 +56,7 @@ const siteRoutes = [
     indexRoute: Home,
     childRoutes: [
       syncRoute('/',PageContainer, [], Home),
-      syncRoute('/main',PageContainer, subroutes, Home)
+      syncRoute('/main',PageContainer, [AssessmentsRoute,AssessmentPageRoute], Home)
     ]
   }
 ];

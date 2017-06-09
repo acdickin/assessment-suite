@@ -19,7 +19,7 @@ interface AssessmentRoutesConfig{
 }
 
 export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): JSX.Element;
-export function createPlainRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): any[];
+export function createPlainRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): {AssessmentPageRoute: any, AssessmentsRoute: any};
 export namespace assessments {
     /*~ For example, given this definition, someone could write:
      *~   import { assessments } from 'yourModule';
