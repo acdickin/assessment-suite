@@ -1180,8 +1180,8 @@ export const PostDeploymentSocialSupportAssessment = makeAssessment(4,'Post Depl
 export const ParentingConfidenceAssessment = makeAssessment(5,'Parenting Confidence', 16, 60, 96,ParentingConfidenceList,1,parentingConfidenceAssessment,parentingConfidenceImage);
   
 
-export const AlchoholDrugsAssessment = makeAssessment(6,'Alcohol and Drugs', 0, 22, 38, AlcoholDrugsList,0,alcDrugsQuestions,alcImage,calcAlcDrugQuestions,calcDrugsScore);
-export const PTSAssessment =  makeAssessment(7,'Post-Traumatic Stress', 17, 39, 85,PostTraumaticStressList, 0, ptsQuestions, ptsImage);
+export const AlcoholDrugsAssessment = makeAssessment(6,'Alcohol and Drugs', 0, 22, 38, AlcoholDrugsList,0,alcDrugsQuestions,alcImage,calcAlcDrugQuestions,calcDrugsScore);
+export const PostTraumaticStressAssessment =  makeAssessment(7,'Post-Traumatic Stress', 17, 39, 85,PostTraumaticStressList, 0, ptsQuestions, ptsImage);
 
 export const DepressionAssessment =  makeAssessment(8,'Depression', 0, 10, 27,DepressionList, 0, depressionQuestions, depressImage);
 export const AnxietyAssessment =  makeAssessment(9,'Anxiety', 0, 8.5, 21, AnxietyList, 0, anxietyQuestions,anxietyImage);
@@ -1197,10 +1197,9 @@ const assessmentsRaw: AssessmentInterface[] = [
   SocialSupportAssessment,
   PostDeploymentSocialSupportAssessment,
   ParentingConfidenceAssessment,
-
-  AlchoholDrugsAssessment,
-  PTSAssessment,
-  DepressionAssessment,
+  AlcoholDrugsAssessment,
+  PostTraumaticStressAssessment,
+  DepressionAssessment, //TODO fix depression results page - and questions - Gauge indicator is missing
   AnxietyAssessment,
   PanicAssessment,
   PhysicalAssessment,

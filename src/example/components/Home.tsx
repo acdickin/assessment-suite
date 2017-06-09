@@ -5,7 +5,20 @@ import {
   assessments,
   createRoutes
 } from '../../';
-const {FriendShip} = assessments;
+const {
+    FriendShip,
+    MaritalSatisfaction,
+    PostDeploymentSocialSupport,
+    SocialSupport,
+    Sleep,
+    Panic,
+    PostTraumaticStress,
+    Depression,
+    AlcoholDrugs,
+    Anxiety,
+    Physical,
+    ParentingConfidence
+} = assessments;
 
 
 export interface Props { 
@@ -30,7 +43,18 @@ export default class Home extends React.Component<Props, State> {
         return (<div>
                   <h1>Home Page</h1>
                   <Link to="/main/assessments">Assessments List</Link>
-                  <FriendShip onSubmit={this.handleSubmit} onCancel={this.handleCancel} />
+                      <FriendShip />
+                      <MaritalSatisfaction />
+                      <PostDeploymentSocialSupport />
+                      <SocialSupport />
+                      <Sleep />
+                      <Panic />
+                      <PostTraumaticStress />
+                      <Depression />
+                      <AlcoholDrugs />
+                      <Anxiety />
+                      <Physical />
+                      <ParentingConfidence />
                 </div>
                   );
     }
