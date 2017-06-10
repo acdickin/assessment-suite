@@ -17,7 +17,8 @@ const {
     AlcoholDrugs,
     Anxiety,
     Physical,
-    ParentingConfidence
+    ParentingConfidence,
+    Anger
 } = assessments;
 
 
@@ -43,7 +44,7 @@ export default class Home extends React.Component<Props, State> {
         return (<div>
                   <h1>Home Page</h1>
                   <Link to="/main/assessments">Assessments List</Link>
-                      <FriendShip />
+                      {/*<FriendShip />
                       <MaritalSatisfaction />
                       <PostDeploymentSocialSupport />
                       <SocialSupport />
@@ -53,8 +54,9 @@ export default class Home extends React.Component<Props, State> {
                       <Depression />
                       <AlcoholDrugs />
                       <Anxiety />
-                      <Physical />
+                      <Physical />*/}
                       <ParentingConfidence />
+                      <Anger />
                 </div>
                   );
     }

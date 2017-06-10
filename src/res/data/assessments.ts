@@ -340,7 +340,7 @@ PhysicalInjuryResilienceList.push(PhysicalInjuryResilienceScoring27);
 const MaritalSatisfactionList: ScoringInterface[] = [];
 
 
-const MaritalSatisfactionScoring0 = makeScoring(3,2,84,'POOR',
+const MaritalSatisfactionScoring0 = makeScoring(29,2,84,'POOR',
                                     `<p>Your score is in a range typically associated with high marital distress.</p><p>Your response indicated that you are experiencing problems with your spouse in a variety of areas leading to a great deal of distress in your marital relationship.</p>`,
                                     `<p>Having experiences of marital distress suggests that you should look into these concerns because they can be very upsetting and disruptive of your life.  We encourage you to check out the resources in the "Families and Friendships" topic. You will find information and exercises for developing skills and strategies that can help improve your marriage.</p><p>In addition to the materials on AfterDeployment, you may benefit from discussing your marriage with a healthcare provider. You can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of this page. If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of this page. Both the CALL and CHAT options are available 24/7. 
                                     </p> <p> We recommend that you retake the Marital Relationships assessment in a month to see how you are doing. If over time you find that problems aren’t improving, consult a professional. AfterDeployment is not a substitute for face to face support.</p><p>Problems may also be present in other areas of life. A good way to determine if you’re having problems in other areas is to take additional assessments.</p><p>For your convenience, you can find links to the tools that were mentioned here through the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -348,14 +348,14 @@ const MaritalSatisfactionScoring0 = makeScoring(3,2,84,'POOR',
 
 
 
-const MaritalSatisfactionScoring1 = makeScoring(2,85,99,'MODERATE',
+const MaritalSatisfactionScoring1 = makeScoring(30,85,99,'MODERATE',
                                     `<p>Your score is in a range typically associated with some marital distress.</p><p>Your responses suggest that you have some dissatisfaction with your marital relationship based on the presence of conflict or disagreement.</p>`,
                                     `<p>Having some experiences of marital distress suggests that you should look into these concerns because they can become very upsetting and disruptive of your life if left unresolved.  We encourage you to check out the resources in the "Families and Friendships" topic. You will find information and exercises for developing skills and strategies that can help improve your marriage.</p><p>In addition to the materials on AfterDeployment, you may benefit from discussing your marriage with a healthcare provider. You can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of this page. If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of this page. Both the CALL and CHAT options are available 24/7.</p><p> We recommend that you retake the Marital Relationships assessment in a month to see how you are doing. If over time you find that problems aren’t improving, consult a professional. AfterDeployment is not a substitute for face to face support.</p><p>When there are marital difficulties present, problems are often present in other areas of life. A good way to determine if you’re having problems in other areas is to take additional assessments.</p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const MaritalSatisfactionScoring2 = makeScoring(1,100,158,'GOOD',
+const MaritalSatisfactionScoring2 = makeScoring(31,100,158,'GOOD',
                                     `<p>Your score is in a range typically associated with good marital satisfaction.</p><p>Your responses suggest that you are feeling satisfied with your marriage.</p>`,
                                     `<p>Your results suggest you are managing this area of your life.  Because maintaining healthy habits means a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the “Life Stress” program.</p><p>You’re also encouraged to check out other assessments on AfterDeployment as they can be helpful for learning more about whether or not you are having problems in other areas.  For your convenience, you can find links to the tools that were mentioned here through the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -364,7 +364,7 @@ const MaritalSatisfactionScoring2 = makeScoring(1,100,158,'GOOD',
 const FriendshipScaleList: ScoringInterface[] = [];
 
 
-const FriendshipScaleScoring3 = makeScoring(4,0,15,'LOW',
+const FriendshipScaleScoring3 = makeScoring(32,0,15,'LOW',
                                     `<p>Your score is in a range typically associated with low social support, and suggests that you do not feel socially connected or supported by the people in your life. </p>`,
                                     `<p>After a stressful experience, some people withdraw from friends and family and from activities. However, caring and encouragement from others can boost health and well-being. People who feel connected are less likely to be depressed and are more likely to live longer.  Because you’re reporting a low level of social support, we encourage you to meet with a health care provider. If you don’t have a provider, you can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the main page. We recommend you take a copy of the results of this assessment and share them during your appointment.</p><p>If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the main page.  Both the CALL and CHAT options are available 24-7.
 
@@ -373,14 +373,14 @@ const FriendshipScaleScoring3 = makeScoring(4,0,15,'LOW',
 
 
 
-const FriendshipScaleScoring4 = makeScoring(5,16,18,'MODERATE',
+const FriendshipScaleScoring4 = makeScoring(33,16,18,'MODERATE',
                                     `<p>Your score is in a range typically associated with some social support.<p>  <p>Your responses suggest that you have some social support but perhaps not as much as you would like, which may be causing you to feel isolated. </p>`,
                                     `<p>After a stressful experience, some people withdraw from friends and family and from activities. However, caring and encouragement from others can boost health and well-being. People who feel connected are less likely to be depressed and are more likely to live longer. We encourage you to check out <i>AfterDeployment</i>'s materials in the "Families and Friendships" topic.   In addition to the materials on AfterDeployment, you may benefit from discussing your feelings of isolation with a health care provider. If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.</p><p>Another way to explore these experiences is to check out the materials in AfterDeployment’s “Families and Friendships” topic.</p> <p>When someone is experiencing these kinds of concerns, problems may be present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.  </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const FriendshipScaleScoring5 = makeScoring(6,19,24,'HIGH',
+const FriendshipScaleScoring5 = makeScoring(34,19,24,'HIGH',
                                     `<p>Your score is in a range reflecting few problems with social connections.</p>  <p>Your responses suggest that you’re socially connected and do not feel isolated from others. </p>`,
                                     `<p>Your results suggest you are managing this area of your life. Because maintaining healthy habits means a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the “Life Stress” topic.</p><p>You're also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in other areas.  You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                      );
@@ -389,7 +389,7 @@ const FriendshipScaleScoring5 = makeScoring(6,19,24,'HIGH',
 const ParentingConfidenceList: ScoringInterface[] = [];
 
 
-const ParentingConfidenceScoring6 = makeScoring(7,16,50,'LOW',
+const ParentingConfidenceScoring6 = makeScoring(35,16,50,'LOW',
                                     `<p>Your score is in a range typically associated with a significant lack of confidence and satisfaction in your role as a parent.  You describe yourself as someone who is experiencing conflict in this role.</p>`,
                                     `<p>There are many reasons that can contribute to feeling a lack of confidence or satisfaction as a parent.   You may feel like you have little support  or it may be that you have particularly challenging kids.   Many parents struggle with handling the demands of parenting, but it is possible to develop increased confidence and satisfaction by consulting with experts in the field.  If you would like personal support in developing more confidence you can speak with a professional who can provide guidance in this area.  You can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of this page.  If you have other personal concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of this page. Both the CALL and CHAT options are available 24-7.
                                     </p> <p> When someone wishes to grow in their role as a parent, exploring other areas of life can help.  You can do more exploration by taking additional assessments. We also encourage you to check out AfterDeployment’s Families with Kids materials. You can find links to the tools that were mentioned here through the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -397,7 +397,7 @@ const ParentingConfidenceScoring6 = makeScoring(7,16,50,'LOW',
 
 
 
-const ParentingConfidenceScoring7 = makeScoring(8,51,69,'MOD',
+const ParentingConfidenceScoring7 = makeScoring(36,51,69,'MOD',
                                     `<p>Your score is in a range typically associated with a moderate level of confidence and satisfaction in your role as a parent.</p>`,
                                     `<p>Your score suggests that for the most part, you believe you handle your role as a parent well but  you also identify some challenges with satisfaction or confidence as a parent.</p><p>Parenting is full of challenges and it is normal to feel unsure or dissatisfied on occasion.  If you would like support or guidance in increasing your confidence as a parent, there are providers who specialize in helping parents develop increased confidence.  If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.
                                     </p> <p>When someone wishes to grow in their role as a parent, exploring other areas of life can help.  You can do more exploration by taking additional assessments.  We also encourage you to check out AfterDeployment’s "Families with Kids" topic. <p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -405,7 +405,7 @@ const ParentingConfidenceScoring7 = makeScoring(8,51,69,'MOD',
 
 
 
-const ParentingConfidenceScoring8 = makeScoring(9,70,96,'HIGH',
+const ParentingConfidenceScoring8 = makeScoring(37,70,96,'HIGH',
                                     `<p>Your score is in a range indicating that you very confident and satisfied with how you are handling your role as a parent.</p>`,
                                     `<p>Because maintaining healthy habits means a lifestyle that includes many stress management tools to help find balance, we encourage you to check out the many tools in the “Life Stress” program.</p><p>You're also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in other areas.  You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -414,7 +414,7 @@ const ParentingConfidenceScoring8 = makeScoring(9,70,96,'HIGH',
 const PerceivedSocialSupportList: ScoringInterface[] = [];
 
 
-const PerceivedSocialSupportScoring9 = makeScoring(10,12,48,'LOW',
+const PerceivedSocialSupportScoring9 = makeScoring(38,12,48,'LOW',
                                     `<p>Your score is in a range typically associated with low social support.</p>  <p>Your responses indicate that you are not feeling helped and supported by the important people in your life. You don’t have a lot of people to count on in difficult times. This can leave you feeling overwhelmed. Help and encouragement from others is important to your physical and emotional health and well-being. </p>`,
                                     `<p>Having experiences such as you have identified suggests that you should look into these concerns and discuss your sense of isolation with a counselor or therapist.  If you don’t have a provider, you can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the main page. We recommend you take a copy of the results of this assessment and share them during your appointment.</p><p>If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the main page.  Both the CALL and CHAT options are available 24-7.</p> 
                                      <p>When someone is experiencing the kinds of distressing concerns you report, problems are often present in other areas of life.  You can determine where other problems may exist or the extent of the problem by taking additional assessments.  </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p>We recommend that you take this assessment again in two to four weeks to track how you are doing. We also encourage you to check out AfterDeployment's “Families and Friendships” materials. However, we want to emphasize that your responses on the assessment indicate that your best plan is to consult with a counselor or therapist. AfterDeployment is not a substitute for consulting with a provider in person.</p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -422,7 +422,7 @@ const PerceivedSocialSupportScoring9 = makeScoring(10,12,48,'LOW',
 
 
 
-const PerceivedSocialSupportScoring10 = makeScoring(11,49,68,'MOD',
+const PerceivedSocialSupportScoring10 = makeScoring(39,49,68,'MOD',
                                     `<p>Your score is in a range typically associated with a moderate level of social support.</p>  <p>Your responses indicate that you have people in your life who are there when you need them. However, you may feel that you could use more support from some of the important people in your life. Help and encouragement from others is important to your physical and emotional health and well-being. </p>`,
                                     `<p>When someone experiences insufficient social support, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments. We also encourage you to check out the information in the "Families and Friendships" topic to find out more about these problems and what you can do about them. You will find information and activities on how to increase levels of social support.</p><p>You may benefit from discussing your need for increased social support with a counselor or therapist. If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7. </p>
                                     <p>We recommend that you retake this assessment in two to four weeks to track how you are doing.</p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -430,7 +430,7 @@ const PerceivedSocialSupportScoring10 = makeScoring(11,49,68,'MOD',
 
 
 
-const PerceivedSocialSupportScoring11 = makeScoring(12,69,84,'HIGH',
+const PerceivedSocialSupportScoring11 = makeScoring(40,69,84,'HIGH',
                                     `<p>Your score is in a range typically associated with high levels of social support.</p>  <p>Your responses suggest that you have support and help from family and friends.  You have people there when you need them. </p>`,
                                     `<p>Your results suggest you are managing this area of your life. Because maintaining healthy habits means a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the “Life Stress” topic.</p><p>You're also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in other areas.  You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -439,14 +439,14 @@ const PerceivedSocialSupportScoring11 = makeScoring(12,69,84,'HIGH',
 const PostDeploymentSocialSupportList: ScoringInterface[] = [];
 
 
-const PostDeploymentSocialSupportScoring12 = makeScoring(13,15,39,'LOW',
+const PostDeploymentSocialSupportScoring12 = makeScoring(41,15,39,'LOW',
                                     `<p>Your score is in a range typically associated with high social support following deployment.</p>  <p>Your responses suggest that you are satisfied with the social support that you have experienced following your deployment. </p>`,
                                     `<p>Your results suggest you are managing this area of your life. Because maintaining healthy habits means following a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the “Life Stress” topic.</p><p>You're also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in other areas.  You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const PostDeploymentSocialSupportScoring13 = makeScoring(14,40,59,'MOD',
+const PostDeploymentSocialSupportScoring13 = makeScoring(42,40,59,'MOD',
                                     `<p>Your score is in a range typically associated with moderate social support following deployment.</p>  <p>Your responses suggest that you may not be completely satisfied with the support that you have received from your family, friends, or community since your return from deployment.</p>`,
                                     `<p>Emotional and practical support from family and community is helpful for service members, making the transition back home much easier. We encourage you to build support and make sure that you have others to turn to when you need them. If you are not finding what you need, you may want to consider looking for other supports in the military, veteran, or civilian community. </p><p>When someone has a problem with social support, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments. We also encourage you to check out the materials in AfterDeployment's "Families and Friendships" and "Work Adjustment" topics to find out more about how to deal with difficulties in your personal and work relationships upon return from deployment. There, you will find information and strategies to help develop additional social support.</p><p>In addition to the materials on AfterDeployment, you may benefit from discussing social support with a healthcare provider. If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.</p> 
                                     <p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
@@ -454,10 +454,26 @@ const PostDeploymentSocialSupportScoring13 = makeScoring(14,40,59,'MOD',
 
 
 
-const PostDeploymentSocialSupportScoring14 = makeScoring(15,60,75,'HIGH',
+const PostDeploymentSocialSupportScoring14 = makeScoring(43,60,75,'HIGH',
                                     `<p>Your score is in a range typically associated with low social support following deployment.</p>  <p>Your responses suggest that you are not satisfied with the emotional or practical support that you have received from your family, friends, or community since your return from deployment. </p>`,
                                     `<p>If you are not currently seeking help, we strongly recommend that you discuss your sense of isolation with a counselor or therapist. Take a copy of your assessment results with you to share the details of your problem. A provider can help target the specific problems you might be having and will help develop a plan to improve your sense of connection to others. You can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the main page. We recommend you take a copy of the results of this assessment and share them during your appointment.</p><p>If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the main page.  Both the CALL and CHAT options are available 24-7. </p>  <p>When someone has a problem with social support, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.</p>  <p>We also encourage you to check out the materials in AfterDeployment's "Families and Friendships" and "Work Adjustment" topics to find out more about how to deal with difficulties in relationships upon return from deployment. You will find information and strategies to help develop social supports.</p>  <p>Take a look at how comfortable you are with asking for support. You may find that you are giving people the message that you are OK and don't need or want support. It is a common mistake to believe that if you have to ask for support it means that people don’t care. Many people are more than happy to provide help and support if they understand the need. Remember that people can't read your mind.</p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
+
+
+const angerScoringList: ScoringInterface[] = [
+makeScoring(44,0,22,'Low Acuity',
+                `<p>Your score is in a range typically associated with LOW anger.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, your results suggest that you don’t seem to be having difficulties with anger right now.</p>`
+                ),
+makeScoring(45,23,42,'Moderate Acuity',
+                `<p>Your score is in a range typically associated with MODERATE anger.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, anger may be causing significant problems in your relationships, your work, and your health.</p>`
+                ),
+makeScoring(46,43,56,'High Acuity',
+                `<p>Your score is in a range typically associated with HIGH anger.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, your responses suggest you may be feeling angry often or having problems controlling your anger.</p>`
+                )
+];
 
 
 MaritalSatisfactionList.push(MaritalSatisfactionScoring0);
@@ -476,7 +492,7 @@ PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring12);
 PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring13);
 PostDeploymentSocialSupportList.push(PostDeploymentSocialSupportScoring14);
 
-/*
+
 
 const choicesSet1: ChoicesInterface[] = [
       {title: '0 - Not at all', value: '1', score: 0},
@@ -489,7 +505,7 @@ const choicesSet1: ChoicesInterface[] = [
       {title: '7', value: '8', score: 7},
       {title: '8 - Exactly So', value: '9', score: 8}
 ];
-*/
+
 const choicesSet2: ChoicesInterface[] = [
       {title: 'Almost Always', value: '1', score: 4},
       {title: 'Most of the time', value: '2', score: 3},
@@ -795,11 +811,22 @@ const parentingConfidenceAssessment: QuestionInterface[] = [
   makeQuestion(17,'Being a parent makes me tense and anxious.','select',choicesSet11),
 ]
 
+const angerQuestions: QuestionInterface[] = [
+  makeQuestion(1,'I often find myself getting angry at people or situations.','select',choicesSet1),
+  makeQuestion(2,'When I get angry, I get really mad.','select',choicesSet1),
+  makeQuestion(3,'When I get angry, I stay angry.','select',choicesSet1),
+  makeQuestion(4,'When I get angry at someone, I want to hit or clobber the person.','select',choicesSet1),
+  makeQuestion(5,'My anger interferes with my ability to get my work done.','select',choicesSet1),
+  makeQuestion(6,'My anger prevents me from getting along with people as well as I would like to.','select',choicesSet1),
+  makeQuestion(7,'My anger has a bad effect on my health.','select',choicesSet1),
+];
+
 const friendsImage = 'res/images/Friendship_Scale.jpg';
 const marriageImage  = 'res/images/Marital_Satisfaction.jpg';
 const socialImage  = 'res/images/Perceived_Social_Support.jpg';
 const postDepSocialImage = 'res/images/Post_Deployment_Social_Support.jpg';
 const parentingConfidenceImage = 'res/images/Parenting_Confidence.jpg';
+const angerImage = 'res/images/Parenting_Confidence.jpg';
 
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
@@ -1079,19 +1106,19 @@ const ptsQuestions: QuestionInterface[] = [
   makeQuestion('17','Feeling jumpy or easily startled?','select',choicesSet24),
 ];
 const depressionQuestions: QuestionInterface[] = [
-  makeQuestion('1','How often have you been bothered by having little interest or pleasure in doing things?','select',choicesSet9),
-  makeQuestion('2','How often have you been bothered by feeling down, depressed or hopeless?','select',choicesSet9),
+  makeQuestion('1','How often have you been bothered by having little interest or pleasure in doing things?','select',choicesSet25),
+  makeQuestion('2','How often have you been bothered by feeling down, depressed or hopeless?','select',choicesSet25),
   makeQuestion('3','Over the last two weeks, how often have you been bothered by any of the following problems? ','label'),
-  makeQuestion('4','Trouble falling or staying asleep, or sleeping too much. ','select',choicesSet9),
-  makeQuestion('5','Feeling tired or having little energy.','select',choicesSet9),
-  makeQuestion('6','Poor appetite or overeating.','select',choicesSet9),
-  makeQuestion('7','Feeling bad about yourself – or that  you are a failure or have let yourself or your family down. ','select',choicesSet9),
-  makeQuestion('8','Trouble concentrating on things, such as reading the newspaper or watching television.  ','select',choicesSet9),
+  makeQuestion('4','Trouble falling or staying asleep, or sleeping too much. ','select',choicesSet25),
+  makeQuestion('5','Feeling tired or having little energy.','select',choicesSet25),
+  makeQuestion('6','Poor appetite or overeating.','select',choicesSet25),
+  makeQuestion('7','Feeling bad about yourself – or that  you are a failure or have let yourself or your family down. ','select',choicesSet25),
+  makeQuestion('8','Trouble concentrating on things, such as reading the newspaper or watching television.  ','select',choicesSet25),
   makeQuestion('9',`Moving or speaking so slowly that other people 
 could have noticed.  Or the opposite – being so 
 fidgety or restless that you have been moving 
-around a lot more than usual. `,'select',choicesSet9),
-  makeQuestion('10','Thoughts that you would be better off dead, or of hurting yourself in some way. ','select',choicesSet9)
+around a lot more than usual. `,'select',choicesSet25),
+  makeQuestion('10','Thoughts that you would be better off dead, or of hurting yourself in some way. ','select',choicesSet25)
 ];
 const anxietyQuestions: QuestionInterface[] = [
   makeQuestion('1','Feeling nervous, anxious, or on edge','select',choicesSet25),
@@ -1190,6 +1217,7 @@ export const PanicAssessment =  makeAssessment(10,'Panic', 0, 31, 60, PanicList,
 export const PhysicalAssessment =  makeAssessment(11,'Physical Injury Resilience', 0, 60, 88, PhysicalInjuryResilienceList, 1, physicalInjuryAssessmentQs,physInjuryImage);
 export const SleepAssessment =  makeAssessment(12,'Sleep', 0, 1.5, 10, SleepList, 0, sleepAssessmentQs,sleepImage);
 
+export const AngerAssessment = makeAssessment(13,'Anger', 0, 32.5, 56, angerScoringList, 0, angerQuestions,panicImage);
 
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
@@ -1203,7 +1231,8 @@ const assessmentsRaw: AssessmentInterface[] = [
   AnxietyAssessment,
   PanicAssessment,
   PhysicalAssessment,
-  SleepAssessment
+  SleepAssessment,
+  AngerAssessment
 ]
 
 const normalData = normalize(assessmentsRaw,assessmentListSchema);

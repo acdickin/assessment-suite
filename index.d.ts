@@ -43,4 +43,41 @@ export namespace assessments {
     export class SocialSupport extends Component<null, null> implements AssessmentComponentInterface{
       
     }
+
+    export class Sleep extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class Panic extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class PostTraumaticStress extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class Depression extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class AlcoholDrugs extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class Anxiety extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class Physical extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class ParentingConfidence extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
+    export class Anger extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
 }
