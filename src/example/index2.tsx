@@ -27,7 +27,6 @@ const itemClick = (assessment: AssessmentInterface) => {
   hashHistory.push('/main/assessment/'+assessment.id);
 }
 const onCancel = (error: any, assessment: AssessmentInterface) => {
-  console.log('me canceled');
   hashHistory.push('/main/assessments');
 }
 
@@ -36,7 +35,7 @@ const onSubmit = (errors,data,assessment: AssessmentInterface) => {
 }
 
 const configSubroutes = {
-  ids: [1,2,3,4,5,6,7,8,9,10,11,12],
+  ids: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
   itemClick,
   onCancel,
   loadImages: true,

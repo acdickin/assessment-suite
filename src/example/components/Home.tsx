@@ -19,7 +19,8 @@ const {
     Physical,
     ParentingConfidence,
     Anger,
-    Stress
+    Stress,
+    Stigma
 } = assessments;
 
 
@@ -59,6 +60,7 @@ export default class Home extends React.Component<Props, State> {
                       <ParentingConfidence />
                       <Anger />
                       <assessments.Stress />
+                      <assessments.Stigma />
                 </div>
                   );
     }

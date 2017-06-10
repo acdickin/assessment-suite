@@ -491,6 +491,47 @@ makeScoring(49,26,40,'High Acuity',
 ];
 
 
+const stigmaScoringList: ScoringInterface[] = [
+makeScoring(47,10,22,'Low Stigma', //TODO find copy for conclusions
+                `<p>Your results indicate that you are comfortable with the idea of seeking psychological treatment.</p>`,
+                `<p>Your results suggest you are managing this area of your life. Because maintaining healthy habits means following a lifestyle that includes stress management and finding balance, we encourage you to check out the many tools in the "Life Stress" topic.</p>
+<p>You are also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in some areas. You can find links to these tools under the RESOURCES tab located above. </p>
+<p>You may find it helpful to join the AfterDeployment Facebook page where you can network with others on a range of topics.</p>`
+                ),
+makeScoring(48,23,32,'Medium Stigma',
+                `<p>Your results indicate that you are somewhat uncomfortable with the idea of seeking psychological treatment.</p>`,
+                `<p>Discomfort with the idea of seeking psychological treatment for problems in living is not unusual. Reluctance to meet with a mental health professional however is often the result of a lack of information or misinformation about the treatment process. Counseling, 
+                psychotherapy, and medication management are now based on research and have been shown to be very effective for a wide range of psychological health issues from depression to relationship problems. Failure to get needed treatment for the effects of stress or other 
+                issues can lead to increasing problems with your physical health, your emotional well-being, and your relationships. If you are experiencing depression, anxiety, or other psychological distress, you need to get help. Start with your physician or clergy. You can 
+                locate a provider or a clinic near you by clicking on the LOCATE tab in the upper right corner of the main page. We recommend you take a copy of the results of this assessment and share them during your appointment.</p>
+                <p>
+                  We encourage you to check out the materials in AfterDeployment is "Stigma" topic.
+                </p>
+                <p>
+                  If you are concerned about seeking psychological treatment, you may wish to explore the kinds of problems that may be present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.
+                </p>
+                <!--<p>You can find links to these tools under the RESOURCES tab located above.</p>-->
+                  <p>You may find it helpful to join the AfterDeployment Facebook page where you can network with others on a range of topics.</p>
+                `
+                ),
+makeScoring(49,33,50,'High Stigma',
+                `<p>Your results indicate that you are highly uncomfortable with the idea of seeking psychological treatment.</p>`,
+                `<p>Discomfort with the idea of seeking psychological treatment for problems in living is not unusual. Reluctance to meet with a mental health professional however is often the result of a lack of information or misinformation about the treatment process. Counseling, 
+                psychotherapy, and medication management are now based on research and have been shown to be very effective for a wide range of psychological health issues from depression to relationship problems. Failure to get needed treatment for the effects of stress or other 
+                issues can lead to increasing problems with your physical health, your emotional well-being, and your relationships. If you are experiencing depression, anxiety, or other psychological distress, you need to get help. Start with your physician or clergy. You can 
+                locate a provider or a clinic near you by clicking on the LOCATE tab in the upper right corner of the main page. We recommend you take a copy of the results of this assessment and share them during your appointment.</p>
+                <p>
+                  We encourage you to check out the materials in AfterDeployment is "Stigma" topic.
+                </p>
+                <p>
+                  If you are concerned about seeking psychological treatment, you may wish to explore the kinds of problems that may be present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.
+                </p>
+                <!--<p>You can find links to these tools under the RESOURCES tab located above.</p>-->
+                  <p>You may find it helpful to join the AfterDeployment Facebook page where you can network with others on a range of topics.</p>
+                `
+                )
+];
+
 MaritalSatisfactionList.push(MaritalSatisfactionScoring0);
 MaritalSatisfactionList.push(MaritalSatisfactionScoring1);
 MaritalSatisfactionList.push(MaritalSatisfactionScoring2);
@@ -746,6 +787,24 @@ const choicesSet31: ChoicesInterface[] = [
       {title: 'Fairly often ', value: '4', score: 1},
       {title: 'Very often ', value: '5', score: 0}
 ];
+
+const choicesSet32: ChoicesInterface[] = [
+      {title: 'Strongly disagree', value: '1', score: 1},
+      {title: 'Disagree', value: '2', score: 2},
+      {title: 'Agree and Disagree Equally', value: '3', score: 3},
+      {title: 'Agree', value: '4', score: 4},
+      {title: 'Strongly agree', value: '5', score: 5}
+];
+
+const choicesSet33: ChoicesInterface[] = [
+      {title: 'Strongly disagree', value: '1', score: 5},
+      {title: 'Disagree', value: '2', score: 4},
+      {title: 'Agree and Disagree Equally', value: '3', score: 3},
+      {title: 'Agree', value: '4', score: 2},
+      {title: 'Strongly agree', value: '5', score: 1}
+];
+
+
 // (a) almost never 0 (b) rarely 2(c) in most things 10 (d) in everything 10 
 
 const friendShipQuestions: QuestionInterface[] = [
@@ -864,13 +923,36 @@ const stressQuestions: QuestionInterface[] = [
   makeQuestion(10,'In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?','select',choicesSet30),
 ];
 
+
+const stigmaQuestions: QuestionInterface[] = [
+  makeQuestion(1,'I would feel inadequate if I went to a therapist for psychological help.','select',choicesSet32),
+  makeQuestion(2,'My self-confidence would NOT be threatened if I sought professional help.','select',choicesSet33),
+  makeQuestion(3,'Seeking psychological help would make me feel less intelligent.','select',choicesSet32),
+  makeQuestion(4,'My self-esteem would increase if I talked to a therapist.','select',choicesSet33),
+  makeQuestion(5,'My view of myself would not change just because I made the choice to see a therapist.','select',choicesSet33),
+  makeQuestion(6,'It would make me feel inferior to ask a therapist for help.','select',choicesSet32),
+  makeQuestion(7,'I would feel okay about myself if I made the choice to seek professional help.','select',choicesSet33),
+  makeQuestion(8,'If I went to a therapist, I would be less satisfied with myself.','select',choicesSet32),
+  makeQuestion(9,'My self-confidence would remain the same if I sought professional help for a problem I could not solve.','select',choicesSet33),
+  makeQuestion(10,'I would feel worse about myself if I could not solve my own problems.','select',choicesSet32),
+];
+
+const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
+const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
+const depressImage = 'res/images/Depression.jpg';
+const anxietyImage = 'res/images/Anxiety.jpg';
+const panicImage = 'res/images/Panic.jpg';
+const physInjuryImage = 'res/images/PhysicaI_Injury_Resilience.jpg';
+const sleepImage = 'res/images/Sleep.jpg';
+
 const friendsImage = 'res/images/Friendship_Scale.jpg';
 const marriageImage  = 'res/images/Marital_Satisfaction.jpg';
 const socialImage  = 'res/images/Perceived_Social_Support.jpg';
 const postDepSocialImage = 'res/images/Post_Deployment_Social_Support.jpg';
 const parentingConfidenceImage = 'res/images/Parenting_Confidence.jpg';
-const angerImage = 'res/images/Parenting_Confidence.jpg';
+const angerImage = panicImage;
 const stressImage = postDepSocialImage;
+const stigmaImage = ptsImage;
 
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
@@ -1231,13 +1313,7 @@ const sleepAssessmentQs: QuestionInterface[] = [
   makeQuestion('10','I\'ve fallen asleep driving.','select',choicesSet28),
 ]
 
-const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
-const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
-const depressImage = 'res/images/Depression.jpg';
-const anxietyImage = 'res/images/Anxiety.jpg';
-const panicImage = 'res/images/Panic.jpg';
-const physInjuryImage = 'res/images/PhysicaI_Injury_Resilience.jpg';
-const sleepImage = 'res/images/Sleep.jpg';
+
 /////////////////////////////////////PORT of Drugs Assessments END
 
 export interface AssessmentTreeInterface {
@@ -1263,6 +1339,8 @@ export const SleepAssessment =  makeAssessment(12,'Sleep', 0, 1.5, 10, SleepList
 
 export const AngerAssessment = makeAssessment(13,'Anger', 0, 32.5, 56, angerScoringList, 0, angerQuestions,panicImage);
 export const StressAssessment = makeAssessment(14,'Stress', 0, 18, 40, stressScoringList, 0, stressQuestions,stressImage);
+export const StigmaAssessment = makeAssessment(15,'Stigma', 10, 27.5, 50, stigmaScoringList, 0, stigmaQuestions,stigmaImage);
+
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
   MaritalAssessment,
@@ -1277,7 +1355,8 @@ const assessmentsRaw: AssessmentInterface[] = [
   PhysicalAssessment,
   SleepAssessment,
   AngerAssessment,
-  StressAssessment
+  StressAssessment,
+  StigmaAssessment
 ];
 
 //TODO

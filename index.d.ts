@@ -84,4 +84,7 @@ export namespace assessments {
       
     }
 
+    export class Stigma extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
 }
