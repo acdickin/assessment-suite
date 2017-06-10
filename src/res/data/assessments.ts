@@ -475,6 +475,21 @@ makeScoring(46,43,56,'High Acuity',
                 )
 ];
 
+const stressScoringList: ScoringInterface[] = [
+makeScoring(47,0,10,'Low Acuity', //TODO find copy for conclusions
+                `<p>Your score is in a range typically associated with LOW stress.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, your results suggest that you don’t seem to be having difficulties with stress right now.</p>`
+                ),
+makeScoring(48,11,25,'Moderate Acuity',
+                `<p>Your score is in a range typically associated with MODERATE stress.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, stress may be causing significant problems in your relationships, your work, and your health.</p>`
+                ),
+makeScoring(49,26,40,'High Acuity',
+                `<p>Your score is in a range typically associated with HIGH stress.</p>`,
+                `<p>Although only a healthcare professional can provide an actual diagnosis, your responses suggest you may be feeling stress often or having problems controlling your stress.</p>`
+                )
+];
+
 
 MaritalSatisfactionList.push(MaritalSatisfactionScoring0);
 MaritalSatisfactionList.push(MaritalSatisfactionScoring1);
@@ -716,6 +731,21 @@ const choicesSet29: ChoicesInterface[] = [
       {title: 'Yes', value: '2', score: 1}
 ];
 ;
+
+const choicesSet30: ChoicesInterface[] = [
+      {title: 'Never', value: '1', score: 0},
+      {title: 'Almost Never', value: '2', score: 1},
+      {title: 'Sometimes', value: '3', score: 2},
+      {title: 'Fairly often ', value: '4', score: 3},
+      {title: 'Very often ', value: '5', score: 4}
+];
+const choicesSet31: ChoicesInterface[] = [
+      {title: 'Never', value: '1', score: 4},
+      {title: 'Almost Never', value: '2', score: 3},
+      {title: 'Sometimes', value: '3', score: 2},
+      {title: 'Fairly often ', value: '4', score: 1},
+      {title: 'Very often ', value: '5', score: 0}
+];
 // (a) almost never 0 (b) rarely 2(c) in most things 10 (d) in everything 10 
 
 const friendShipQuestions: QuestionInterface[] = [
@@ -821,12 +851,26 @@ const angerQuestions: QuestionInterface[] = [
   makeQuestion(7,'My anger has a bad effect on my health.','select',choicesSet1),
 ];
 
+const stressQuestions: QuestionInterface[] = [
+  makeQuestion(1,'In the last month, how often have you been upset because of something that happened unexpectedly?','select',choicesSet30),
+  makeQuestion(2,'In the last month, how often have you felt that you were unable to control the important things in your life?','select',choicesSet30),
+  makeQuestion(3,'In the last month, how often have you felt nervous and stressed?','select',choicesSet30),
+  makeQuestion(4,'In the last month, how often have you felt confident about your ability to handle your personal problems?','select',choicesSet31),
+  makeQuestion(5,'In the last month, how often have you felt that things were going your way?','select',choicesSet31),
+  makeQuestion(6,'In the last month, how often have you found that you could not cope with all the things that you had to do?','select',choicesSet30),
+  makeQuestion(7,'In the last month, how often have you been able to control irritations in your life?','select',choicesSet31),
+  makeQuestion(8,'In the last month, how often have you felt that you were on top of things?','select',choicesSet31),
+  makeQuestion(9,'In the last month, how often have you been angered because of things that were outside of your control?','select',choicesSet30),
+  makeQuestion(10,'In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?','select',choicesSet30),
+];
+
 const friendsImage = 'res/images/Friendship_Scale.jpg';
 const marriageImage  = 'res/images/Marital_Satisfaction.jpg';
 const socialImage  = 'res/images/Perceived_Social_Support.jpg';
 const postDepSocialImage = 'res/images/Post_Deployment_Social_Support.jpg';
 const parentingConfidenceImage = 'res/images/Parenting_Confidence.jpg';
 const angerImage = 'res/images/Parenting_Confidence.jpg';
+const stressImage = postDepSocialImage;
 
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
@@ -1218,7 +1262,7 @@ export const PhysicalAssessment =  makeAssessment(11,'Physical Injury Resilience
 export const SleepAssessment =  makeAssessment(12,'Sleep', 0, 1.5, 10, SleepList, 0, sleepAssessmentQs,sleepImage);
 
 export const AngerAssessment = makeAssessment(13,'Anger', 0, 32.5, 56, angerScoringList, 0, angerQuestions,panicImage);
-
+export const StressAssessment = makeAssessment(14,'Stress', 0, 18, 40, stressScoringList, 0, stressQuestions,stressImage);
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
   MaritalAssessment,
@@ -1232,8 +1276,15 @@ const assessmentsRaw: AssessmentInterface[] = [
   PanicAssessment,
   PhysicalAssessment,
   SleepAssessment,
-  AngerAssessment
-]
+  AngerAssessment,
+  StressAssessment
+];
+
+//TODO
+/*
+Stress
+Stigma
+*/
 
 const normalData = normalize(assessmentsRaw,assessmentListSchema);
 

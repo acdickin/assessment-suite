@@ -80,4 +80,8 @@ export namespace assessments {
       
     }
 
+    export class Stress extends Component<null, null> implements AssessmentComponentInterface{
+      
+    }
+
 }

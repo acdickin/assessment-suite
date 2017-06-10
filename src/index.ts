@@ -12,6 +12,7 @@ import Anxiety from './containers/assessments/Anxiety';
 import Physical from './containers/assessments/Physical';
 import ParentingConfidence from './containers/assessments/ParentingConfidence';
 import Anger from './containers/assessments/Anger';
+import Stress from './containers/assessments/Stress';
 
 import {createRoutes,createPlainRoutes} from './routes';
 
@@ -29,7 +30,8 @@ const assessments = {
     Anxiety,
     Physical,
     ParentingConfidence,
-    Anger
+    Anger,
+    Stress
 }
 
 export  {

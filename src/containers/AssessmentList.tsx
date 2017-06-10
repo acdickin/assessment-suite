@@ -70,7 +70,7 @@ export default class AssessmentList extends React.Component<Props, State> {
                    });
                  }
               },
-            1000);
+            300);
       
     }
   }
