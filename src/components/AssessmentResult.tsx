@@ -28,7 +28,7 @@ export default class Assessment extends React.Component<Props, State> {
    
     render() {
         const {minScore,maxScore,middleScore,highIsGood,score,result,backClick,id} = this.props;
-   
+         console.log(this.props);
 
         return (
           <div>

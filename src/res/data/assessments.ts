@@ -66,7 +66,8 @@ const defaultCalcScore = function(values: any){
             }
           }
       });
-     
+      console.log(questions);
+      console.log(total);
       return total;
     }
 
@@ -532,6 +533,23 @@ makeScoring(49,33,50,'High Stigma',
                 )
 ];
 
+const worryScoringList: ScoringInterface[] = [
+  makeScoring(23,0,39,'LOW',
+                                      `<p>Your score is in a range typically associated with a low level of worry indicating that chronic worry is probably not affecting your life.</p>`,
+                                      `<p>Although only a healthcare professional can provide an actual diagnosis of an anxiety disorder, your results suggest that you are not likely to engage in catastrophic thinking and that you can accurately evaluate the likelihood of negative events occurring in your life.</p>`
+                                      ),
+
+  makeScoring(24,40,59,'MODERATE',
+                                      `<p>Your score is in a range typically associated with a moderate level of worry indicating that worry may be causing you some level of distress.</p>`,
+                                      `<p>Although only a healthcare professional can provide an actual diagnosis, your responses suggest you may be prone to some degree of unrealistic concern about bad things happening in your life.</p>`
+                                      ),
+
+  makeScoring(25,59,80,'HIGH',
+                                      `<p>Your score is in a range typically associated with a high level of worried thinking and anxiety.</p>`,
+                                      `<p>Although only a healthcare professional can provide an actual diagnosis, worry may be causing you significant distress.</p>`
+                                      )
+];
+
 MaritalSatisfactionList.push(MaritalSatisfactionScoring0);
 MaritalSatisfactionList.push(MaritalSatisfactionScoring1);
 MaritalSatisfactionList.push(MaritalSatisfactionScoring2);
@@ -804,8 +822,40 @@ const choicesSet33: ChoicesInterface[] = [
       {title: 'Strongly agree', value: '5', score: 1}
 ];
 
+const choicesSet34: ChoicesInterface[] = [
+  {title: '1 - Not at all typical of me', value: '1', score: 1},
+  {title: '2', value: '2', score: 2},
+  {title: '3', value: '3', score: 3},
+  {title: '4', value: '4', score: 4},
+  {title: '5 - Very typical of me', value: '5', score: 5}
+];
+const choicesSet35: ChoicesInterface[] = [
+  {title: '1 - Not at all typical of me', value: '1', score: 5},
+  {title: '2', value: '2', score: 4},
+  {title: '3', value: '3', score: 3},
+  {title: '4', value: '4', score: 2},
+  {title: '5 - Very typical of me', value: '5', score: 1}
+];
 
-// (a) almost never 0 (b) rarely 2(c) in most things 10 (d) in everything 10 
+
+const worryAssessmentQs: QuestionInterface[] = [
+  makeQuestion('1','If I do not have enough time to do everything, I do not worry about it.','select',choicesSet35),
+  makeQuestion('2','My worries overwhelm me.','select',choicesSet34),
+  makeQuestion('3','I do not tend to worry about things.','select',choicesSet35),
+  makeQuestion('4','Many situations make me worry.','select',choicesSet34),
+  makeQuestion('5','I know I should not worry about things, but I just cannot help it.','select',choicesSet34),
+  makeQuestion('6','When I am under pressure I worry a lot.','select',choicesSet34),
+  makeQuestion('7','I am always worrying about something.','select',choicesSet34),
+  makeQuestion('8','I find it easy to dismiss worrisome thoughts.','select',choicesSet35),
+  makeQuestion('9','As soon as I finish one task, I start to worry about everything else I have to do.','select',choicesSet34),
+  makeQuestion('10','I never worry about anything.','select',choicesSet35),
+  makeQuestion('11','When there is nothing more I can do about a concern, I do not worry about it anymore.','select',choicesSet35),
+  makeQuestion('12','I have been a worrier all my life.','select',choicesSet34),
+  makeQuestion('13','I notice that I have been worrying about things.','select',choicesSet34),
+  makeQuestion('14','Once I start worrying, I cannot stop.','select',choicesSet34),
+  makeQuestion('15','I worry all the time.','select',choicesSet34),
+  makeQuestion('16','I worry about projects until they are all done.','select',choicesSet34),
+]
 
 const friendShipQuestions: QuestionInterface[] = [
   makeQuestion(1,'It has been easy to relate to others.','select',choicesSet2),
@@ -1340,6 +1390,7 @@ export const SleepAssessment =  makeAssessment(12,'Sleep', 0, 1.5, 10, SleepList
 export const AngerAssessment = makeAssessment(13,'Anger', 0, 32.5, 56, angerScoringList, 0, angerQuestions,panicImage);
 export const StressAssessment = makeAssessment(14,'Stress', 0, 18, 40, stressScoringList, 0, stressQuestions,stressImage);
 export const StigmaAssessment = makeAssessment(15,'Stigma', 10, 27.5, 50, stigmaScoringList, 0, stigmaQuestions,stigmaImage);
+export const WorryAssessment = makeAssessment(16,'Worry', 16, 38, 80, worryScoringList, 0, worryAssessmentQs,stigmaImage);
 
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
@@ -1356,7 +1407,8 @@ const assessmentsRaw: AssessmentInterface[] = [
   SleepAssessment,
   AngerAssessment,
   StressAssessment,
-  StigmaAssessment
+  StigmaAssessment,
+  WorryAssessment
 ];
 
 //TODO

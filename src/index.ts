@@ -14,6 +14,7 @@ import ParentingConfidence from './containers/assessments/ParentingConfidence';
 import Anger from './containers/assessments/Anger';
 import Stress from './containers/assessments/Stress';
 import Stigma from './containers/assessments/Stigma';
+import Worry from './containers/assessments/Worry';
 
 import {createRoutes,createPlainRoutes} from './routes';
 
@@ -33,7 +34,8 @@ const assessments = {
     ParentingConfidence,
     Anger,
     Stress,
-    Stigma
+    Stigma,
+    Worry
 }
 
 export  {
