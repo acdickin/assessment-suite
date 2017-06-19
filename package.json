@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,11 +12,13 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "d3": "^4.7.3",
+    "material-ui": "^0.18.0",
+    "normalizr": "^3.2.0",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
-    "react-tap-event-plugin": "^2.0.1",
-    "babel-polyfill": "^6.20.0",
-    "normalizr": "^3.2.0"
+    "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
     "@types/enzyme": "^2.7.7",
@@ -26,23 +28,22 @@
     "@types/react-dom": "^15.5.0",
     "@types/systemjs": "^0.20.2",
     "awesome-typescript-loader": "^3.1.3",
+    "babel-polyfill": "^6.23.0",
+    "d3": "^4.7.3",
+    "file-loader": "^0.11.1",
     "jest": "^19.0.2",
+    "local-t2-linear-gage": "0.0.5",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0",
     "ts-jest": "^19.0.7",
     "typescript": "^2.2.2",
+    "url-loader": "^0.5.8",
     "webpack": "^2.6.0",
     "webpack-dev-server": "^2.4.5",
     "webpack-path-rewriter": "^1.1.4"
   },
-  "dependencies": {
-    "d3": "^4.9.1",
-    "file-loader": "^0.11.1",
-    "local-t2-linear-gage": "0.0.5",
-    "material-ui": "^0.18.1",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "react-router": "^3.0.2",
-    "redux": "^3.6.0",
-    "url-loader": "^0.5.8"
-  },
+  "dependencies": {},
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/specs/__mocks__/fileMock.ts",
