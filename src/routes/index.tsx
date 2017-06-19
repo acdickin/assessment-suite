@@ -1,4 +1,4 @@
-import {syncRoute,asynRouteMaker} from '../lib/helper';
+import {asynRouteMaker} from '../lib/helper';
 import {Route} from 'react-router';
 import AssessmentResult from '../containers/AssessmentResult';
 import AssessmentPage from '../containers/AssessmentPage';
@@ -62,9 +62,10 @@ const initConfig = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentI
 };
 
 export const createPlainRoutes = (config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): {AssessmentPageRoute: any, AssessmentsRoute: any} => {
+  const asyncRoute = asynRouteMaker({});
   const {AssessmentList, AssessmentPage} = initConfig(config,cb);
-  const AssessmentPageRoute = syncRoute('assessment/:id',AssessmentPage);
-  const AssessmentsRoute = syncRoute('assessments',AssessmentList);
+  const AssessmentPageRoute = asyncRoute('assessment/:id',System.import('../containers/AssessmentPage'));
+  const AssessmentsRoute = asyncRoute('assessments',System.import('../containers/AssessmentList'));
   return  {
     AssessmentPageRoute,
     AssessmentsRoute
