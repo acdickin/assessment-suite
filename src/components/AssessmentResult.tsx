@@ -27,9 +27,11 @@ export default class Assessment extends React.Component<Props, State> {
      // window.scrollTo(0,0);
      const {minScore,maxScore,middleScore,highIsGood,score,result,backClick,id} = this.props;
      
-     import('local-t2-linear-gage').then((LinearGauge) => {
-       this.setState({gage: <LinearGauge.default id={id} middleScore={middleScore} highIsGood={highIsGood} minScore={minScore} maxScore={maxScore} result={score} />});
+     (require as any).ensure([], (require) => {
+         const LinearGauge = require('local-t2-linear-gage');
+         this.setState({gage: <LinearGauge.default id={id} middleScore={middleScore} highIsGood={highIsGood} minScore={minScore} maxScore={maxScore} result={score} />});
      });
+
      
     }
 
