@@ -6,6 +6,8 @@ interface AssessmentComponentInterface{
   values?: any;
 }
 
+
+
 export interface AssessmentInterface{
     id: number|string;
     image: string;
@@ -28,67 +30,72 @@ export namespace assessments {
      *~   import * as yourMod from 'yourModule';
      *~   yourMod.assessments.FriendShip;
      */
-    export class FriendShip extends Component<null, null> implements AssessmentComponentInterface{
+    class AssessmentBase extends Component<null, null> implements AssessmentComponentInterface{
+      onSubmit(error: any, data: any): void; 
+      values: any;
+    }
+
+    export class FriendShip extends AssessmentBase{
 
     }
 
-    export class MaritalSatisfaction extends Component<null, null> implements AssessmentComponentInterface{
+    export class MaritalSatisfaction extends AssessmentBase{
       
     }
 
-    export class PostDeploymentSocialSupport extends Component<null, null> implements AssessmentComponentInterface{
+    export class PostDeploymentSocialSupport extends AssessmentBase{
       
     }
 
-    export class SocialSupport extends Component<null, null> implements AssessmentComponentInterface{
+    export class SocialSupport extends AssessmentBase{
       
     }
 
-    export class Sleep extends Component<null, null> implements AssessmentComponentInterface{
+    export class Sleep extends AssessmentBase{
       
     }
 
-    export class Panic extends Component<null, null> implements AssessmentComponentInterface{
+    export class Panic extends AssessmentBase{
       
     }
 
-    export class PostTraumaticStress extends Component<null, null> implements AssessmentComponentInterface{
+    export class PostTraumaticStress extends AssessmentBase{
       
     }
 
-    export class Depression extends Component<null, null> implements AssessmentComponentInterface{
+    export class Depression extends AssessmentBase{
       
     }
 
-    export class AlcoholDrugs extends Component<null, null> implements AssessmentComponentInterface{
+    export class AlcoholDrugs extends AssessmentBase{
       
     }
 
-    export class Anxiety extends Component<null, null> implements AssessmentComponentInterface{
+    export class Anxiety extends AssessmentBase{
       
     }
 
-    export class Physical extends Component<null, null> implements AssessmentComponentInterface{
+    export class Physical extends AssessmentBase{
       
     }
 
-    export class ParentingConfidence extends Component<null, null> implements AssessmentComponentInterface{
+    export class ParentingConfidence extends AssessmentBase{
       
     }
 
-    export class Anger extends Component<null, null> implements AssessmentComponentInterface{
+    export class Anger extends AssessmentBase{
       
     }
 
-    export class Stress extends Component<null, null> implements AssessmentComponentInterface{
+    export class Stress extends AssessmentBase{
       
     }
 
-    export class Stigma extends Component<null, null> implements AssessmentComponentInterface{
+    export class Stigma extends AssessmentBase{
       
     }
 
-    export class Worry extends Component<null, null> implements AssessmentComponentInterface{
+    export class Worry extends AssessmentBase {
       
     }
 }

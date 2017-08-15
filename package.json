@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -14,8 +14,9 @@
   "peerDependencies": {
     "babel-polyfill": "^6.23.0",
     "d3": "^4.7.3",
+    "local-t2-linear-gage": "v0.0.5",
     "material-ui": "^0.18.0",
-    "normalizr": "^3.2.0",
+    "normalizr": "^3.2.3",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-tap-event-plugin": "^2.0.1"
