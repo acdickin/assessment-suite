@@ -1,17 +1,18 @@
 import {Component} from 'React';
 
 //import {AssessmentInterface} from './src/res/data/assessments';
-interface AssessmentComponentInterface{
+
+interface AssessmentProps { 
   onSubmit?(error: any, data: any): void;
+  onCancel?(error: any,assessment: AssessmentInterface): void;
   values?: any;
 }
-
-
 
 export interface AssessmentInterface{
     id: number|string;
     image: string;
 }
+
 interface AssessmentRoutesConfig{
   ids: number[]|string[];
   itemClick(assessment: AssessmentInterface): void;
@@ -30,9 +31,8 @@ export namespace assessments {
      *~   import * as yourMod from 'yourModule';
      *~   yourMod.assessments.FriendShip;
      */
-    class AssessmentBase extends Component<null, null> implements AssessmentComponentInterface{
-      onSubmit(error: any, data: any): void; 
-      values: any;
+    class AssessmentBase extends Component<AssessmentProps, null>{
+
     }
 
     export class FriendShip extends AssessmentBase{
