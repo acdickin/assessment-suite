@@ -98,4 +98,16 @@ export namespace assessments {
     export class Worry extends AssessmentBase {
       
     }
+
+    export class Resilience extends AssessmentBase {
+      
+    }
+    
+    export class Forgiveness extends AssessmentBase {
+      
+    }
+
+    export class Gratitude extends AssessmentBase {
+      
+    }
 }
