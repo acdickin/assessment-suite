@@ -21,6 +21,8 @@ interface AssessmentRoutesConfig{
   onSubmit?(error: any, data: any, assessment: AssessmentInterface): void;
 }
 
+export const AssessmentsList: JSX.Element;
+
 export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): JSX.Element;
 export function createPlainRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): {AssessmentPageRoute: any, AssessmentsRoute: any};
 export namespace assessments {

@@ -8,7 +8,7 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin';
 import {Router, hashHistory, Route} from 'react-router';
 import {syncRoute} from '../lib/helper';
 import {AssessmentInterface} from '../res/data/assessments';
-
+import { HashRouter } from 'react-router-dom';
 
 import {
   assessments,
@@ -68,9 +68,15 @@ injectTapEventPlugin();
 
 const render = () => {
     ReactDOM.render(
-          <div>
-            <Router routes={siteRoutes} history={hashHistory} />
-          </div>,
+
+            <Theme>
+              <HashRouter>
+                <PageContainer>
+                  <Home />
+                </PageContainer>
+              </HashRouter>
+            </Theme>
+          ,
         document.getElementById("spaApp")
     );
 }

@@ -1,7 +1,8 @@
 import * as React from "react";
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import {
+  AssessmentsList,
   assessments,
   createRoutes
 } from '../../';
@@ -45,8 +46,13 @@ export default class Home extends React.Component<Props, State> {
 
     render() {
         return (<div>
-                  <h1>Home Page</h1>
-                  <Link to="/main/assessments">Assessments List</Link>
+
+                  <AssessmentsList>
+                    <assessments.Stress />
+                    <assessments.PostTraumaticStress />
+                    <assessments.Depression />
+                    <assessments.Anxiety />
+                  </AssessmentsList>
                       {/*<FriendShip />
                       <MaritalSatisfaction />
                       <PostDeploymentSocialSupport />

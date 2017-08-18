@@ -54,13 +54,13 @@ class AssessmentAdapter extends React.Component<{testyTestTitle: (msg:string) =>
 interface MyProps {
   
   appBarTitle?(msg: string): any;
-  categories: any[];
-  pathOnTouchTap(path:string): any;
-  appConfig: any;
-  leftIcon: any;
-  flashMessage: {message: string, open: boolean};
-  appNameShort: string;
-  appNameLong: string;
+  // categories: any[];
+  // pathOnTouchTap(path:string): any;
+  // appConfig: any;
+  // leftIcon: any;
+  // flashMessage: {message: string, open: boolean};
+  // appNameShort: string;
+  // appNameLong: string;
 }
 
 interface MyState {
@@ -131,7 +131,7 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
 
 
   render () {
-    const {categories,pathOnTouchTap,appConfig,leftIcon,flashMessage,appNameShort,appNameLong} = this.props;
+   // const {categories,pathOnTouchTap,leftIcon,flashMessage} = this.props;
 
     //const MainContent = !this.state.showAltContent ? React.cloneElement((this.props as any).children, { restoreContent: this.restoreContent, replaceContent: this.replaceContent, appBarTitle: this.handleTitle, categories, pathOnTouchTap, appConfig: appConfig }) : this.state.altContent;
     return (
@@ -141,7 +141,7 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
             {!this.state.showAltContent && <AppBar
                         title={this.state.title}
                         titleStyle={{textAlign: 'center'}}
-                        iconElementLeft={leftIcon}
+                        
                     
                          />}
                 <div style={{'padding': '5px'} as any}>
@@ -151,7 +151,7 @@ export default class AppBarPage extends React.Component<MyProps, MyState>{
                 
                   </div>
                 </div>
-                <AppSnackBar {...flashMessage} />
+                {/* <AppSnackBar {...flashMessage} /> */}
         </div>
     );
   }
