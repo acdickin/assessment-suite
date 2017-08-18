@@ -1213,6 +1213,30 @@ const choicesSet39: ChoicesInterface[] = [
       {title: 'Strongly Agree', value: '7', score: 1}
 ];
 
+const choicesSet40: ChoicesInterface[] = [
+      {title: 'Strongly disagree', value: '1', score: 0},
+      {title: 'Disagree', value: '2', score: 1},
+      {title: 'Neutral', value: '3', score: 2},
+      {title: 'Agree', value: '4', score: 3},
+      {title: 'Strongly Agree', value: '5', score: 4},
+];
+
+const choicesSet41: ChoicesInterface[] = [
+      {title: 'Strongly disagree', value: '1', score: 4},
+      {title: 'Disagree', value: '2', score: 3},
+      {title: 'Neutral', value: '3', score: 2},
+      {title: 'Agree', value: '4', score: 1},
+      {title: 'Strongly Agree', value: '5', score: 0},
+];
+
+const choicesSet42: ChoicesInterface[] = [
+      {title: 'Strongly disagree', value: '1', score: 0},
+      {title: 'Disagree', value: '2', score: 0},
+      {title: 'Neutral', value: '3', score: 0},
+      {title: 'Agree', value: '4', score: 0},
+      {title: 'Strongly Agree', value: '5', score: 0}
+];
+
 const worryAssessmentQs: QuestionInterface[] = [
   makeQuestion('1','If I do not have enough time to do everything, I do not worry about it.','select',choicesSet35),
   makeQuestion('2','My worries overwhelm me.','select',choicesSet34),
@@ -1393,7 +1417,6 @@ const gratitudeAssessmentQs: QuestionInterface[] = [
   makeQuestion(5,'As I get older, I find myself more able to appreciate the people, events, and situations that have been part of my life history.','select',choicesSet38),
   makeQuestion(6,'Long amounts of time can go by before I feel grateful to something or someone.','select',choicesSet39),
 ];
-
 
 const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
 const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
@@ -1797,7 +1820,31 @@ const sleepAssessmentQs: QuestionInterface[] = [
   makeQuestion('10','I\'ve fallen asleep driving.','select',choicesSet28),
 ]
 
+const generosityAssessmentQs: QuestionInterface[] = [
+  makeQuestion('1','When one of my loved ones needs my attention, I really try to slow down and give them the time and help they need.','select',choicesSet12),
+  makeQuestion('2','I am known by family and friends as someone who makes time to pay attention to others\' problems.','select',choicesSet12),
+  makeQuestion('3','I\'m the kind of person who is willing to go the "extra mile" to help take care of my friends, relatives, and acquaintances.','select',choicesSet12),
+  makeQuestion('4','When friends or family members experience something upsetting or discouraging, I make a special point of being kind to them.','select',choicesSet12),
+  makeQuestion('5','When it comes to my personal relationships with others, I am a very generous person.','select',choicesSet12),
+  makeQuestion('6','It makes me very happy to give to other people in ways that meet their needs.','select',choicesSet12),
+  makeQuestion('7','It is just as important to me that other people around me are happy and thriving as it is that I am happy and thriving.','select',choicesSet12),
+  makeQuestion('8','My decisions are often based on concern for the welfare of others.','select',choicesSet12),
+  makeQuestion('9','I am usually willing to risk my own feelings being hurt in the process if I stand a chance of helping someone else I need.','select',choicesSet12),
+  makeQuestion('10','I make it a point to let my friends and family know how much I love and appreciate them.','select',choicesSet12)
+];
 
+const optimismAssessmentQs: QuestionInterface[] = [
+  makeQuestion('1','In uncertain times, I usually expect the best.','select',choicesSet40),
+  makeQuestion('2','It\'s easy for me to relax.','select',choicesSet42),
+  makeQuestion('3','If something can go wrong for me it will.','select',choicesSet41),
+  makeQuestion('4','I am always optimistic about my future','select',choicesSet40),
+  makeQuestion('5','I enjoy my friends a lot.','select',choicesSet42),
+  makeQuestion('6','It\'s important for me to keep busy.','select',choicesSet42),
+  makeQuestion('7','I hardly ever expect things to go my way.','select',choicesSet41),
+  makeQuestion('8','I don\'t get upset too easily.','select',choicesSet42),
+  makeQuestion('9','I rarely count on good things happening to me.','select',choicesSet41),
+  makeQuestion('10','Overall, I expect more good things to happen to me than bad.','select',choicesSet40)
+];
 
 /////////////////////////////////////PORT of Drugs Assessments END
 
@@ -1827,11 +1874,11 @@ export const AngerAssessment = makeAssessment(13,'Anger', 0, 32.5, 56, AngerList
 export const StressAssessment = makeAssessment(14,'Stress', 0, 18, 40, StressList, 0, stressQuestions,stressImage);
 export const StigmaAssessment = makeAssessment(15,'Stigma', 10, 27.5, 50, StigmaList, 0, stigmaQuestions,stigmaImage);
 export const WorryAssessment = makeAssessment(16,'Worry', 16, 38, 80, WorryList, 0, worryAssessmentQs,stigmaImage);
-export const Resilience =  makeAssessment(17,'Resilience', 0, 60, 88, PhysicalInjuryResilienceList, 1, resilienceAssessmentQs,physInjuryImage);
-export const Forgiveness =  makeAssessment(18,'Forgiveness', 0, 70, 126, ForgivenessList, 1, forgivenessQuestions,postDepSocialImage);
-
-export const Gratitude =  makeAssessment(19,'Gratitude', 0, 38, 42, GratitudeList, 1, gratitudeAssessmentQs,socialImage);
-
+export const ResilienceAssessment =  makeAssessment(17,'Resilience', 0, 60, 88, PhysicalInjuryResilienceList, 1, resilienceAssessmentQs,physInjuryImage);
+export const ForgivenessAssessment =  makeAssessment(18,'Forgiveness', 0, 70, 126, ForgivenessList, 1, forgivenessQuestions,postDepSocialImage);
+export const GratitudeAssessment =  makeAssessment(19,'Gratitude', 0, 38, 42, GratitudeList, 1, gratitudeAssessmentQs,socialImage);
+export const GenerosityAssessment =  makeAssessment(20,'Generosity', 0, 51, 60, GenerosityList, 1, generosityAssessmentQs,friendsImage);
+export const OptimismAssessment =  makeAssessment(21,'Optimism', 0, 16, 24, OptimismList, 1, optimismAssessmentQs, friendsImage);
 
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
@@ -1850,9 +1897,11 @@ const assessmentsRaw: AssessmentInterface[] = [
   StressAssessment,
   StigmaAssessment,
   WorryAssessment,
-  Resilience,
-  Forgiveness,
-  Gratitude
+  ResilienceAssessment,
+  ForgivenessAssessment,
+  GratitudeAssessment,
+  GenerosityAssessment,
+  OptimismAssessment
 ];
 
 //TODO

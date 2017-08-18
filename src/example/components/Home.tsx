@@ -60,8 +60,9 @@ export default class Home extends React.Component<Props, State> {
                       <Physical />
                       <ParentingConfidence />
                       <Anger />
-                      <assessments.Stress /> */}
-                      <assessments.Worry />
+                      <assessments.Stress />
+                      <assessments.Worry /> 
+                      <assessments.Optimism /> */}
                 </div>
                   );
     }

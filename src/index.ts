@@ -16,6 +16,12 @@ import Stress from './containers/assessments/Stress';
 import Stigma from './containers/assessments/Stigma';
 import Worry from './containers/assessments/Worry';
 
+import Resilience from './containers/assessments/Resilience';
+import Forgiveness from './containers/assessments/Forgiveness';
+import Gratitude from './containers/assessments/Gratitude';
+import Generosity from './containers/assessments/Generosity';
+import Optimism from './containers/assessments/Optimism';
+
 import {createRoutes,createPlainRoutes} from './routes';
 
 
@@ -35,7 +41,12 @@ const assessments = {
     Anger,
     Stress,
     Stigma,
-    Worry
+    Worry,
+    Resilience,
+    Forgiveness,
+    Gratitude,
+    Generosity,
+    Optimism
 }
 
 export  {

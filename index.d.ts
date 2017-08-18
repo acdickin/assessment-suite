@@ -110,4 +110,13 @@ export namespace assessments {
     export class Gratitude extends AssessmentBase {
       
     }
+
+    export class Generosity extends AssessmentBase {
+      
+    }
+
+    export class Optimism extends AssessmentBase {
+      
+    }
+
 }
