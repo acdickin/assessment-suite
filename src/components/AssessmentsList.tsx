@@ -1,25 +1,25 @@
 import * as React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import {GridList, GridTile} from 'material-ui/GridList';
 import {Tab} from 'material-ui/Tabs';
 import {assessments, AssessmentInterface} from '../res/data/assessments';
 
 export interface Props {
   onCancel?: (err,assessment:{id:number|string, title: string}) => void;
-  basePath?: string;
   children?: JSX.Element[] | JSX.Element;
+  history: {push: any};
+  match: {url: any}
 }
 
 export interface State {
-  mode?: any;
   selectedId: number;
 }
 
 
-export default class AssessmentsList extends React.Component<Props,any> {
-  static defaultProps: Partial<Props> = {
-    basePath: ''
-  }
+class AssessmentsList extends React.Component<Props,any> {
+  // static defaultProps: Partial<Props> = {
+  //   basePath: '/'
+  // }
   constructor(props){
     super(props);
     this.state = {
@@ -36,43 +36,64 @@ export default class AssessmentsList extends React.Component<Props,any> {
   }
 
   handleItemClick = (assessment: AssessmentInterface) => {
-    this.setState({
-      selectedId: assessment.id,
-      mode: 'item'
-    });
+    const {history,match} = this.props;
+    history.push(match.url + '/' + assessment.id);
+    // this.setState({
+    //   selectedId: assessment.id,
+    //   mode: 'item'
+    // });
   }
 
   handleItemCancel = (err: any, assessment: AssessmentInterface) => {
-    this.setState({
-      selectedId: null,
-      mode: 'list'
-    });
+    const {history,match} = this.props;
+    console.log(this.props);
+    history.push(match.url);
+    // this.setState({
+    //   selectedId: null,
+    //   mode: 'list'
+    // });
   }
-      // <div>
-      //   <Route exact path={basePath} mode={'image'} components={this.props.children} />
-      //   <Route exact path={basePath + '/:id'} components={this.props.children} />
-      // </div>
-  render() {
-    const {basePath} = this.props;
+
+  renderList = (rProps) => {
+
     const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
 
-
     const content = (children as any).map(item => {
-        return React.cloneElement(item,{mode: this.state.mode,onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: this.state.selectedId})
+        return React.cloneElement(item,{mode: 'list',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: null})
     });
-    console.log(this.state);
-    if(this.state.mode !== 'list'){
-      return <div>{content}</div>;
-    }
 
+    return <GridList
+                      cellHeight={180}
+                    >    
+                      {content}
 
-    return (
-    <GridList
-      cellHeight={180}
-    >    
-      {content}
-
-    </GridList>
-    );
+                    </GridList>
   }
+
+  renderAssessment = (rProps) => {
+    const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
+    // console.log(rProps.match.params.id);
+    const content = (children as any).map(item => {
+        return React.cloneElement(item,{mode: 'default',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
+    });
+
+    return <div>{content}</div>
+  }
+
+
+
+  render(){
+
+    return <div>
+ 
+      <Switch>
+        <Route path={'*/:id(\\d+)'} render={this.renderAssessment} />
+        <Route render={this.renderList} />
+      </Switch>
+
+    </div>
+  }
+
 }
+
+export default withRouter(AssessmentsList);
