@@ -46,7 +46,7 @@ class AssessmentsList extends React.Component<Props,any> {
 
   handleItemCancel = (err: any, assessment: AssessmentInterface) => {
     const {history,match} = this.props;
-    console.log(this.props);
+
     history.push(match.url);
     // this.setState({
     //   selectedId: null,
@@ -72,7 +72,7 @@ class AssessmentsList extends React.Component<Props,any> {
 
   renderAssessment = (rProps) => {
     const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
-    // console.log(rProps.match.params.id);
+
     const content = (children as any).map(item => {
         return React.cloneElement(item,{mode: 'default',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
     });

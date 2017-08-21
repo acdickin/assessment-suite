@@ -68,7 +68,7 @@ export default class Assessment extends React.Component<Props, State> {
   handleChange = (values) => {
     const {item} = this.props;
     let newQuestions = this.props.item.calcQuestions(values);
-    console.log(values,newQuestions);
+
     this.setState({values: values});
     if(newQuestions){
       this.setState({questions: this.props.item.calcQuestions(values)});
@@ -113,7 +113,7 @@ export default class Assessment extends React.Component<Props, State> {
     const {item,onSubmit} = this.props;
      let content;
      const image = require('../' + item.image);
-     console.log(this.props);
+
      if(!this.shouldDisplay()){
        return null;
      } else {

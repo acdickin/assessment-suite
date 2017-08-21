@@ -12,13 +12,6 @@ export interface State {
 
 
 export default class Home extends React.Component<Props, State> {
-    handleCancel = (error: any, assessment: any) => {
-          alert("you clicked cancel");
-    }
-
-    handleSubmit = (error: any, assessment: any) => {
-          alert("you clicked SUBMIT");
-    }
 
     render() {
         return (<div>
