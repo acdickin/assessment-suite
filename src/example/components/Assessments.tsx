@@ -40,7 +40,7 @@ export default class Assessments extends React.Component<Props, State> {
     render() {
         return (<div>
 
-                  <AssessmentsList>
+                  <AssessmentsList cols={2}>
                     <assessments.Stress />
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />

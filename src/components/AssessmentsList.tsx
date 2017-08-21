@@ -9,6 +9,7 @@ export interface Props {
   children?: JSX.Element[] | JSX.Element;
   history: {push: any};
   match: {url: any}
+  cols?: number;
 }
 
 export interface State {
@@ -17,9 +18,9 @@ export interface State {
 
 
 class AssessmentsList extends React.Component<Props,any> {
-  // static defaultProps: Partial<Props> = {
-  //   basePath: '/'
-  // }
+  static defaultProps: Partial<Props> = {
+    cols: 2
+  }
   constructor(props){
     super(props);
     this.state = {
@@ -63,6 +64,7 @@ class AssessmentsList extends React.Component<Props,any> {
     });
 
     return <GridList
+                      cols={this.props.cols}
                       cellHeight={180}
                     >    
                       {content}

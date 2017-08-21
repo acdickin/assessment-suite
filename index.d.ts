@@ -23,6 +23,7 @@ interface AssessmentRoutesConfig{
 
 interface AssessmentsListProps{
   onCancel?: (err,assessment:{id:number|string, title: string}) => void;
+  cols?: number;
 }
 
 export class AssessmentsList extends Component<AssessmentsListProps, null>{
