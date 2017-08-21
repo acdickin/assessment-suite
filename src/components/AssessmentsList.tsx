@@ -10,6 +10,7 @@ export interface Props {
   history: {push: any};
   match: {url: any}
   cols?: number;
+  setPageTitle?(title:string): void;
 }
 
 export interface State {
@@ -19,7 +20,8 @@ export interface State {
 
 class AssessmentsList extends React.Component<Props,any> {
   static defaultProps: Partial<Props> = {
-    cols: 2
+    cols: 2,
+    setPageTitle: (title: string) => {}
   }
   constructor(props){
     super(props);
@@ -76,7 +78,7 @@ class AssessmentsList extends React.Component<Props,any> {
     const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
 
     const content = (children as any).map((item,index) => {
-        return React.cloneElement(item,{key: index, mode: 'default',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
+        return React.cloneElement(item,{key: index, mode: 'default',setPageTitle: this.props.setPageTitle, onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
     });
 
     return <div>{content}</div>

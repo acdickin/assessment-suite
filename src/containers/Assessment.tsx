@@ -45,7 +45,9 @@ export default class Assessment extends React.Component<Props, State> {
 
   componentDidMount(){
     const {setPageTitle,item} = this.props;
-    setPageTitle(item.title);
+    if(this.shouldDisplay()){
+      setPageTitle(item.title);
+    }
   }
 
   handleSubmitData = (error:any, data: any) => {

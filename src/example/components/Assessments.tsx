@@ -38,9 +38,13 @@ export interface State {
 export default class Assessments extends React.Component<Props, State> {
 
     render() {
+        const titleTest = (title) => {
+          console.log(title);
+        }
+
         return (<div>
 
-                  <AssessmentsList cols={2}>
+                  <AssessmentsList setPageTitle={titleTest} cols={2}>
                     <assessments.Stress />
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />
