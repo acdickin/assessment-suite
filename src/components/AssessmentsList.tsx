@@ -58,9 +58,9 @@ class AssessmentsList extends React.Component<Props,any> {
   renderList = (rProps) => {
 
     const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
-
-    const content = (children as any).map(item => {
-        return React.cloneElement(item,{mode: 'list',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: null})
+    
+    const content = (children as any).map((item,index)=> {
+        return React.cloneElement(item,{key: index, mode: 'list',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: null})
     });
 
     return <GridList
@@ -75,8 +75,8 @@ class AssessmentsList extends React.Component<Props,any> {
   renderAssessment = (rProps) => {
     const children = !Array.isArray(this.props.children) ? [this.props.children] : this.props.children;
 
-    const content = (children as any).map(item => {
-        return React.cloneElement(item,{mode: 'default',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
+    const content = (children as any).map((item,index) => {
+        return React.cloneElement(item,{key: index, mode: 'default',onCancel: this.handleItemCancel,itemClick: this.handleItemClick,selectedId: parseInt(rProps.match.params.id)})
     });
 
     return <div>{content}</div>

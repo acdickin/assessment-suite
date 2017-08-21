@@ -121,19 +121,19 @@ export default class Assessment extends React.Component<Props, State> {
           content = <GridTile
                       onTouchTap={this.handleItemClick(item)}
                       title={item.title}
-                      key={"assess" + item.id}
+                      key={"assess_tile" + item.id}
                     >
                       <img src={image} />
                     </GridTile>;
        } else if (this.state.isComplete){
-         content = <AssessmentResultContainer backClick={this.handleResultBack} results={this.state.values} assessment={item} />;
+         content = <AssessmentResultContainer key={"assess_result" + item.id} backClick={this.handleResultBack} results={this.state.values} assessment={item} />;
        }else {
-         content = <AssessmentComponent questions={this.state.questions} handleChange={this.handleChange} item={item} values={this.state.values} cancel={this.handleCancel} onSubmit={this.handleSubmitData} validateData={this.handleValidateData} />;
+         content = <AssessmentComponent key={"assess_comp" + item.id} questions={this.state.questions} handleChange={this.handleChange} item={item} values={this.state.values} cancel={this.handleCancel} onSubmit={this.handleSubmitData} validateData={this.handleValidateData} />;
        }
 
 
 
-       return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>{content}</MuiThemeProvider>;
+       return content;
      }
 
   }

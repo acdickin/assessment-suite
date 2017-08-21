@@ -1,6 +1,6 @@
 {
   "name": "local-t2-assessment-suite",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -49,7 +49,9 @@
     "webpack-dev-server": "^2.4.5",
     "webpack-path-rewriter": "^1.1.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "material-ui": "0.18.7"
+  },
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/specs/__mocks__/fileMock.ts",
