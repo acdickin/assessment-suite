@@ -21,7 +21,13 @@ interface AssessmentRoutesConfig{
   onSubmit?(error: any, data: any, assessment: AssessmentInterface): void;
 }
 
-export const AssessmentsList: JSX.Element;
+interface AssessmentsListProps{
+  onCancel?: (err,assessment:{id:number|string, title: string}) => void;
+}
+
+export class AssessmentsList extends Component<AssessmentsListProps, null>{
+
+}
 
 export function createRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): JSX.Element;
 export function createPlainRoutes(config: AssessmentRoutesConfig,cb?: (assessment: AssessmentInterface) => AssessmentInterface): {AssessmentPageRoute: any, AssessmentsRoute: any};
