@@ -22,7 +22,7 @@ interface AssessmentRoutesConfig{
 }
 
 interface AssessmentsListProps{
-  onCancel?: (err,assessment:{id:number|string, title: string}) => void;
+  onCancel: (err,assessment:{id:number|string, title: string}) => void;
   cols?: number;
   setPageTitle?(title:string): void;
 }

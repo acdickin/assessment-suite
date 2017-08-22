@@ -5,7 +5,7 @@ import {Tab} from 'material-ui/Tabs';
 import {assessments, AssessmentInterface} from '../res/data/assessments';
 
 export interface Props {
-  onCancel?: (err,assessment:{id:number|string, title: string}) => void;
+  onCancel: (err,assessment:{id:number|string, title: string}) => void;
   children?: JSX.Element[] | JSX.Element;
   history: {push: any};
   match: {url: any}
@@ -48,13 +48,8 @@ class AssessmentsList extends React.Component<Props,any> {
   }
 
   handleItemCancel = (err: any, assessment: AssessmentInterface) => {
-    const {history,match} = this.props;
-
-    history.push(match.url);
-    // this.setState({
-    //   selectedId: null,
-    //   mode: 'list'
-    // });
+    const {onCancel} = this.props;
+    onCancel(null,assessment);
   }
 
   renderList = (rProps) => {

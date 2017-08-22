@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from 'react-router-dom';
+import { Link , withRouter } from 'react-router-dom';
 
 import {
   AssessmentsList,
@@ -27,7 +27,7 @@ const {
 
 
 export interface Props { 
-
+  history: {push: (path: string) => any}
 }
 
 export interface State { 
@@ -35,16 +35,18 @@ export interface State {
 }
 
 
-export default class Assessments extends React.Component<Props, State> {
+class Assessments extends React.Component<Props, State> {
 
     render() {
         const titleTest = (title) => {
           console.log(title);
         }
-
+        const handleCancel = (err,assessment) => {
+          this.props.history.push('/assessments');
+        }
         return (<div>
 
-                  <AssessmentsList setPageTitle={titleTest} cols={2}>
+                  <AssessmentsList onCancel={handleCancel} setPageTitle={titleTest} cols={2}>
                     <assessments.Stress />
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />
@@ -70,3 +72,5 @@ export default class Assessments extends React.Component<Props, State> {
                   );
     }
 }
+
+export default withRouter(Assessments);

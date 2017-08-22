@@ -24,7 +24,7 @@ export default class Select extends React.Component<Props, State>{
               <SelectField 
                   hintText={'Select One'} 
                   value={value}
-                  fullWidth={true}
+                  fullWidth={false}
                   onChange={handleChange}
                  // ref={(input) => { (this as any).textInput = input; }}
                   errorText={error}>
