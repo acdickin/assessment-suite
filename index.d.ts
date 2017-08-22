@@ -11,6 +11,7 @@ interface AssessmentProps {
 export interface AssessmentInterface{
     id: number|string;
     image: string;
+    title: string;
 }
 
 interface AssessmentRoutesConfig{
@@ -22,9 +23,10 @@ interface AssessmentRoutesConfig{
 }
 
 interface AssessmentsListProps{
-  onCancel: (err,assessment:{id:number|string, title: string}) => void;
+  onCancel: (err,assessment:AssessmentInterface) => void;
   cols?: number;
   setPageTitle?(title:string): void;
+  onAssessmentMounted?(assessment:AssessmentInterface):void;
 }
 
 export class AssessmentsList extends Component<AssessmentsListProps, null>{

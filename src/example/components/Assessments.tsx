@@ -38,15 +38,15 @@ export interface State {
 class Assessments extends React.Component<Props, State> {
 
     render() {
-        const titleTest = (title) => {
-          console.log(title);
+        const handleAssessmentLoaded = (assessment) => {
+          console.log(assessment.title);
         }
         const handleCancel = (err,assessment) => {
           this.props.history.push('/assessments');
         }
         return (<div>
 
-                  <AssessmentsList onCancel={handleCancel} setPageTitle={titleTest} cols={2}>
+                  <AssessmentsList onCancel={handleCancel} onAssessmentMounted={handleAssessmentLoaded} cols={2}>
                     <assessments.Stress />
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />

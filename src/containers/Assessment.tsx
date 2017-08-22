@@ -17,6 +17,7 @@ export interface Props {
   mode?: string;
   itemClick?: (assessment: AssessmentInterface) => void;
   selectedId?: number;
+  onAssessmentMounted?(assessment: AssessmentInterface): void;
 }
 
 export interface State { 
@@ -32,7 +33,8 @@ export default class Assessment extends React.Component<Props, State> {
     onSubmit: (error: any, data: any,assessment: AssessmentInterface) => {},
     mode: 'default',
     selectedId: null,
-    itemClick: (assessment: AssessmentInterface) => {}
+    itemClick: (assessment: AssessmentInterface) => {},
+    onAssessmentMounted: (assessment: AssessmentInterface) => {}
   }
   constructor(props){
     super(props);
@@ -44,9 +46,10 @@ export default class Assessment extends React.Component<Props, State> {
   }
 
   componentDidMount(){
-    const {setPageTitle,item} = this.props;
+    const {setPageTitle,onAssessmentMounted,item} = this.props;
     if(this.shouldDisplay()){
       setPageTitle(item.title);
+      onAssessmentMounted(item);
     }
   }
 
