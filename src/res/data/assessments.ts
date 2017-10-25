@@ -1417,6 +1417,35 @@ const gratitudeAssessmentQs: QuestionInterface[] = [
   makeQuestion(5,'As I get older, I find myself more able to appreciate the people, events, and situations that have been part of my life history.','select',choicesSet38),
   makeQuestion(6,'Long amounts of time can go by before I feel grateful to something or someone.','select',choicesSet39),
 ];
+//choiceSet?
+const hopeAssessmentQs: QuestionInterface[] =[
+  makeQuestion(1,'I energetically pursue my goals.','select',choicesSet),
+  makeQuestion(2,'I can think of many ways to get out of a jam.','select',choicesSet),
+  makeQuestion(3,'My past experiences have prepared me well for my future.','select',choicesSet),
+  makeQuestion(4,'There are lots of ways around any problem.','select',choicesSet),
+  makeQuestion(5,'I\'ve been pretty successful in life.','select',choicesSet),
+  makeQuestion(6,'I can think of many ways to get the things in life that are important to me.','select',choicesSet),
+  makeQuestion(7,'I meet the goals that I set for myself.','select',choicesSet),
+  makeQuestion(8,' Even when others get discouraged, I know I can find a way to solve the problem.','select',choicesSet),
+]
+
+const  spiritualAssessmentQs: QuestionInterface[] =[
+  makeQuestion(1,'Looked for a stronger connection with God.','select',choicesSet),
+  makeQuestion(2,'Sought God’s love and care.','select',choicesSet),
+  makeQuestion(3,'Sought help from God in letting go of my anger.','select',choicesSet),
+  makeQuestion(4,'Tried to put my plans into action together with God.','select',choicesSet),
+  makeQuestion(5,'Tried to see how God might be trying to strengthen me in this situation.','select',choicesSet),
+  makeQuestion(6,'Asked forgiveness for my sins.','select',choicesSet),
+  makeQuestion(7,'Focused on religion to stop worrying about my problems.','select',choicesSet),
+  makeQuestion(8,'Wondered whether God had abandoned me.','select',choicesSet),
+  makeQuestion(9,'Felt punished by God for my lack of devotion.','select',choicesSet),
+  makeQuestion(10,'Wondered what I did for God to punish me.','select',choicesSet),
+  makeQuestion(11,'Questioned God’s love for me.','select',choicesSet),
+  makeQuestion(12,'Wondered whether my church had abandoned me.','select',choicesSet),
+  makeQuestion(13,'Decided the devil made this happen.','select',choicesSet),
+  makeQuestion(14,'Questioned the power of God.','select',choicesSet),
+]
+
 
 const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
 const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
@@ -1434,6 +1463,8 @@ const parentingConfidenceImage = 'res/images/Parenting_Confidence.jpg';
 const angerImage = panicImage;
 const stressImage = postDepSocialImage;
 const stigmaImage = ptsImage;
+const spiritualImage='res/images/Spirituality.png';
+const hopeImage ='res/images/hope.png';
 
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
@@ -1879,6 +1910,8 @@ export const ForgivenessAssessment =  makeAssessment(18,'Forgiveness', 0, 70, 12
 export const GratitudeAssessment =  makeAssessment(19,'Gratitude', 0, 38, 42, GratitudeList, 1, gratitudeAssessmentQs,socialImage);
 export const GenerosityAssessment =  makeAssessment(20,'Generosity', 0, 51, 60, GenerosityList, 1, generosityAssessmentQs,friendsImage);
 export const OptimismAssessment =  makeAssessment(21,'Optimism', 0, 16, 24, OptimismList, 1, optimismAssessmentQs, friendsImage);
+
+export const SpiritualityAssessments =makeAssessment(22,'Spirituality',0,35,45 SpiritualityList,0,SpiritualityAssessmentsQs, )
 
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
