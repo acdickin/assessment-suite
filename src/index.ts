@@ -22,6 +22,9 @@ import Generosity from './containers/assessments/Generosity';
 import Optimism from './containers/assessments/Optimism';
 import AssessmentsList from './components/AssessmentsList';
 
+import Hope from './containers/assessments/Hope';
+import Spirituality from './containers/assessments/Spirituality';
+
 import {createRoutes,createPlainRoutes} from './routes';
 
 
@@ -46,7 +49,9 @@ const assessments = {
     Forgiveness,
     Gratitude,
     Generosity,
-    Optimism
+    Optimism,
+     Spirituality,
+    Hope
 }
 
 export  {

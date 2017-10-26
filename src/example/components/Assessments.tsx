@@ -21,8 +21,9 @@ const {
     ParentingConfidence,
     Anger,
     Stress,
-    Stigma,
-    Worry
+    Worry,
+    Spirituality,
+    Hope
 } = assessments;
 
 
@@ -51,6 +52,8 @@ class Assessments extends React.Component<Props, State> {
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />
                     <assessments.Anxiety />
+                    <assessments.Spirituality/>
+                    <assessments.Hope/>
                   </AssessmentsList>
                       {/*<FriendShip />
                       <MaritalSatisfaction />
