@@ -562,21 +562,21 @@ const SleepScoring60 = makeScoring(61,3,10,'HIGH',
 const CaregiverStressList: ScoringInterface[] = [];
 
 
-const CaregiverStressScoring61 = makeScoring(62,1,2,'LOW',
+const CaregiverStressScoring61 = makeScoring(62,2,12,'LOW',
                                     `<p>Your score is in a range typically associated with low caregiver stress.</p>  <p>Your responses suggest that you’re taking care of yourself and dealing well with the stress of care giving. </p>`,
                                     `<p>Even though you're not reporting caregiver stress, maintaining healthy habits means a lifestyle that includes stress management and finding balance. You may find helpful tools in the “Life Stress” and "Health and Wellness" topics.</p><p>You're also encouraged to check out other assessments on AfterDeployment to learn if you are having problems in other areas.  You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const CaregiverStressScoring62 = makeScoring(63,3,4,'MOD',
+const CaregiverStressScoring62 = makeScoring(63,13,24,'MOD',
                                     `<p>Your score is in a range typically associated with moderate stress.</p>  <p>Based on your responses, you’re experiencing some stress in your role as a caregiver right now, and may be feeling somewhat overwhelmed by current demands. </p>`,
                                     `<p>There are many things in the life of a caregiver that can lead to feeling stressed. Caring for others is best accomplished by those who also make time for themselves. Consider whether you need to have some relief from your role as a caregiver. If you’re feeling resentment because you can’t seem to ask others for help, or because you believe that you must do everything yourself, talk with a healthcare professional. If you don’t have a provider, you can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner on the main page.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner on the main page. Both the CALL and CHAT options are available 24-7.</p><p>Another way to explore these experiences is to check out the materials in AfterDeployment’s “Life Stress” topic. The stress of being a caregiver can be accompanied by problems in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments. </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const CaregiverStressScoring63 = makeScoring(64,5,6,'HIGH',
+const CaregiverStressScoring63 = makeScoring(64,25,36,'HIGH',
                                     `<p>Your score is in a range typically associated with high caregiver stress.</p>  <p>Based on your results, you’re experiencing a high level of distress in your role as a caregiver, which may be taking an emotional and physical toll. </p>`,
                                     `<p>There are many things in the life of a caregiver that can lead to feeling stressed. High stress can cause a variety of health problems, such as sleep difficulties, headaches, and gastrointestinal problems. Caring for others is best accomplished by those who also make time for themselves. Consider whether you need to have some relief from your role as a caregiver. If you’re feeling resentment because you can’t seem to ask others for help, or because you believe that you must do everything yourself, talk with a healthcare professional. If you don’t have a provider, you can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner on the main page.  If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner on the main page. Both the CALL and CHAT options are available 24-7.</p><p>Another way to explore these experiences is to check out the materials in AfterDeployment’s “Life Stress” topic. The stress of being a caregiver can be accompanied by problems in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments..</p> <p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href='https://www.facebook.com/afterdeployment/timeline'>AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -1254,6 +1254,26 @@ const choicesSet45: ChoicesInterface[]=[
       {title: 'Quite a bit', value: '3', score: 2},
       {title: 'A great deal', value: '4', score: 1},
 ]
+const choicesSet46: ChoicesInterface[] = [
+  {title: 'Yes', value: '1', score: 1},
+  {title: 'No', value: '2', score: 0},
+];
+const choicesSet47: ChoicesInterface[] = [
+  {title: 'Yes', value: '1', score: 0},
+  {title: 'No', value: '2', score: 1},
+];
+const choicesSet48: ChoicesInterface[] = [
+      {title: '1', value: '1', score: 1},
+      {title: '2', value: '2', score: 2},
+      {title: '3', value: '3', score: 3},
+      {title: '4', value: '4', score: 4},
+      {title: '5', value: '5', score: 5},
+      {title: '6', value: '6', score: 6},
+      {title: '7', value: '7', score: 7},
+      {title: '8', value: '8', score: 8},
+      {title: '9', value: '9', score: 9},
+      {title: '10', value: '10', score: 10},
+];
 
 const worryAssessmentQs: QuestionInterface[] = [
   makeQuestion('1','If I do not have enough time to do everything, I do not worry about it.','select',choicesSet35),
@@ -1463,7 +1483,44 @@ const  spiritualityAssessmentsQs: QuestionInterface[] =[
   makeQuestion(13,'Decided the devil made this happen.','select',choicesSet45),
   makeQuestion(14,'Questioned the power of God.','select',choicesSet45),
 ]
+//#doto figure out the values 
+const CaregiverStressAssessmentsQs: QuestionInterface[]=[
+  makeQuestion(1,'Had trouble keeping my mind on what I was doing.','select',choicesSet47),
+  makeQuestion(2,'Felt that I couldn’t leave my relative alone.','select',choicesSet47),
+  makeQuestion(3,'Had difficulty making decisions.','select',choicesSet47),
+  makeQuestion(4,'Felt completely overwhelmed.','select',choicesSet47),
+  makeQuestion(5,'Felt useful and needed.','select',choicesSet46),
+  makeQuestion(6,'Felt lonely.','select',choicesSet47),
+  makeQuestion(7,'Been upset that my relative has changed so much from his/her former self.','select',choicesSet47),
+  makeQuestion(8,'Felt a loss of privacy and/or personal time.','select',choicesSet47),
+  makeQuestion(9,'Been edgy or irritable.','select',choicesSet47),
+  makeQuestion(10,'Had sleep disturbed because of caring for my relative.','select',choicesSet47),
+  makeQuestion(11,'Had a crying spell.','select',choicesSet47),
+  makeQuestion(12,'Felt strained between work and family responsibilities.','select',choicesSet47),
+  makeQuestion(13,'Had back pain.','select',choicesSet47),
+  makeQuestion(14,'Felt ill (headaches, stomach problems or common cold).','select',choicesSet47),
+  makeQuestion(15,'Been satisfied with the support my family has given me.','select',choicesSet46),
+  makeQuestion(16,'Found my relative’s living situation to be inconvenient or a barrier to care','select',choicesSet47),
+  makeQuestion(17,'On a scale of 1 to 10, with 1 being \“not stressful\” to 10 being \“extremely stressful,\” please rate your current level of stress.','select',choicesSet48),
+  makeQuestion(18,' On a scale of 1 to 10, with 1 being \“very healthy\” to 10 being \“very ill,\” please rate your current health compared to what it was this time last year','select',choicesSet48),
 
+]
+// const CaregiverStressAssessmentsQs: QuestionInterface=[
+//   makeQuestion(1,'','select',choicesSet),
+//   makeQuestion(2,'','select',choicesSet),
+//   makeQuestion(3,'','select',choicesSet),
+//   makeQuestion(4,'','select',choicesSet),
+//   makeQuestion(5,'','select',choicesSet),
+//   makeQuestion(6,'','select',choicesSet),
+//   makeQuestion(7,'','select',choicesSet),
+//   makeQuestion(8,'','select',choicesSet),
+//   makeQuestion(9,'','select',choicesSet),
+//   makeQuestion(10,'','select',choicesSet),
+//   makeQuestion(11,'','select',choicesSet),
+//   makeQuestion(12,'','select',choicesSet),
+//   makeQuestion(13,'','select',choicesSet),
+//   makeQuestion(14,'','select',choicesSet),
+// ]
 
 const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
 const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
@@ -1484,7 +1541,7 @@ const stigmaImage = ptsImage;
 
 const hopeImage ='res/images/Hope.png';
 const spiritualImage='res/images/Spirituality.png';
-
+const caregiverStressImage='res/images/Caregiver.png';
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
   return choices.reduce((score,choice) => {
@@ -1931,7 +1988,7 @@ export const GenerosityAssessment =  makeAssessment(20,'Generosity', 0, 51, 60, 
 export const OptimismAssessment =  makeAssessment(21,'Optimism', 0, 16, 24, OptimismList, 1, optimismAssessmentQs, friendsImage);
 export const HopeAssessment = makeAssessment(22, 'Hope', 8,  16 , 32, HopeList, 1, hopeAssessmentQs, hopeImage);
 export const SpiritualityAssessment =makeAssessment(23,'Spirituality', 14, 28, 56, SpiritualityList, 1 ,spiritualityAssessmentsQs, spiritualImage);
-
+export const CaregiverStressAssessment = makeAssessment(24, 'CaregiverStress', 2,19,36, CaregiverStressList, 1, CaregiverStressAssessmentsQs, caregiverStressImage);
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
   MaritalAssessment,
@@ -1956,6 +2013,7 @@ const assessmentsRaw: AssessmentInterface[] = [
   OptimismAssessment,
   HopeAssessment,
   SpiritualityAssessment,
+  CaregiverStressAssessment
 ];
 
 //TODO

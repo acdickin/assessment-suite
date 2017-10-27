@@ -24,6 +24,7 @@ import AssessmentsList from './components/AssessmentsList';
 
 import Hope from './containers/assessments/Hope';
 import Spirituality from './containers/assessments/Spirituality';
+import CaregiverStress from './containers/assessments/CaregiverStress';
 
 import {createRoutes,createPlainRoutes} from './routes';
 
@@ -50,8 +51,9 @@ const assessments = {
     Gratitude,
     Generosity,
     Optimism,
-     Spirituality,
-    Hope
+    Spirituality,
+    Hope,
+    CaregiverStress,
 }
 
 export  {
