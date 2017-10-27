@@ -1263,16 +1263,34 @@ const choicesSet47: ChoicesInterface[] = [
   {title: 'No', value: '2', score: 1},
 ];
 const choicesSet48: ChoicesInterface[] = [
-      {title: '1', value: '1', score: 1},
-      {title: '2', value: '2', score: 2},
-      {title: '3', value: '3', score: 3},
-      {title: '4', value: '4', score: 4},
-      {title: '5', value: '5', score: 5},
-      {title: '6', value: '6', score: 6},
-      {title: '7', value: '7', score: 7},
-      {title: '8', value: '8', score: 8},
-      {title: '9', value: '9', score: 9},
-      {title: '10', value: '10', score: 10},
+  {title: '1', value: '1', score: 1},
+  {title: '2', value: '2', score: 2},
+  {title: '3', value: '3', score: 3},
+  {title: '4', value: '4', score: 4},
+  {title: '5', value: '5', score: 5},
+  {title: '6', value: '6', score: 6},
+  {title: '7', value: '7', score: 7},
+  {title: '8', value: '8', score: 8},
+  {title: '9', value: '9', score: 9},
+  {title: '10', value: '10', score: 10},
+];
+const choicesSet49: ChoicesInterface[] = [
+  {title: '1', value: '1 Almost Always False of Me', score: 1},
+  {title: '2', value: '2', score: 2},
+  {title: '3', value: '3 More Often False of Me', score: 3},
+  {title: '4', value: '4', score: 4},
+  {title: '5', value: '5 More Often True of Me', score: 5},
+  {title: '6', value: '6', score: 6},
+  {title: '7', value: '7 Almost Always True of Me', score: 7},
+];
+const choicesSet50: ChoicesInterface[] = [
+  {title: '1', value: '1 Almost Always False of Me', score: 7},
+  {title: '2', value: '2', score: 6},
+  {title: '3', value: '3 More Often False of Me', score: 5},
+  {title: '4', value: '4', score: 4},
+  {title: '5', value: '5 More Often True of Me', score: 3},
+  {title: '6', value: '6', score: 2},
+  {title: '7', value: '7 Almost Always True of Me', score: 1},
 ];
 
 const worryAssessmentQs: QuestionInterface[] = [
@@ -1503,8 +1521,29 @@ const CaregiverStressAssessmentsQs: QuestionInterface[]=[
   makeQuestion(16,'Found my relative’s living situation to be inconvenient or a barrier to care','select',choicesSet47),
   makeQuestion(17,'On a scale of 1 to 10, with 1 being \“not stressful\” to 10 being \“extremely stressful,\” please rate your current level of stress.','select',choicesSet48),
   makeQuestion(18,' On a scale of 1 to 10, with 1 being \“very healthy\” to 10 being \“very ill,\” please rate your current health compared to what it was this time last year','select',choicesSet48),
-
 ]
+
+const ForgivenessAssessmentsQs: QuestionInterface[]=[
+  makeQuestion(1,'Although I feel bad at first when I mess up, over time I can give myself some slack.','select',choicesSet49),
+  makeQuestion(2,'I hold grudges against myself for negative things I’ve done.','select',choicesSet50),
+  makeQuestion(3,'Learning from bad things that I’ve done helps me get over them.','select',choicesSet49),
+  makeQuestion(4,'It is really hard for me to accept myself once I’ve messed up.','select',choicesSet50),
+  makeQuestion(5,'With time I am understanding of myself for mistakes I’ve made.','select',choicesSet49),
+  makeQuestion(6,'I don’t stop criticizing myself for negative things I’ve felt, thought, said, or done.','select',choicesSet50),
+  makeQuestion(7,'I continue to punish a person who has done something that I think is wrong.','select',choicesSet50),
+  makeQuestion(8,'With time I am understanding of others for the mistakes they’ve made.','select',choicesSet49),
+  makeQuestion(9,'I continue to be hard on others who have hurt me.','select',choicesSet50),
+  makeQuestion(10,'Although others have hurt me in the past, I have eventually been able to see them as good people.','select',choicesSet49),
+  makeQuestion(11,'If others mistreat me, I continue to think badly of them.','select',choicesSet50),
+  makeQuestion(12,'When someone disappoints me, I can eventually move past it.','select',choicesSet49),
+  makeQuestion(13,'When things go wrong for reasons that can’t be controlled, I get stuck in negative thoughts about it.','select',choicesSet50),
+  makeQuestion(14,'With time I can be understanding of bad circumstances in my life.','select',choicesSet49),
+  makeQuestion(15,'If I am disappointed by uncontrollable circumstances in my life, I continue to think negatively about them.','select',choicesSet50),
+  makeQuestion(16,'I eventually make peace with bad situations in my life.','select',choicesSet49),
+  makeQuestion(17,'It’s really hard for me to accept negative situations that aren’t anybody’s fault.','select',choicesSet50),
+  makeQuestion(18,'Eventually I let go of negative thoughts about bad circumstances that are beyond anyone’s control.','select',choicesSet50),
+]
+
 // const CaregiverStressAssessmentsQs: QuestionInterface=[
 //   makeQuestion(1,'','select',choicesSet),
 //   makeQuestion(2,'','select',choicesSet),
@@ -1542,6 +1581,7 @@ const stigmaImage = ptsImage;
 const hopeImage ='res/images/Hope.png';
 const spiritualImage='res/images/Spirituality.png';
 const caregiverStressImage='res/images/Caregiver.png';
+const forgivenessImage = 'res/image/Forgiveness.png';
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
   return choices.reduce((score,choice) => {
@@ -1988,7 +2028,9 @@ export const GenerosityAssessment =  makeAssessment(20,'Generosity', 0, 51, 60, 
 export const OptimismAssessment =  makeAssessment(21,'Optimism', 0, 16, 24, OptimismList, 1, optimismAssessmentQs, friendsImage);
 export const HopeAssessment = makeAssessment(22, 'Hope', 8,  16 , 32, HopeList, 1, hopeAssessmentQs, hopeImage);
 export const SpiritualityAssessment =makeAssessment(23,'Spirituality', 14, 28, 56, SpiritualityList, 1 ,spiritualityAssessmentsQs, spiritualImage);
-export const CaregiverStressAssessment = makeAssessment(24, 'CaregiverStress', 2,19,36, CaregiverStressList, 1, CaregiverStressAssessmentsQs, caregiverStressImage);
+export const CaregiverStressAssessment = makeAssessment(24, 'Caregiver Stress', 2,19,36, CaregiverStressList, 1, CaregiverStressAssessmentsQs, caregiverStressImage);
+export const Forgiveness = makeAssessment('25', 'Forgiveness', 7, 67 , 128, ForgivenessList, 1, ForgivenessAssessmentsQs, forgivenessImage)
+
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
   MaritalAssessment,
@@ -2013,7 +2055,8 @@ const assessmentsRaw: AssessmentInterface[] = [
   OptimismAssessment,
   HopeAssessment,
   SpiritualityAssessment,
-  CaregiverStressAssessment
+  CaregiverStressAssessment,
+  ForgivenessAssessment
 ];
 
 //TODO
