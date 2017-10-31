@@ -25,7 +25,12 @@ const {
     Spirituality,
     Hope,
     CaregiverStress,
-    Forgiveness
+    Forgiveness,
+    mTBI,
+    Nicotine,
+    Satisfaction,
+    SexualTrauma,
+    WorkAdjustment
 
 } = assessments;
 
@@ -59,6 +64,11 @@ class Assessments extends React.Component<Props, State> {
                     <assessments.Hope/>
                     <assessments.CaregiverStress/>
                     <assessments.Forgiveness/>
+                    <assessments.mTBI/>
+                    <assessments.Nicotine/>
+                    <assessments.Satisfaction/> 
+                    <assessments.SexualTrauma/>
+                    <assessments.WorkAdjustment/> 
                   </AssessmentsList>
                       {/*<FriendShip />
                       <MaritalSatisfaction />

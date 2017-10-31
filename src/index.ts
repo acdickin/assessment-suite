@@ -20,12 +20,16 @@ import Forgiveness from './containers/assessments/Forgiveness';
 import Gratitude from './containers/assessments/Gratitude';
 import Generosity from './containers/assessments/Generosity';
 import Optimism from './containers/assessments/Optimism';
-import AssessmentsList from './components/AssessmentsList';
+import mTBI from './containers/assessments/mTBI';
+import Satisfaction from './containers/assessments/Satisfaction';
 
+import AssessmentsList from './components/AssessmentsList';
 import Hope from './containers/assessments/Hope';
 import Spirituality from './containers/assessments/Spirituality';
 import CaregiverStress from './containers/assessments/CaregiverStress';
-
+import Nicotine from './containers/assessments/Nicotine';
+import SexualTrauma from './containers/assessments/SexualTrauma';
+import WorkAdjustment from './containers/assessments/WorkAdjustment';
 import {createRoutes,createPlainRoutes} from './routes';
 
 
@@ -54,6 +58,11 @@ const assessments = {
     Spirituality,
     Hope,
     CaregiverStress,
+    mTBI,
+    Nicotine,
+    Satisfaction,
+    SexualTrauma,
+    WorkAdjustment
 }
 
 export  {

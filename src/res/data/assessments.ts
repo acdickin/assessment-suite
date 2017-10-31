@@ -194,21 +194,21 @@ const DepressionScoring5 = makeScoring(6,16,27,'HIGH',
 const mTBISymptomManagementList: ScoringInterface[] = [];
 
 
-const mTBISymptomManagementScoring9 = makeScoring(10,0,59,'LOW',
+const mTBISymptomManagementScoring9 = makeScoring(10,13,64,'LOW',
                                     `<p>Your score is in a range typically associated with a low level of confidence in your ability to cope with and manage many of the symptoms of your brain injury.</p><p>Although only a healthcare professional can provide a complete evaluation,   your concerns over your ability to cope with your injury are significant and may have the potential to interfere with your recovery.</p>`,
                                     `<p>A decrease in self-confidence can be common following an injury like a traumatic brain injury.  It is important to identify where you believe support is lacking or additional support is required and begin to problem-solve around getting what you need.  If you find that your confidence in your ability to cope with the problems created by your brain injury has not gradually improved, it is important to discuss these issues with your family and your health care provider. If you don’t have a provider, you can locate a provider or a clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website.   If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.</p><p> Another way to explore these experiences is to check out the materials in AfterDeployment’s “mTBI” topic. When someone is struggling with managing the symptoms of a traumatic brain injury, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments. </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const mTBISymptomManagementScoring10 = makeScoring(11,60,114,'MOD',
+const mTBISymptomManagementScoring10 = makeScoring(11,65,119,'MOD',
                                     `<p>Compared to others with  a traumatic brain injury, your score is in a range typically associated with a moderate amount of confidence in your ability to cope with the symptoms associated with your brain injury.</p><p>Although only a healthcare professional can provide a complete evaluation, your responses suggest you may be feeling somewhat uncertain in your ability to get help with or manage the symptoms of your injury.</p>`,
                                     `<p>A decrease in self-confidence can be common following an injury like a traumatic brain injury.  It is important to identify where you believe support is lacking or additional support is required and begin to problem-solve around getting what you need .  If you find that your confidence in your ability to cope with the problems created by your brain injury has not gradually improved, it is important to discuss these issues with your family and your health care provider.  If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website. If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.</p><p>When someone is experiencing the kinds of distressing symptoms you report, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.  </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
 
 
 
-const mTBISymptomManagementScoring11 = makeScoring(12,115,130,'HIGH',
+const mTBISymptomManagementScoring11 = makeScoring(12,119,130,'HIGH',
                                     `<p>Your score is in a range typically associated with a high level of confidence in your ability to cope with your traumatic brain injury compared to others with a TBI.</p><p>Although only a healthcare professional can provide a completely accurate evaluation, your results suggest that you believe you will be able to positively manage the consequences of  your brain injury.  Self-confidence in this area is often associated with symptom improvement.</p>`,
                                     `<p>A decrease in self-confidence can be common following an injury like a traumatic brain injury.  It is important to identify where you believe support is lacking or additional support is required and begin to problem-solve around getting what you need .  If you find that your confidence in your ability to cope with the problems created by your brain injury has not gradually improved, it is important to discuss these issues with your family and your health care provider.  If you don’t have a provider, you can locate a provider or clinic near you by clicking on the <a href='http://afterdeployment.dcoe.mil/locate-help'>LOCATE</a> tab in the upper right corner of the website. If you have more immediate concerns, you can talk with a professional right now by clicking on the <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=2#qt-quick_tab_header'>CALL</a> or <a href='http://afterdeployment.dcoe.mil/home?qt-quick_tab_header=1#qt-quick_tab_header'>CHAT</a> tabs, also found in the upper right corner of the website. Both the CALL and CHAT options are available 24-7.</p><p>When someone is experiencing the kinds of distressing symptoms you report, problems are often present in other areas of life. You can determine where other problems may exist or the extent of the problem by taking additional assessments.   </p><p>You can find links to these tools under the RESOURCES tab located above.</p><p> You may find it helpful to join the <a href="https://www.facebook.com/afterdeployment/timeline">AfterDeployment Facebook</a> page where you can network with others on a range of topics. </p>`
                                     );
@@ -903,188 +903,188 @@ WorryList.push(WorryScoring93);
 
 
 const choicesSet1: ChoicesInterface[] = [
-      {title: '0 - Not at all', value: '1', score: 0},
-      {title: '1', value: '2', score: 1},
-      {title: '2', value: '3', score: 2},
-      {title: '3', value: '4', score: 3},
-      {title: '4', value: '5', score: 4},
-      {title: '5', value: '6', score: 5},
-      {title: '6', value: '7', score: 6},
-      {title: '7', value: '8', score: 7},
-      {title: '8 - Exactly So', value: '9', score: 8}
+  {title: '0 - Not at all', value: '1', score: 0},
+  {title: '1', value: '2', score: 1},
+  {title: '2', value: '3', score: 2},
+  {title: '3', value: '4', score: 3},
+  {title: '4', value: '5', score: 4},
+  {title: '5', value: '6', score: 5},
+  {title: '6', value: '7', score: 6},
+  {title: '7', value: '8', score: 7},
+  {title: '8 - Exactly So', value: '9', score: 8}
 ];
 
 
 
 const choicesSet2: ChoicesInterface[] = [
-      {title: 'Almost Always', value: '1', score: 4},
-      {title: 'Most of the time', value: '2', score: 3},
-      {title: 'About half the time', value: '3', score: 2},
-      {title: 'Occasionally', value: '4', score: 1},
-      {title: 'Not at all', value: '5', score: 0},
+  {title: 'Almost Always', value: '1', score: 4},
+  {title: 'Most of the time', value: '2', score: 3},
+  {title: 'About half the time', value: '3', score: 2},
+  {title: 'Occasionally', value: '4', score: 1},
+  {title: 'Not at all', value: '5', score: 0},
 ];
 
 const choicesSet3: ChoicesInterface[] = [
-      {title: 'Almost Always', value: '1', score: 0},
-      {title: 'Most of the time', value: '2', score: 1},
-      {title: 'About half the time', value: '3', score: 2},
-      {title: 'Occasionally', value: '4', score: 3},
-      {title: 'Not at all', value: '5', score: 4},
+  {title: 'Almost Always', value: '1', score: 0},
+  {title: 'Most of the time', value: '2', score: 1},
+  {title: 'About half the time', value: '3', score: 2},
+  {title: 'Occasionally', value: '4', score: 3},
+  {title: 'Not at all', value: '5', score: 4},
 ];
 
 const choicesSet4: ChoicesInterface[] = [
-      {title: 'Very Unhappy', value: '1', score: 0},
-      {title: 'Somewhat Unhappy', value: '2', score: 2},
-      {title: 'Slightly Unhappy', value: '3', score: 7},
-      {title: 'Happy', value: '4', score: 15},
-      {title: 'Pretty Happy', value: '5', score: 20},
-      {title: 'Very Happy', value: '6', score: 25},
-      {title: 'Perfectly Happy', value: '7', score: 35},
+  {title: 'Very Unhappy', value: '1', score: 0},
+  {title: 'Somewhat Unhappy', value: '2', score: 2},
+  {title: 'Slightly Unhappy', value: '3', score: 7},
+  {title: 'Happy', value: '4', score: 15},
+  {title: 'Pretty Happy', value: '5', score: 20},
+  {title: 'Very Happy', value: '6', score: 25},
+  {title: 'Perfectly Happy', value: '7', score: 35},
 ];
 
 const choicesSet5: ChoicesInterface[] = [
-      {title: 'Always Agree', value: '1', score: 5},
-      {title: 'Almost Always Agree', value: '2', score: 4},
-      {title: 'Occasionally Disagree', value: '3', score: 3},
-      {title: 'Frequently Disagree', value: '4', score: 2},
-      {title: 'Almost Always Disagree', value: '5', score: 1},
-      {title: 'Always Disagree', value: '6', score: 0},
+  {title: 'Always Agree', value: '1', score: 5},
+  {title: 'Almost Always Agree', value: '2', score: 4},
+  {title: 'Occasionally Disagree', value: '3', score: 3},
+  {title: 'Frequently Disagree', value: '4', score: 2},
+  {title: 'Almost Always Disagree', value: '5', score: 1},
+  {title: 'Always Disagree', value: '6', score: 0},
 ];
 
 const choicesSet6: ChoicesInterface[] = [
-      {title: 'Always Agree', value: '1', score: 8},
-      {title: 'Almost Always Agree', value: '2', score: 6},
-      {title: 'Occasionally Disagree', value: '3', score: 4},
-      {title: 'Frequently Disagree', value: '4', score: 2},
-      {title: 'Almost Always Disagree', value: '5', score: 1},
-      {title: 'Always Disagree', value: '6', score: 0},
+  {title: 'Always Agree', value: '1', score: 8},
+  {title: 'Almost Always Agree', value: '2', score: 6},
+  {title: 'Occasionally Disagree', value: '3', score: 4},
+  {title: 'Frequently Disagree', value: '4', score: 2},
+  {title: 'Almost Always Disagree', value: '5', score: 1},
+  {title: 'Always Disagree', value: '6', score: 0},
 ];
 
 const choicesSet7: ChoicesInterface[] = [
-      {title: 'Always Agree', value: '1', score: 15},
-      {title: 'Almost Always Agree', value: '2', score: 12},
-      {title: 'Occasionally Disagree', value: '3', score: 9},
-      {title: 'Frequently Disagree', value: '4', score: 4},
-      {title: 'Almost Always Disagree', value: '5', score: 1},
-      {title: 'Always Disagree', value: '6', score: 0},
+  {title: 'Always Agree', value: '1', score: 15},
+  {title: 'Almost Always Agree', value: '2', score: 12},
+  {title: 'Occasionally Disagree', value: '3', score: 9},
+  {title: 'Frequently Disagree', value: '4', score: 4},
+  {title: 'Almost Always Disagree', value: '5', score: 1},
+  {title: 'Always Disagree', value: '6', score: 0},
 ];
 
 const choicesSet8: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 5},
-      {title: 'Disagree', value: '2', score: 4},
-      {title: 'Neither agree nor disagree', value: '3', score: 3},
-      {title: 'Agree', value: '4', score: 2},
-      {title: 'Strongly agree', value: '5', score: 1}
+  {title: 'Strongly disagree', value: '1', score: 5},
+  {title: 'Disagree', value: '2', score: 4},
+  {title: 'Neither agree nor disagree', value: '3', score: 3},
+  {title: 'Agree', value: '4', score: 2},
+  {title: 'Strongly agree', value: '5', score: 1}
 ];
 
 const choicesSet9: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 1},
-      {title: 'Disagree', value: '2', score: 2},
-      {title: 'Neither agree nor disagree', value: '3', score: 3},
-      {title: 'Agree', value: '4', score: 4},
-      {title: 'Strongly agree', value: '5', score: 5}
+  {title: 'Strongly disagree', value: '1', score: 1},
+  {title: 'Disagree', value: '2', score: 2},
+  {title: 'Neither agree nor disagree', value: '3', score: 3},
+  {title: 'Agree', value: '4', score: 4},
+  {title: 'Strongly agree', value: '5', score: 5}
 ];
 
 const choicesSet10: ChoicesInterface[] = [
-      {title: 'Mother', value: '1', score: 0},
-      {title: 'Father', value: '2', score: 0},
-      {title: 'Other', value: '3', score: 0}
+  {title: 'Mother', value: '1', score: 0},
+  {title: 'Father', value: '2', score: 0},
+  {title: 'Other', value: '3', score: 0}
 ];
 
 const choicesSet11: ChoicesInterface[] = [
-      {title: 'Strongly Agree', value: '1', score: 1},
-      {title: 'Agree', value: '2', score: 2},
-      {title: 'Mildly Agree', value: '3', score: 3},
-      {title: 'Mildly Disagree', value: '4', score: 4},
-      {title: 'Disagree', value: '5', score: 5},
-      {title: 'Strongly Disagree', value: '6', score: 6}
+  {title: 'Strongly Agree', value: '1', score: 1},
+  {title: 'Agree', value: '2', score: 2},
+  {title: 'Mildly Agree', value: '3', score: 3},
+  {title: 'Mildly Disagree', value: '4', score: 4},
+  {title: 'Disagree', value: '5', score: 5},
+  {title: 'Strongly Disagree', value: '6', score: 6}
 ];
 
 const choicesSet12: ChoicesInterface[] = [
-      {title: 'Strongly Agree', value: '1', score: 6},
-      {title: 'Agree', value: '2', score: 5},
-      {title: 'Mildly Agree', value: '3', score: 4},
-      {title: 'Mildly Disagree', value: '4', score: 3},
-      {title: 'Disagree', value: '5', score: 2},
-      {title: 'Strongly Disagree', value: '6', score: 1}
+  {title: 'Strongly Agree', value: '1', score: 6},
+  {title: 'Agree', value: '2', score: 5},
+  {title: 'Mildly Agree', value: '3', score: 4},
+  {title: 'Mildly Disagree', value: '4', score: 3},
+  {title: 'Disagree', value: '5', score: 2},
+  {title: 'Strongly Disagree', value: '6', score: 1}
 ];
 
 const choicesSet13: ChoicesInterface[] = [
-      {title: 'husband giving in', value: '1', score: 0},
-      {title: 'wife giving in', value: '2', score: 2},
-      {title: 'agreement by mutual give and take', value: '3', score: 10},
+  {title: 'husband giving in', value: '1', score: 0},
+  {title: 'wife giving in', value: '2', score: 2},
+  {title: 'agreement by mutual give and take', value: '3', score: 10},
 ];
 const choicesSet14: ChoicesInterface[] = [
-      {title: 'All of them', value: '1', score: 10},
-      {title: 'Some of them', value: '2', score: 8},
-      {title: 'Very few of them', value: '3', score: 3},
-      {title: 'None of them', value: '4', score: 0}
+  {title: 'All of them', value: '1', score: 10},
+  {title: 'Some of them', value: '2', score: 8},
+  {title: 'Very few of them', value: '3', score: 3},
+  {title: 'None of them', value: '4', score: 0}
 ];
 
 const choicesSet15: ChoicesInterface[] = [
-      {title: 'to both be "On the go" ', value: '1', score: 3},
-      {title: 'to both be stay at home ', value: '2', score: 10},
-      {title: 'neither', value: '3', score: 2}
+  {title: 'to both be "On the go" ', value: '1', score: 3},
+  {title: 'to both be stay at home ', value: '2', score: 10},
+  {title: 'neither', value: '3', score: 2}
 ];
 
 const choicesSet16: ChoicesInterface[] = [
-      {title: 'Frequently', value: '1', score: 0},
-      {title: 'Occasionally', value: '2', score: 3},
-      {title: 'Rarely', value: '3', score: 8},
-      {title: 'Never', value: '4', score: 15}
+  {title: 'Frequently', value: '1', score: 0},
+  {title: 'Occasionally', value: '2', score: 3},
+  {title: 'Rarely', value: '3', score: 8},
+  {title: 'Never', value: '4', score: 15}
 ];
 
 const choicesSet17: ChoicesInterface[] = [
-      {title: 'Marry the same person', value: '1', score: 15},
-      {title: 'Marry a different person', value: '2', score: 0},
-      {title: 'Not marry at all', value: '3', score: 1}
+  {title: 'Marry the same person', value: '1', score: 15},
+  {title: 'Marry a different person', value: '2', score: 0},
+  {title: 'Not marry at all', value: '3', score: 1}
 ];
 
 const choicesSet18: ChoicesInterface[] = [
-      {title: 'almost never', value: '1', score: 0},
-      {title: 'rarely', value: '2', score: 2},
-      {title: 'in most things', value: '3', score: 10},
-      {title: 'in everything', value: '4', score: 10}
+  {title: 'almost never', value: '1', score: 0},
+  {title: 'rarely', value: '2', score: 2},
+  {title: 'in most things', value: '3', score: 10},
+  {title: 'in everything', value: '4', score: 10}
 ];
 
 const choicesSet19: ChoicesInterface[] = [
-      {title: 'Very Strongly Disagree', value: '1', score: 1},
-      {title: 'Strongly Disagree', value: '2', score: 2},
-      {title: 'Mildly Disagree', value: '3', score: 3},
-      {title: 'Neutral', value: '4', score: 4},
-      {title: 'Mildly Agree', value: '5', score: 5},
-      {title: 'Strongly Agree', value: '6', score: 6},
-      {title: 'Very Strongly Agree', value: '7', score: 7}
+  {title: 'Very Strongly Disagree', value: '1', score: 1},
+  {title: 'Strongly Disagree', value: '2', score: 2},
+  {title: 'Mildly Disagree', value: '3', score: 3},
+  {title: 'Neutral', value: '4', score: 4},
+  {title: 'Mildly Agree', value: '5', score: 5},
+  {title: 'Strongly Agree', value: '6', score: 6},
+  {title: 'Very Strongly Agree', value: '7', score: 7}
 ];
 
 const choicesSet20: ChoicesInterface[] = [
-      {title: 'Never', value: '1', score: 0},
-      {title: 'Once or Twice', value: '2', score: 2},
-      {title: 'Monthly', value: '3', score: 3},
-      {title: 'Weekly', value: '4', score: 4},
-      {title: 'Daily or almost daily', value: '5', score: 6},
+  {title: 'Never', value: '1', score: 0},
+  {title: 'Once or Twice', value: '2', score: 2},
+  {title: 'Monthly', value: '3', score: 3},
+  {title: 'Weekly', value: '4', score: 4},
+  {title: 'Daily or almost daily', value: '5', score: 6},
 ];
 
 const choicesSet21: ChoicesInterface[] = [
-      {title: 'Never', value: '1', score: 0},
-      {title: 'Once or Twice', value: '2', score: 3},
-      {title: 'Monthly', value: '3', score: 4},
-      {title: 'Weekly', value: '4', score: 5},
-      {title: 'Daily or almost daily', value: '5', score: 6},
+  {title: 'Never', value: '1', score: 0},
+  {title: 'Once or Twice', value: '2', score: 3},
+  {title: 'Monthly', value: '3', score: 4},
+  {title: 'Weekly', value: '4', score: 5},
+  {title: 'Daily or almost daily', value: '5', score: 6},
 ];
 
 const choicesSet22: ChoicesInterface[] = [
-      {title: 'Never', value: '1', score: 0},
-      {title: 'Once or Twice', value: '2', score: 5},
-      {title: 'Monthly', value: '3', score: 6},
-      {title: 'Weekly', value: '4', score: 7},
-      {title: 'Daily or almost daily', value: '5', score: 8},
+  {title: 'Never', value: '1', score: 0},
+  {title: 'Once or Twice', value: '2', score: 5},
+  {title: 'Monthly', value: '3', score: 6},
+  {title: 'Weekly', value: '4', score: 7},
+  {title: 'Daily or almost daily', value: '5', score: 8},
 ];
 
 const choicesSet23: ChoicesInterface[] = [
-      {title: 'No, Never', value: '1', score: 0},
-      {title: 'Yes, in the past 3 months', value: '2', score: 6},
-      {title: 'Yes, but not in the past 3 months', value: '3', score: 3}
+  {title: 'No, Never', value: '1', score: 0},
+  {title: 'Yes, in the past 3 months', value: '2', score: 6},
+  {title: 'Yes, but not in the past 3 months', value: '3', score: 3}
 ];
 
 const choicesSet24: ChoicesInterface[] = [
@@ -1118,44 +1118,44 @@ const choicesSet27: ChoicesInterface[] = [
 ];
 
 const choicesSet28: ChoicesInterface[] = [
-      {title: 'True', value: '1', score: 1},
-      {title: 'False', value: '2', score: 0}
+  {title: 'True', value: '1', score: 1},
+  {title: 'False', value: '2', score: 0}
 ];
 const choicesSet29: ChoicesInterface[] = [
-      {title: 'No', value: '1', score: 0},
-      {title: 'Yes', value: '2', score: 1}
+  {title: 'No', value: '1', score: 0},
+  {title: 'Yes', value: '2', score: 1}
 ];
-;
+
 
 const choicesSet30: ChoicesInterface[] = [
-      {title: 'Never', value: '1', score: 0},
-      {title: 'Almost Never', value: '2', score: 1},
-      {title: 'Sometimes', value: '3', score: 2},
-      {title: 'Fairly often ', value: '4', score: 3},
-      {title: 'Very often ', value: '5', score: 4}
+  {title: 'Never', value: '1', score: 0},
+  {title: 'Almost Never', value: '2', score: 1},
+  {title: 'Sometimes', value: '3', score: 2},
+  {title: 'Fairly often ', value: '4', score: 3},
+  {title: 'Very often ', value: '5', score: 4}
 ];
 const choicesSet31: ChoicesInterface[] = [
-      {title: 'Never', value: '1', score: 4},
-      {title: 'Almost Never', value: '2', score: 3},
-      {title: 'Sometimes', value: '3', score: 2},
-      {title: 'Fairly often ', value: '4', score: 1},
-      {title: 'Very often ', value: '5', score: 0}
+  {title: 'Never', value: '1', score: 4},
+  {title: 'Almost Never', value: '2', score: 3},
+  {title: 'Sometimes', value: '3', score: 2},
+  {title: 'Fairly often ', value: '4', score: 1},
+  {title: 'Very often ', value: '5', score: 0}
 ];
 
 const choicesSet32: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 1},
-      {title: 'Disagree', value: '2', score: 2},
-      {title: 'Agree and Disagree Equally', value: '3', score: 3},
-      {title: 'Agree', value: '4', score: 4},
-      {title: 'Strongly agree', value: '5', score: 5}
+  {title: 'Strongly disagree', value: '1', score: 1},
+  {title: 'Disagree', value: '2', score: 2},
+  {title: 'Agree and Disagree Equally', value: '3', score: 3},
+  {title: 'Agree', value: '4', score: 4},
+  {title: 'Strongly agree', value: '5', score: 5}
 ];
 
 const choicesSet33: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 5},
-      {title: 'Disagree', value: '2', score: 4},
-      {title: 'Agree and Disagree Equally', value: '3', score: 3},
-      {title: 'Agree', value: '4', score: 2},
-      {title: 'Strongly agree', value: '5', score: 1}
+  {title: 'Strongly disagree', value: '1', score: 5},
+  {title: 'Disagree', value: '2', score: 4},
+  {title: 'Agree and Disagree Equally', value: '3', score: 3},
+  {title: 'Agree', value: '4', score: 2},
+  {title: 'Strongly agree', value: '5', score: 1}
 ];
 
 const choicesSet34: ChoicesInterface[] = [
@@ -1174,85 +1174,85 @@ const choicesSet35: ChoicesInterface[] = [
 ];
 
 const choicesSet36: ChoicesInterface[] = [
-      {title: '1 - Almost always false of me.', value: '1', score: 1},
-      {title: '2', value: '2', score: 2},
-      {title: '3 - More often false of me', value: '3', score: 3},
-      {title: '4', value: '4', score: 4},
-      {title: '5 - More often true of me', value: '5', score: 5},
-      {title: '6', value: '6', score: 6},
-      {title: '7 - Almost always true of me', value: '7', score: 7}
+  {title: '1 - Almost always false of me.', value: '1', score: 1},
+  {title: '2', value: '2', score: 2},
+  {title: '3 - More often false of me', value: '3', score: 3},
+  {title: '4', value: '4', score: 4},
+  {title: '5 - More often true of me', value: '5', score: 5},
+  {title: '6', value: '6', score: 6},
+  {title: '7 - Almost always true of me', value: '7', score: 7}
 ];
 
 const choicesSet37: ChoicesInterface[] = [
-      {title: '1 - Almost always false of me.', value: '1', score: 7},
-      {title: '2', value: '2', score: 6},
-      {title: '3 - More often false of me', value: '3', score: 5},
-      {title: '4', value: '4', score: 4},
-      {title: '5 - More often true of me', value: '5', score: 3},
-      {title: '6', value: '6', score: 2},
-      {title: '7 - Almost always true of me', value: '7', score: 1}
+  {title: '1 - Almost always false of me.', value: '1', score: 7},
+  {title: '2', value: '2', score: 6},
+  {title: '3 - More often false of me', value: '3', score: 5},
+  {title: '4', value: '4', score: 4},
+  {title: '5 - More often true of me', value: '5', score: 3},
+  {title: '6', value: '6', score: 2},
+  {title: '7 - Almost always true of me', value: '7', score: 1}
 ];
 
 const choicesSet38: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 1},
-      {title: 'Disagree', value: '2', score: 2},
-      {title: 'Slightly disagree', value: '3', score: 3},
-      {title: 'Neutral', value: '4', score: 4},
-      {title: 'Slightly agree', value: '5', score: 5},
-      {title: 'Agree', value: '6', score: 6},
-      {title: 'Strongly Agree', value: '7', score: 7}
+  {title: 'Strongly disagree', value: '1', score: 1},
+  {title: 'Disagree', value: '2', score: 2},
+  {title: 'Slightly disagree', value: '3', score: 3},
+  {title: 'Neutral', value: '4', score: 4},
+  {title: 'Slightly agree', value: '5', score: 5},
+  {title: 'Agree', value: '6', score: 6},
+  {title: 'Strongly Agree', value: '7', score: 7}
 ];
 
 const choicesSet39: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 7},
-      {title: 'Disagree', value: '2', score: 6},
-      {title: 'Slightly disagree', value: '3', score: 5},
-      {title: 'Neutral', value: '4', score: 4},
-      {title: 'Slightly agree', value: '5', score: 3},
-      {title: 'Agree', value: '6', score: 2},
-      {title: 'Strongly Agree', value: '7', score: 1}
+  {title: 'Strongly disagree', value: '1', score: 7},
+  {title: 'Disagree', value: '2', score: 6},
+  {title: 'Slightly disagree', value: '3', score: 5},
+  {title: 'Neutral', value: '4', score: 4},
+  {title: 'Slightly agree', value: '5', score: 3},
+  {title: 'Agree', value: '6', score: 2},
+  {title: 'Strongly Agree', value: '7', score: 1}
 ];
 
 const choicesSet40: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 0},
-      {title: 'Disagree', value: '2', score: 1},
-      {title: 'Neutral', value: '3', score: 2},
-      {title: 'Agree', value: '4', score: 3},
-      {title: 'Strongly Agree', value: '5', score: 4},
+  {title: 'Strongly disagree', value: '1', score: 0},
+  {title: 'Disagree', value: '2', score: 1},
+  {title: 'Neutral', value: '3', score: 2},
+  {title: 'Agree', value: '4', score: 3},
+  {title: 'Strongly Agree', value: '5', score: 4},
 ];
 
 const choicesSet41: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 4},
-      {title: 'Disagree', value: '2', score: 3},
-      {title: 'Neutral', value: '3', score: 2},
-      {title: 'Agree', value: '4', score: 1},
-      {title: 'Strongly Agree', value: '5', score: 0},
+  {title: 'Strongly disagree', value: '1', score: 4},
+  {title: 'Disagree', value: '2', score: 3},
+  {title: 'Neutral', value: '3', score: 2},
+  {title: 'Agree', value: '4', score: 1},
+  {title: 'Strongly Agree', value: '5', score: 0},
 ];
 
 const choicesSet42: ChoicesInterface[] = [
-      {title: 'Strongly disagree', value: '1', score: 0},
-      {title: 'Disagree', value: '2', score: 0},
-      {title: 'Neutral', value: '3', score: 0},
-      {title: 'Agree', value: '4', score: 0},
-      {title: 'Strongly Agree', value: '5', score: 0}
+  {title: 'Strongly disagree', value: '1', score: 0},
+  {title: 'Disagree', value: '2', score: 0},
+  {title: 'Neutral', value: '3', score: 0},
+  {title: 'Agree', value: '4', score: 0},
+  {title: 'Strongly Agree', value: '5', score: 0}
 ];
 const choicesSet43: ChoicesInterface[]=[
-      {title:'Definitely False', value:'1', score:1},
-      {title:'Mostly False', value:'2', score:2},
-      {title: 'Mostly True', value: '3', score: 3},
-      {title: 'Definitely true', value: '4', score: 4},
+  {title:'Definitely False', value:'1', score:1},
+  {title:'Mostly False', value:'2', score:2},
+  {title: 'Mostly True', value: '3', score: 3},
+  {title: 'Definitely true', value: '4', score: 4},
 ]
 const choicesSet44: ChoicesInterface[]=[
-      {title:'Not at all', value:'1', score:1},
-      {title:'Somewhat', value:'2', score:2},
-      {title: 'Quite a bit', value: '3', score: 3},
-      {title: 'A great deal', value: '4', score: 4},
+  {title:'Not at all', value:'1', score:1},
+  {title:'Somewhat', value:'2', score:2},
+  {title: 'Quite a bit', value: '3', score: 3},
+  {title: 'A great deal', value: '4', score: 4},
 ]
 const choicesSet45: ChoicesInterface[]=[
-      {title:'Not at all', value:'1', score: 4},
-      {title:'Somewhat', value:'2', score: 3},
-      {title: 'Quite a bit', value: '3', score: 2},
-      {title: 'A great deal', value: '4', score: 1},
+  {title:'Not at all', value:'1', score: 4},
+  {title:'Somewhat', value:'2', score: 3},
+  {title: 'Quite a bit', value: '3', score: 2},
+  {title: 'A great deal', value: '4', score: 1},
 ]
 const choicesSet46: ChoicesInterface[] = [
   {title: 'Yes', value: '1', score: 1},
@@ -1275,23 +1275,73 @@ const choicesSet48: ChoicesInterface[] = [
   {title: '10', value: '10', score: 10},
 ];
 const choicesSet49: ChoicesInterface[] = [
-  {title: '1', value: '1 Almost Always False of Me', score: 1},
+  {title: '1 Almost Always False of Me', value: '1', score: 1},
   {title: '2', value: '2', score: 2},
-  {title: '3', value: '3 More Often False of Me', score: 3},
+  {title: '3 More Often False of Me', value: '3', score: 3},
   {title: '4', value: '4', score: 4},
-  {title: '5', value: '5 More Often True of Me', score: 5},
+  {title: '5  More Often True of Me', value: '5', score: 5},
   {title: '6', value: '6', score: 6},
-  {title: '7', value: '7 Almost Always True of Me', score: 7},
+  {title: '7 Almost Always True of Me', value: '7', score: 7},
 ];
 const choicesSet50: ChoicesInterface[] = [
-  {title: '1', value: '1 Almost Always False of Me', score: 7},
+  {title: '1 Almost Always False of Me', value: '1', score: 7},
   {title: '2', value: '2', score: 6},
-  {title: '3', value: '3 More Often False of Me', score: 5},
+  {title: '3 More Often False of Me', value: '3', score: 5},
   {title: '4', value: '4', score: 4},
-  {title: '5', value: '5 More Often True of Me', score: 3},
+  {title: '5 More Often True of Me', value: '5', score: 3},
   {title: '6', value: '6', score: 2},
-  {title: '7', value: '7 Almost Always True of Me', score: 1},
+  {title: '7 Almost Always True of Me', value: '7', score: 1},
 ];
+const choicesSet51: ChoicesInterface[] = [
+  {title: '1 Not at all Confident', value: '1', score: 1},
+  {title: '2', value: '2', score: 2},
+  {title: '3', value: '3', score: 3},
+  {title: '4', value: '4', score: 4},
+  {title: '5', value: '5', score: 5},
+  {title: '6', value: '6', score: 6},
+  {title: '7', value: '7', score: 7},
+  {title: '8', value: '8', score: 8},
+  {title: '9', value: '9', score: 9},
+  {title: '10  Totally Confident', value: '10', score: 10},
+];
+const choicesSet52: ChoicesInterface[] = [
+  {title: 'After 60 minutes', value: '1', score: 1},
+  {title: '31-60 minutes', value: '2', score: 2},
+  {title: '6-30 minutes', value: '3', score: 3},
+  {title: 'Within 5 minutes', value: '4', score: 4},
+];
+const choicesSet53: ChoicesInterface[]=[
+  {title: 'The first in the morning', value: '1', score: 1},
+  {title: 'Any other', value: '2', score: 0},
+]
+const choicesSet54: ChoicesInterface[]=[
+  {title: '10 or less', value: '1', score: 1},
+  {title: '11-20', value: '2', score: 2},
+  {title: '21-30', value: '3', score: 3},
+  {title: '31 or more', value: '', score: 4},
+]
+const choicesSet55: ChoicesInterface[]=[
+  {title: 'Strongly Disagree', value: '1', score: 1},
+  {title: 'Disagree', value: '2', score: 2},
+  {title: 'Slightly Disagree', value: '3', score: 3},
+  {title: 'Neither Agree or Disagree', value: '4', score: 4},
+  {title: 'Slightly Agree', value: '5', score: 5},
+  {title: 'Agree', value: '6', score: 6},
+  {title: 'Strongly Agree', value: '7', score: 7},
+]
+const choicesSet56: ChoicesInterface[]=[
+  {title: 'Not at all', value: '1', score: 1},
+  {title: 'A little bit', value: '2', score: 2},
+  {title: 'Moderately', value: '3', score: 3},
+  {title: 'Quite a bit', value: '4', score: 4},
+  {title: 'Extremely', value: '5', score: 5},
+]
+const choicesSet57: ChoicesInterface[]=[
+  {title:'Not at all True', value:'1', score: 1},
+  {title:'Harly True', value:'2', score: 2},
+  {title:'Moderately True', value: '3', score: 3},
+  {title:'Exactly True', value: '4', score: 4},
+]
 
 const worryAssessmentQs: QuestionInterface[] = [
   makeQuestion('1','If I do not have enough time to do everything, I do not worry about it.','select',choicesSet35),
@@ -1544,22 +1594,70 @@ const ForgivenessAssessmentsQs: QuestionInterface[]=[
   makeQuestion(18,'Eventually I let go of negative thoughts about bad circumstances that are beyond anyone’s control.','select',choicesSet50),
 ]
 
-// const CaregiverStressAssessmentsQs: QuestionInterface=[
-//   makeQuestion(1,'','select',choicesSet),
-//   makeQuestion(2,'','select',choicesSet),
-//   makeQuestion(3,'','select',choicesSet),
-//   makeQuestion(4,'','select',choicesSet),
-//   makeQuestion(5,'','select',choicesSet),
-//   makeQuestion(6,'','select',choicesSet),
-//   makeQuestion(7,'','select',choicesSet),
-//   makeQuestion(8,'','select',choicesSet),
-//   makeQuestion(9,'','select',choicesSet),
-//   makeQuestion(10,'','select',choicesSet),
-//   makeQuestion(11,'','select',choicesSet),
-//   makeQuestion(12,'','select',choicesSet),
-//   makeQuestion(13,'','select',choicesSet),
-//   makeQuestion(14,'','select',choicesSet),
-// ]
+const mTbiQs: QuestionInterface[]=[
+  makeQuestion(1,'Get family and friends to help you with things you need to do around your home (such as household chores, shopping, paying bills, or transportation)?','select',choicesSet51),
+  makeQuestion(2,'Get emotional support from friends and family (such as listening to you or talking over your concerns)?','select',choicesSet51),
+  makeQuestion(3,'Get emotional support from people other than friends or family, if needed?','select',choicesSet51),
+  makeQuestion(4,'Get help with your daily tasks (like housecleaning, yard work, shopping) from resources other than family or friends, if needed?','select',choicesSet51),
+  makeQuestion(5,'Keep any physical symptoms caused by your injury (such as fatigue, dizziness, or difficulty walking) from interfering with the things that you want to do?','select',choicesSet51),
+  makeQuestion(6,'Keep any problems with concentration caused by your injury from interfering with the things that you want to do?','select',choicesSet51),
+  makeQuestion(7,'Keep any problems with memory caused by your injury from interfering with the things that you want to do?','select',choicesSet51),
+  makeQuestion(8,'Keep any problems with thinking caused by your injury from interfering with the things that you want to do?','select',choicesSet51),
+  makeQuestion(9,'Compensate for any cognitive difficulties caused by your injury so that they don’t interfere with the things that you want to do?','select',choicesSet51),
+  makeQuestion(10,'Keep from feeling frustrated or overwhelmed by things that you are trying to do?','select',choicesSet51),
+  makeQuestion(11,'Keep from feeling sad or discouraged?','select',choicesSet51),
+  makeQuestion(12,'Keep from feeling lonely?','select',choicesSet51),
+  makeQuestion(13,'Do something to control your emotions or make yourself feel better?','select',choicesSet51),
+]
+
+const NicotineAssessmentsQs: QuestionInterface[]=[
+  makeQuestion(1,'How soon after you wake up do you smoke your first cigarette?','select',choicesSet52),
+  makeQuestion(2,'Do you find it difficult to refrain from smoking in places where it is forbidden?','select',choicesSet29),
+  makeQuestion(3,'Which cigarette would you hate most to give up?','select',choicesSet53),
+  makeQuestion(4,'How many cigarettes per day do you smoke?','select',choicesSet54),
+  makeQuestion(5,'Do you smoke more frequently during the first hours after awakening than during the rest of the day?','select',choicesSet29),
+  makeQuestion(6,'Do you smoke even if you are so ill that you are in bed most of the day?','select',choicesSet29),
+]
+const SatisfactionAssessmentsQs: QuestionInterface[]=[
+  makeQuestion(1,'In most ways my life is close to my ideal.','select',choicesSet55),
+  makeQuestion(2,'The conditions of my life are excellent.','select',choicesSet55),
+  makeQuestion(3,'I am satisfied with life.','select',choicesSet55),
+  makeQuestion(4,'So far I have gotten the important things I want in life.','select',choicesSet55),
+  makeQuestion(5,'If I could live my life over, I would change almost nothing.','select',choicesSet55),
+]
+const SexualTraumaAssessmentsQs: QuestionInterface[]=[
+  //Todo add date picker
+  makeQuestion(1,'Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(2,'Repeated, disturbing dreams of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(3,'Suddenly acting or feeling as if a stressful experience were happening again (as if you were reliving it)?','select',choicesSet56),
+  makeQuestion(4,'Feeling very upset when something reminded you of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(5,'Having physical reactions (e.g., heart pounding, trouble breathing, or sweating) when something reminded you of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(6,'Avoiding thinking about or talking about a stressful experience from the past or avoid having feelings related to it?','select',choicesSet56),
+  makeQuestion(7,'Avoid activities or situations because they remind you of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(8,'Trouble remembering important parts of a stressful experience from the past?','select',choicesSet56),
+  makeQuestion(9,'Loss of interest in things that you used to enjoy?','select',choicesSet56),
+  makeQuestion(10,'Feeling distant or cut off from other people?','select',choicesSet56),
+  makeQuestion(11,'Feeling emotionally numb or being unable to have loving feelings for those close to you?','select',choicesSet56),
+  makeQuestion(12,'Feeling as if your future will somehow be cut short?','select',choicesSet56),
+  makeQuestion(13,'Trouble falling or staying asleep?','select',choicesSet56),
+  makeQuestion(14,'Feeling irritable or having angry outbursts?','select',choicesSet56),
+  makeQuestion(15,'Having difficulty concentrating?','select',choicesSet56),
+  makeQuestion(16,'Being "super alert" or watchful on guard?','select',choicesSet56),
+  makeQuestion(17,'Feeling jumpy or easily startled?','select',choicesSet56),
+]
+
+const WorkAdjustmentAssessmentsQs: QuestionInterface[]=[
+  makeQuestion(1,'I can always manage to solve difficult problems if I try hard enough.','select',choicesSet57),
+  makeQuestion(2,'If someone opposes me, I can find the means and ways to get what I want.','select',choicesSet57),
+  makeQuestion(3,'It is easy for me to stick to my aims and accomplish my goals.','select',choicesSet57),
+  makeQuestion(4,'I am confident that I could deal efficiently with unexpected events.','select',choicesSet57),
+  makeQuestion(5,'Thanks to my resourcefulness, I know how to handle unforeseen situations.','select',choicesSet57),
+  makeQuestion(6,'I can solve most problems if I invest the necessary effort.','select',choicesSet57),
+  makeQuestion(7,'I can remain calm when facing difficulties because I can rely on my coping abilities.','select',choicesSet57),
+  makeQuestion(8,'When I am confronted with a problem, I can usually find several solutions.','select',choicesSet57),
+  makeQuestion(9,'If I am in trouble, I can usually think of a solution.','select',choicesSet57),
+  makeQuestion(10,'I can usually handle whatever comes my way.','select',choicesSet57),
+]
 
 const alcImage = 'res/images/Alcohol_and_Drugs.jpg';
 const ptsImage = 'res/images/Post_Traumatic_Stress.jpg';
@@ -1582,6 +1680,18 @@ const hopeImage ='res/images/Hope.png';
 const spiritualImage='res/images/Spirituality.png';
 const caregiverStressImage='res/images/Caregiver.png';
 const forgivenessImage = 'res/image/Forgiveness.png';
+
+//todo make this image work
+//const mTBIImage = 'res/image/mTBI.png';;
+const mTBIImage = ptsImage;
+//const nicotineImage = 'res/image/Nicotine.png';
+const nicotineImage = stressImage;
+//const satisfactionImage ='res/image/Satisfaction.png';
+const satisfactionImage = hopeImage;
+//const sexualTraumaImage ='res/image/SexualTrauma.png';
+const sexualTraumaImage =stressImage;
+//const  workAdjustmentImage ='res/image/WorkAdjustment.png';
+const  workAdjustmentImage=stressImage;
 /////////////////////////////////////PORT of Drugs Assessments START
 const getQuestionScore = (value,choices) => {
   return choices.reduce((score,choice) => {
@@ -2026,11 +2136,14 @@ export const ForgivenessAssessment =  makeAssessment(18,'Forgiveness', 0, 70, 12
 export const GratitudeAssessment =  makeAssessment(19,'Gratitude', 0, 38, 42, GratitudeList, 1, gratitudeAssessmentQs,socialImage);
 export const GenerosityAssessment =  makeAssessment(20,'Generosity', 0, 51, 60, GenerosityList, 1, generosityAssessmentQs,friendsImage);
 export const OptimismAssessment =  makeAssessment(21,'Optimism', 0, 16, 24, OptimismList, 1, optimismAssessmentQs, friendsImage);
-export const HopeAssessment = makeAssessment(22, 'Hope', 8,  16 , 32, HopeList, 1, hopeAssessmentQs, hopeImage);
+export const HopeAssessment = makeAssessment(22,'Hope', 8,  16 , 32, HopeList, 1, hopeAssessmentQs, hopeImage);
 export const SpiritualityAssessment =makeAssessment(23,'Spirituality', 14, 28, 56, SpiritualityList, 1 ,spiritualityAssessmentsQs, spiritualImage);
 export const CaregiverStressAssessment = makeAssessment(24, 'Caregiver Stress', 2,19,36, CaregiverStressList, 1, CaregiverStressAssessmentsQs, caregiverStressImage);
-export const Forgiveness = makeAssessment('25', 'Forgiveness', 7, 67 , 128, ForgivenessList, 1, ForgivenessAssessmentsQs, forgivenessImage)
-
+export const mTBIAssessment = makeAssessment(25,'mTBI', 13, 71, 130, mTBISymptomManagementList, 1, mTbiQs, mTBIImage);
+export const NicotineAssessment =makeAssessment(26,'Nicotine',2, 6, 10, NicotineDependenceList, 1, NicotineAssessmentsQs, nicotineImage);
+export const SatisfactionAssessment =makeAssessment(27,'Satisfaction', 5, 20, 35,  SatisfactionwithLifeList, 1, SatisfactionAssessmentsQs, satisfactionImage);
+export const SexualTraumaAssessment= makeAssessment(28,'Sexual Harassment, Assult, and Trauma', 17, 51 ,85, SexualTraumaList, 1, SexualTraumaAssessmentsQs, sexualTraumaImage);
+export const WorkAdjustmentAssessment = makeAssessment(29,'Work Adjustment', 10, 30, 40, WorkAdjustmentList, 0, WorkAdjustmentAssessmentsQs, workAdjustmentImage)
 const assessmentsRaw: AssessmentInterface[] = [
   FriendShipAssessment,
   MaritalAssessment,
@@ -2056,7 +2169,12 @@ const assessmentsRaw: AssessmentInterface[] = [
   HopeAssessment,
   SpiritualityAssessment,
   CaregiverStressAssessment,
-  ForgivenessAssessment
+  ForgivenessAssessment,
+  mTBIAssessment,
+  NicotineAssessment,
+  SatisfactionAssessment,
+  SexualTraumaAssessment,
+  WorkAdjustmentAssessment
 ];
 
 //TODO
