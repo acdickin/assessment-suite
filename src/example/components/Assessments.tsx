@@ -31,7 +31,11 @@ const {
     Satisfaction,
     SexualTrauma,
     WorkAdjustment
-
+    Stigma,
+    Resilience,
+    Gratitude,
+    Generosity,
+    Optimism
 } = assessments;
 
 
@@ -56,6 +60,7 @@ class Assessments extends React.Component<Props, State> {
         return (<div>
 
                   <AssessmentsList onCancel={handleCancel} onAssessmentMounted={handleAssessmentLoaded} cols={2}>
+
                     <assessments.Stress />
                     <assessments.PostTraumaticStress />
                     <assessments.Depression />
@@ -69,6 +74,24 @@ class Assessments extends React.Component<Props, State> {
                     <assessments.Satisfaction/> 
                     <assessments.SexualTrauma/>
                     <assessments.WorkAdjustment/> 
+
+                        <FriendShip />
+                        <MaritalSatisfaction />
+                        <PostDeploymentSocialSupport />
+                        <SocialSupport />
+                        <Sleep />
+                        <Panic />
+                        <AlcoholDrugs />
+                        <Physical />
+                        <ParentingConfidence />
+                        <Anger />
+                        <Stigma />
+                        <Worry />
+                        <Resilience />
+                        <Gratitude />
+                        <Generosity />
+                        <Optimism />
+
                   </AssessmentsList>
                       {/*<FriendShip />
                       <MaritalSatisfaction />
